@@ -42,6 +42,7 @@ do
 		done
 	done
 
+	echo
 	echo "Runtimes:"
 	$SCRIPTS/re '^Sor.*?([0-9]*)$' '$1' $PROF > $TMPDIR/prof-num
 	$SCRIPTS/columnize $SIZES < $TMPDIR/prof-num
