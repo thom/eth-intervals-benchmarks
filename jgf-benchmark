@@ -16,7 +16,6 @@ JAVAC_OPTS="$5"
 FOUND=
 TMPDIR=/tmp
 PROF=$TMPDIR/prof
-COUNT=$TMPDIR/count
 
 export CLASSPATH=$CLASSPATH:$BINDIR/bin:$BINDIR/lib/*:$BINDIR/test/jgfmt/section3/Data/
 
@@ -26,14 +25,12 @@ do
 	CLSFILE=${BINDIR}/bin/${CLSNAME//./\/}$x.class
 	if [ -f $CLSFILE ]
 	then
-		rm -f $COUNT
 		FOUND+="$x "
 		for iter in $(seq 1 $TRIALS)
 		do 
 			echo Running java $JAVAC_OPTS $CLSNAME$x $THREADS from $BINDIR/runtime
-			java $JAVAC_OPTS $CLSNAME$x $THREADS 1>> $PROF 2>> $COUNT
+			java $JAVAC_OPTS $CLSNAME$x $THREADS 1>> $PROF
 		done
-		$SCRIPTS/counts $COUNT $SCRIPTS
 	else
 		echo -e "$CLSFILE not found.\n"
 	fi

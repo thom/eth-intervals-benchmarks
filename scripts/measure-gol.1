@@ -6,7 +6,6 @@ SCRIPTS=$DIR
 SIZES="500 1000 1500"
 TMPDIR=/tmp
 PROF=$TMPDIR/prof
-COUNT=$TMPDIR/count
 
 $DIR/benchmark-init $1
 
@@ -25,13 +24,11 @@ do
 	rm -f $PROF
 	for t in $PATTERN
 	do
-		rm -f $COUNT
 		for n in $(seq 1 $ITER)
 		do 
 			echo Testing kind=$k test=$t trial=$n tile_size=100
-			java ${JAVA_OPTS} ch.ethz.intervals.TestGameOfLife $k 100 100 $t 150 155 1 1000 1000 1>> $PROF 2>> $COUNT
+			java ${JAVA_OPTS} ch.ethz.intervals.TestGameOfLife $k 100 100 $t 150 155 1 1000 1000 1>> $PROF
 		done
-		$SCRIPTS/counts $COUNT $SCRIPTS
 	done
 
 	echo "Runtimes:"

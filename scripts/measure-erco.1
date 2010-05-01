@@ -6,7 +6,6 @@ SCRIPTS=$DIR
 SIZES="500 1000 1500"
 TMPDIR=/tmp
 PROF=$TMPDIR/prof
-COUNT=$TMPDIR/count
 
 $DIR/benchmark-init $1
 
@@ -30,19 +29,17 @@ do
 	rm -f $PROF 
 	for SIZE in $SIZES
 	do
-		rm -f $COUNT
 		for L in $(seq 1 $ITER)
 		do
 			if [ $N -eq -1 ]
 			then
 				echo Running java ${JAVA_OPTS} erco.sor.intervals.Sor $SIZE from $DIR/runtime
-				java ${JAVA_OPTS} erco.sor.intervals.Sor $SIZE 1>> $PROF 2>> $COUNT
+				java ${JAVA_OPTS} erco.sor.intervals.Sor $SIZE 1>> $PROF
 			else
 				echo Running java ${JAVA_OPTS} erco.sor.threads.Sor $SIZE $N from $DIR/runtime
-				java ${JAVA_OPTS} erco.sor.threads.Sor $SIZE $N 1>> $PROF 2>> $COUNT
+				java ${JAVA_OPTS} erco.sor.threads.Sor $SIZE $N 1>> $PROF
 			fi
 		done
-		$SCRIPTS/counts $COUNT $SCRIPTS
 	done
 
 	echo "Runtimes:"
