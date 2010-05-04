@@ -31,12 +31,12 @@ do
 			echo Running java $JAVAC_OPTS $CLSNAME$x $THREADS from $BINDIR/runtime
 			java $JAVAC_OPTS $CLSNAME$x $THREADS 1>> $PROF
 		done
+		echo
 	else
 		echo -e "$CLSFILE not found.\n"
 	fi
 done
 
-echo
 echo "Runtimes:"
 $SCRIPTS/re '([0-9.]*) \(s\)' '$1' $PROF > $TMPDIR/prof-num
 $SCRIPTS/columnize $FOUND < $TMPDIR/prof-num
