@@ -1,0 +1,100 @@
+Script started on Tue 04 May 2010 11:29:32 PM CEST
+Logfile: mafushi-2010-05-04-23:29:32-erco.txt
+
+date
+Tue May  4 23:29:32 CEST 2010
+
+git show --pretty=oneline | head -1
+a9139ab7ff989e232c3350e2ca20fbdc29a64bde Set running state to null in case we're not using duplicating queues
+
+git diff | cat
+diff --git a/Intervals/src/ch/ethz/intervals/Config.java b/Intervals/src/ch/ethz/intervals/Config.java
+index d8ee97f..566de10 100644
+--- a/Intervals/src/ch/ethz/intervals/Config.java
++++ b/Intervals/src/ch/ethz/intervals/Config.java
+@@ -24,6 +24,6 @@ public class Config {
+ 	 * @return WorkStealingDeque
+ 	 */
+ 	public final static WorkStealingQueue createQueue(Worker owner) {
+-		return new LazyDeque(owner);
++		return new DynamicCircularDequeRTA(owner);
+ 	}
+ }
+
+pwd
+/home/weibelt/intervals-java/Intervals
+
+Settings:
+JAVA_OPTS=
+NOBUILD=
+CLASSPATH=:/home/weibelt/intervals-java/Intervals/bin:/home/weibelt/intervals-java/Intervals/lib/*
+
+Buildfile: build.xml
+
+clean:
+   [delete] Deleting directory /home/weibelt/intervals-java/Intervals/bin
+
+create:
+    [mkdir] Created dir: /home/weibelt/intervals-java/Intervals/bin
+
+compile:
+    [javac] Compiling 79 source files to /home/weibelt/intervals-java/Intervals/bin
+    [javac] Compiling 123 source files to /home/weibelt/intervals-java/Intervals/bin
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+
+SIZES=500 1000 1500
+NS=8 -1
+ITER=5
+
+Running java erco.sor.threads.Sor 500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Runtimes:
+500	1000	1500
+1702	2326	2587
+1750	1829	2497
+1474	2330	2460
+1601	2228	2302
+1664	1836	2420
+
+Running java erco.sor.intervals.Sor 500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1000 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1000 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1000 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1000 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1000 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Runtimes:
+500	1000	1500
+1091	1363	1773
+1230	1344	1912
+1052	1334	1760
+1245	1307	1787
+1083	1475	1793
+
+
+Script done on Tue 04 May 2010 11:30:43 PM CEST
