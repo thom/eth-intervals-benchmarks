@@ -1,0 +1,88 @@
+Script started on Tue 04 May 2010 11:12:33 PM CEST
+Logfile: marvin-2010-05-04-23:12:33-erco.txt
+
+date
+Tue May  4 23:12:33 CEST 2010
+
+git show --pretty=oneline | head -1
+a9139ab7ff989e232c3350e2ca20fbdc29a64bde Set running state to null in case we're not using duplicating queues
+
+git diff | cat
+
+pwd
+/home/thom/workspace/intervals-java/Intervals
+
+Settings:
+JAVA_OPTS=
+NOBUILD=
+CLASSPATH=:/home/thom/workspace/intervals-java/Intervals/bin:/home/thom/workspace/intervals-java/Intervals/lib/*
+
+Buildfile: build.xml
+
+clean:
+   [delete] Deleting directory /home/thom/workspace/intervals-java/Intervals/bin
+
+create:
+    [mkdir] Created dir: /home/thom/workspace/intervals-java/Intervals/bin
+
+compile:
+    [javac] Compiling 79 source files to /home/thom/workspace/intervals-java/Intervals/bin
+    [javac] Compiling 123 source files to /home/thom/workspace/intervals-java/Intervals/bin
+
+BUILD SUCCESSFUL
+Total time: 3 seconds
+
+SIZES=500 1000 1500
+NS=2 -1
+ITER=5
+
+Running java erco.sor.threads.Sor 500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Runtimes:
+500	1000	1500
+1833	2838	3091
+2064	2485	2917
+1861	2612	3046
+2068	2344	3023
+2010	2491	2491
+
+Running java erco.sor.intervals.Sor 500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1000 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1000 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1000 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1000 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1000 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.intervals.Sor 1500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Runtimes:
+500	1000	1500
+1967	2359	2970
+1768	2440	2853
+1768	2440	2755
+1893	2438	2718
+1851	2609	2991
+
+
+Script done on Tue 04 May 2010 11:13:54 PM CEST
