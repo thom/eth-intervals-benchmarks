@@ -1,0 +1,559 @@
+Script started on Wed 05 May 2010 09:34:29 PM CEST
+Logfile: marvin-2010-05-05-21:34:29-erco.txt
+
+date
+Wed May  5 21:34:30 CEST 2010
+
+git show --pretty=oneline | head -1
+a9139ab7ff989e232c3350e2ca20fbdc29a64bde Set running state to null in case we're not using duplicating queues
+
+git diff | cat
+diff --git a/Intervals/src/ch/ethz/intervals/Config.java b/Intervals/src/ch/ethz/intervals/Config.java
+index d8ee97f..268ee92 100644
+--- a/Intervals/src/ch/ethz/intervals/Config.java
++++ b/Intervals/src/ch/ethz/intervals/Config.java
+@@ -6,7 +6,7 @@ public class Config {
+ 	/**
+ 	 * Should we collect and print statistics
+ 	 */
+-	public static final boolean STATISTICS = false;
++	public static final boolean STATISTICS = true;
+ 
+ 	/**
+ 	 * Are we using a duplicating queue?
+@@ -24,6 +24,6 @@ public class Config {
+ 	 * @return WorkStealingDeque
+ 	 */
+ 	public final static WorkStealingQueue createQueue(Worker owner) {
+-		return new LazyDeque(owner);
++		return new DynamicCircularDequeRTA(owner);
+ 	}
+ }
+
+pwd
+/home/thom/workspace/intervals-java/Intervals
+
+Settings:
+JAVA_OPTS=
+NOBUILD=
+CLASSPATH=:/home/thom/workspace/intervals-java/Intervals/bin:/home/thom/workspace/intervals-java/Intervals/lib/*
+
+Buildfile: build.xml
+
+clean:
+   [delete] Deleting directory /home/thom/workspace/intervals-java/Intervals/bin
+
+create:
+    [mkdir] Created dir: /home/thom/workspace/intervals-java/Intervals/bin
+
+compile:
+    [javac] Compiling 79 source files to /home/thom/workspace/intervals-java/Intervals/bin
+    [javac] Compiling 123 source files to /home/thom/workspace/intervals-java/Intervals/bin
+
+BUILD SUCCESSFUL
+Total time: 4 seconds
+
+SIZES=500 1000 1500
+NS=2 -1
+ITER=5
+
+Running java erco.sor.threads.Sor 500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 2 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Runtimes:
+500	1000	1500
+1820	2508	2802
+1805	2596	2872
+1610	2480	2584
+1721	1990	2776
+1894	2342	3132
+
+Running java erco.sor.intervals.Sor 500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+15499
+
+Take Attempts	Take Successes	Take Failures
+16094		14644		1450
+
+Steal Attempts	Steal Successes	Steal Failures
+1450		887		563
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+17502
+
+Take Attempts	Take Successes	Take Failures
+18018		16615		1403
+
+Steal Attempts	Steal Successes	Steal Failures
+1403		855		548
+
+Deque Grows
+2
+
+Running java erco.sor.intervals.Sor 500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+14883
+
+Take Attempts	Take Successes	Take Failures
+15613		13916		1697
+
+Steal Attempts	Steal Successes	Steal Failures
+1697		1054		643
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+18118
+
+Take Attempts	Take Successes	Take Failures
+18708		17064		1644
+
+Steal Attempts	Steal Successes	Steal Failures
+1644		967		677
+
+Deque Grows
+2
+
+Running java erco.sor.intervals.Sor 500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+16520
+
+Take Attempts	Take Successes	Take Failures
+16760		15954		806
+
+Steal Attempts	Steal Successes	Steal Failures
+806		520		286
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+16481
+
+Take Attempts	Take Successes	Take Failures
+16825		15961		864
+
+Steal Attempts	Steal Successes	Steal Failures
+864		566		298
+
+Deque Grows
+2
+
+Running java erco.sor.intervals.Sor 500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+16348
+
+Take Attempts	Take Successes	Take Failures
+17023		15252		1771
+
+Steal Attempts	Steal Successes	Steal Failures
+1771		1048		723
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+16653
+
+Take Attempts	Take Successes	Take Failures
+17418		15605		1813
+
+Steal Attempts	Steal Successes	Steal Failures
+1813		1096		717
+
+Deque Grows
+2
+
+Running java erco.sor.intervals.Sor 500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+18703
+
+Take Attempts	Take Successes	Take Failures
+19280		17738		1542
+
+Steal Attempts	Steal Successes	Steal Failures
+1542		910		632
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+14298
+
+Take Attempts	Take Successes	Take Failures
+14965		13388		1577
+
+Steal Attempts	Steal Successes	Steal Failures
+1577		965		612
+
+Deque Grows
+2
+
+Running java erco.sor.intervals.Sor 1000 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+33855
+
+Take Attempts	Take Successes	Take Failures
+35451		31651		3800
+
+Steal Attempts	Steal Successes	Steal Failures
+3800		2162		1638
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+32146
+
+Take Attempts	Take Successes	Take Failures
+33788		29984		3804
+
+Steal Attempts	Steal Successes	Steal Failures
+3804		2204		1600
+
+Deque Grows
+3
+
+Running java erco.sor.intervals.Sor 1000 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+34445
+
+Take Attempts	Take Successes	Take Failures
+36029		32352		3677
+
+Steal Attempts	Steal Successes	Steal Failures
+3677		2157		1520
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+31556
+
+Take Attempts	Take Successes	Take Failures
+33044		29399		3645
+
+Steal Attempts	Steal Successes	Steal Failures
+3645		2093		1552
+
+Deque Grows
+3
+
+Running java erco.sor.intervals.Sor 1000 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+40048
+
+Take Attempts	Take Successes	Take Failures
+40947		38639		2308
+
+Steal Attempts	Steal Successes	Steal Failures
+2308		1355		953
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+25953
+
+Take Attempts	Take Successes	Take Failures
+27001		24598		2403
+
+Steal Attempts	Steal Successes	Steal Failures
+2403		1409		994
+
+Deque Grows
+3
+
+Running java erco.sor.intervals.Sor 1000 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+41657
+
+Take Attempts	Take Successes	Take Failures
+42714		40049		2665
+
+Steal Attempts	Steal Successes	Steal Failures
+2665		1643		1022
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+24344
+
+Take Attempts	Take Successes	Take Failures
+25414		22701		2713
+
+Steal Attempts	Steal Successes	Steal Failures
+2713		1608		1105
+
+Deque Grows
+3
+
+Running java erco.sor.intervals.Sor 1000 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+33027
+
+Take Attempts	Take Successes	Take Failures
+34655		30808		3847
+
+Steal Attempts	Steal Successes	Steal Failures
+3847		2236		1611
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+32974
+
+Take Attempts	Take Successes	Take Failures
+34645		30738		3907
+
+Steal Attempts	Steal Successes	Steal Failures
+3907		2219		1688
+
+Deque Grows
+3
+
+Running java erco.sor.intervals.Sor 1500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+50566
+
+Take Attempts	Take Successes	Take Failures
+52123		48305		3818
+
+Steal Attempts	Steal Successes	Steal Failures
+3818		2268		1550
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+48435
+
+Take Attempts	Take Successes	Take Failures
+49976		46167		3809
+
+Steal Attempts	Steal Successes	Steal Failures
+3809		2261		1548
+
+Deque Grows
+3
+
+Running java erco.sor.intervals.Sor 1500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+78821
+
+Take Attempts	Take Successes	Take Failures
+79573		77270		2303
+
+Steal Attempts	Steal Successes	Steal Failures
+2303		1449		854
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+20180
+
+Take Attempts	Take Successes	Take Failures
+21223		18731		2492
+
+Steal Attempts	Steal Successes	Steal Failures
+2492		1551		941
+
+Deque Grows
+2
+
+Running java erco.sor.intervals.Sor 1500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+40084
+
+Take Attempts	Take Successes	Take Failures
+42241		37157		5084
+
+Steal Attempts	Steal Successes	Steal Failures
+5084		2989		2095
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+58917
+
+Take Attempts	Take Successes	Take Failures
+60974		55928		5046
+
+Steal Attempts	Steal Successes	Steal Failures
+5046		2927		2119
+
+Deque Grows
+4
+
+Running java erco.sor.intervals.Sor 1500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+50961
+
+Take Attempts	Take Successes	Take Failures
+52928		48196		4732
+
+Steal Attempts	Steal Successes	Steal Failures
+4732		2826		1906
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+48040
+
+Take Attempts	Take Successes	Take Failures
+49890		45214		4676
+
+Steal Attempts	Steal Successes	Steal Failures
+4676		2765		1911
+
+Deque Grows
+3
+
+Running java erco.sor.intervals.Sor 1500 from /home/thom/workspace/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+53906
+
+Take Attempts	Take Successes	Take Failures
+55796		51183		4613
+
+Steal Attempts	Steal Successes	Steal Failures
+4613		2693		1920
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+45095
+
+Take Attempts	Take Successes	Take Failures
+46999		42402		4597
+
+Steal Attempts	Steal Successes	Steal Failures
+4597		2723		1874
+
+Deque Grows
+3
+
+
+Runtimes:
+500	1000	1500
+1840	2130	2888
+1851	2138	2892
+1995	2382	2698
+1779	2394	2817
+1728	2124	2728
+
+
+Script done on Wed 05 May 2010 09:35:47 PM CEST
