@@ -1,0 +1,3337 @@
+Script started on Wed 05 May 2010 08:58:01 PM CEST
+Logfile: marvin-2010-05-05-20:58:01.txt
+
+date
+Wed May  5 20:58:01 CEST 2010
+
+git show --pretty=oneline | head -1
+a9139ab7ff989e232c3350e2ca20fbdc29a64bde Set running state to null in case we're not using duplicating queues
+
+git diff | cat
+diff --git a/Intervals/src/ch/ethz/intervals/Config.java b/Intervals/src/ch/ethz/intervals/Config.java
+index d8ee97f..59a696b 100644
+--- a/Intervals/src/ch/ethz/intervals/Config.java
++++ b/Intervals/src/ch/ethz/intervals/Config.java
+@@ -6,7 +6,7 @@ public class Config {
+ 	/**
+ 	 * Should we collect and print statistics
+ 	 */
+-	public static final boolean STATISTICS = false;
++	public static final boolean STATISTICS = true;
+ 
+ 	/**
+ 	 * Are we using a duplicating queue?
+@@ -24,6 +24,6 @@ public class Config {
+ 	 * @return WorkStealingDeque
+ 	 */
+ 	public final static WorkStealingQueue createQueue(Worker owner) {
+-		return new LazyDeque(owner);
++		return new DynamicCircularDeque(owner);
+ 	}
+ }
+
+pwd
+/home/thom/workspace/intervals-java/Intervals
+
+Settings:
+JAVA_OPTS=
+NOBUILD=
+CLASSPATH=:/home/thom/workspace/intervals-java/Intervals/bin:/home/thom/workspace/intervals-java/Intervals/lib/*
+
+Buildfile: build.xml
+
+clean:
+   [delete] Deleting directory /home/thom/workspace/intervals-java/Intervals/bin
+
+create:
+    [mkdir] Created dir: /home/thom/workspace/intervals-java/Intervals/bin
+
+compile:
+    [javac] Compiling 79 source files to /home/thom/workspace/intervals-java/Intervals/bin
+    [javac] Compiling 123 source files to /home/thom/workspace/intervals-java/Intervals/bin
+
+BUILD SUCCESSFUL
+Total time: 3 seconds
+
+SIZES2=SizeA SizeB SizeC
+SIZES3=SizeA SizeB
+ITERFAST=6
+ITERSLOW=3
+NS=2 -1
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Runtimes:
+SizeA	SizeB	SizeC
+0.436	2.361	5.735
+0.403	2.271	5.698
+0.438	2.371	5.536
+0.4	2.324	5.52
+0.55	2.263	5.486
+0.44	2.423	5.526
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+37		32		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		2		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+37		32		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		2		3
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+37		32		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		2		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+37		32		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		2		3
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+34		29		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		2		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+41		34		7
+
+Steal Attempts	Steal Successes	Steal Failures
+7		3		4
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+36		30		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		2		4
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+41		34		7
+
+Steal Attempts	Steal Successes	Steal Failures
+7		2		5
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+40		35		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		2		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+35		30		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		1		4
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+37		31		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		1		5
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+39		33		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		3		3
+
+Deque Grows
+0
+
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+38		33		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		1		4
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+37		32		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		2		3
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+38		32		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		0		6
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+39		33		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		3		3
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+37		31		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		3		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+39		33		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		1		5
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+37		32		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		2		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+38		33		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		1		4
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+38		33		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		1		4
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+37		32		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		2		3
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+37		32		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		2		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+38		33		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		1		4
+
+Deque Grows
+0
+
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+37		31		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		3		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+39		33		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		1		5
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+37		32		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		2		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+38		33		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		1		4
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+37		31		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		3		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+39		33		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		1		5
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+37		31		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		3		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+39		33		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		1		5
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+39		33		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		1		5
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+38		32		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		2		4
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+39		33		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		1		5
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+38		32		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		2		4
+
+Deque Grows
+0
+
+
+Runtimes:
+SizeA	SizeB	SizeC
+0.451	2.284	5.503
+0.599	2.242	5.567
+0.495	2.256	5.537
+0.438	2.329	5.545
+0.426	2.262	5.445
+0.494	2.255	5.554
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Runtimes:
+SizeA	SizeB	SizeC
+0.101	0.526	8.805
+0.118	0.531	8.802
+0.137	0.537	8.86
+0.115	0.52	8.786
+0.117	0.54	8.787
+0.11	0.542	8.807
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+8386
+
+Take Attempts	Take Successes	Take Failures
+8745		8293		452
+
+Steal Attempts	Steal Successes	Steal Failures
+452		105		347
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+7948
+
+Take Attempts	Take Successes	Take Failures
+8286		7843		443
+
+Steal Attempts	Steal Successes	Steal Failures
+443		93		350
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+12768
+
+Take Attempts	Take Successes	Take Failures
+13341		12516		825
+
+Steal Attempts	Steal Successes	Steal Failures
+825		197		628
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+3566
+
+Take Attempts	Take Successes	Take Failures
+3923		3369		554
+
+Steal Attempts	Steal Successes	Steal Failures
+554		252		302
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+5106
+
+Take Attempts	Take Successes	Take Failures
+5279		5085		194
+
+Steal Attempts	Steal Successes	Steal Failures
+194		20		174
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+11228
+
+Take Attempts	Take Successes	Take Failures
+11577		11208		369
+
+Steal Attempts	Steal Successes	Steal Failures
+369		21		348
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+13329
+
+Take Attempts	Take Successes	Take Failures
+13894		13108		786
+
+Steal Attempts	Steal Successes	Steal Failures
+786		182		604
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+3005
+
+Take Attempts	Take Successes	Take Failures
+3312		2823		489
+
+Steal Attempts	Steal Successes	Steal Failures
+489		221		268
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+8038
+
+Take Attempts	Take Successes	Take Failures
+8282		8025		257
+
+Steal Attempts	Steal Successes	Steal Failures
+257		11		246
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+8296
+
+Take Attempts	Take Successes	Take Failures
+8562		8285		277
+
+Steal Attempts	Steal Successes	Steal Failures
+277		13		264
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+9736
+
+Take Attempts	Take Successes	Take Failures
+10146		9609		537
+
+Steal Attempts	Steal Successes	Steal Failures
+537		115		422
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+6598
+
+Take Attempts	Take Successes	Take Failures
+6946		6483		463
+
+Steal Attempts	Steal Successes	Steal Failures
+463		127		336
+
+Deque Grows
+0
+
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+17120
+
+Take Attempts	Take Successes	Take Failures
+18213		15978		2235
+
+Steal Attempts	Steal Successes	Steal Failures
+2235		1132		1103
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+16214
+
+Take Attempts	Take Successes	Take Failures
+17301		15082		2219
+
+Steal Attempts	Steal Successes	Steal Failures
+2219		1142		1077
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+15899
+
+Take Attempts	Take Successes	Take Failures
+16502		15707		795
+
+Steal Attempts	Steal Successes	Steal Failures
+795		173		622
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+17435
+
+Take Attempts	Take Successes	Take Failures
+18102		17262		840
+
+Steal Attempts	Steal Successes	Steal Failures
+840		192		648
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+13429
+
+Take Attempts	Take Successes	Take Failures
+14380		12407		1973
+
+Steal Attempts	Steal Successes	Steal Failures
+1973		1019		954
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+19905
+
+Take Attempts	Take Successes	Take Failures
+21054		18886		2168
+
+Steal Attempts	Steal Successes	Steal Failures
+2168		1022		1146
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+16460
+
+Take Attempts	Take Successes	Take Failures
+17491		15339		2152
+
+Steal Attempts	Steal Successes	Steal Failures
+2152		1088		1064
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+16874
+
+Take Attempts	Take Successes	Take Failures
+17997		15786		2211
+
+Steal Attempts	Steal Successes	Steal Failures
+2211		1121		1090
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+16792
+
+Take Attempts	Take Successes	Take Failures
+17793		15940		1853
+
+Steal Attempts	Steal Successes	Steal Failures
+1853		870		983
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+16542
+
+Take Attempts	Take Successes	Take Failures
+17482		15672		1810
+
+Steal Attempts	Steal Successes	Steal Failures
+1810		852		958
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+16457
+
+Take Attempts	Take Successes	Take Failures
+17370		15479		1891
+
+Steal Attempts	Steal Successes	Steal Failures
+1891		941		950
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+16877
+
+Take Attempts	Take Successes	Take Failures
+17889		15936		1953
+
+Steal Attempts	Steal Successes	Steal Failures
+1953		978		975
+
+Deque Grows
+0
+
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+19724
+
+Take Attempts	Take Successes	Take Failures
+21052		18760		2292
+
+Steal Attempts	Steal Successes	Steal Failures
+2292		1070		1222
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+19954
+
+Take Attempts	Take Successes	Take Failures
+21158		18884		2274
+
+Steal Attempts	Steal Successes	Steal Failures
+2274		964		1310
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+17529
+
+Take Attempts	Take Successes	Take Failures
+18767		16574		2193
+
+Steal Attempts	Steal Successes	Steal Failures
+2193		1044		1149
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+22149
+
+Take Attempts	Take Successes	Take Failures
+23352		21105		2247
+
+Steal Attempts	Steal Successes	Steal Failures
+2247		955		1292
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+22027
+
+Take Attempts	Take Successes	Take Failures
+23433		21012		2421
+
+Steal Attempts	Steal Successes	Steal Failures
+2421		1141		1280
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+17651
+
+Take Attempts	Take Successes	Take Failures
+18789		16510		2279
+
+Steal Attempts	Steal Successes	Steal Failures
+2279		1015		1264
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+18568
+
+Take Attempts	Take Successes	Take Failures
+19751		17419		2332
+
+Steal Attempts	Steal Successes	Steal Failures
+2332		1038		1294
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+21110
+
+Take Attempts	Take Successes	Take Failures
+22444		20072		2372
+
+Steal Attempts	Steal Successes	Steal Failures
+2372		1149		1223
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+17893
+
+Take Attempts	Take Successes	Take Failures
+19120		16930		2190
+
+Steal Attempts	Steal Successes	Steal Failures
+2190		1014		1176
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+21785
+
+Take Attempts	Take Successes	Take Failures
+23016		20771		2245
+
+Steal Attempts	Steal Successes	Steal Failures
+2245		963		1282
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+18744
+
+Take Attempts	Take Successes	Take Failures
+20053		17729		2324
+
+Steal Attempts	Steal Successes	Steal Failures
+2324		1111		1213
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+20934
+
+Take Attempts	Take Successes	Take Failures
+22232		19823		2409
+
+Steal Attempts	Steal Successes	Steal Failures
+2409		1015		1394
+
+Deque Grows
+0
+
+
+Runtimes:
+SizeA	SizeB	SizeC
+0.327	1.021	9.275
+0.445	0.938	9.234
+0.355	1.001	9.18
+0.449	1.018	9.303
+0.3	1.029	9.134
+0.346	1.019	9.233
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Runtimes:
+SizeA	SizeB	SizeC
+0.724	1.825	3.059
+0.733	1.822	3.062
+0.78	1.749	3.097
+0.769	1.843	3.104
+0.742	1.843	3.038
+0.647	1.767	3.055
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+49600
+
+Take Attempts	Take Successes	Take Failures
+49894		49597		297
+
+Steal Attempts	Steal Successes	Steal Failures
+297		295		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+50301
+
+Take Attempts	Take Successes	Take Failures
+50012		50006		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		3		3
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+50930
+
+Take Attempts	Take Successes	Take Failures
+50636		50597		39
+
+Steal Attempts	Steal Successes	Steal Failures
+39		36		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+48971
+
+Take Attempts	Take Successes	Take Failures
+49271		48935		336
+
+Steal Attempts	Steal Successes	Steal Failures
+336		333		3
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+49955
+
+Take Attempts	Take Successes	Take Failures
+50249		49935		314
+
+Steal Attempts	Steal Successes	Steal Failures
+314		311		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+49946
+
+Take Attempts	Take Successes	Take Failures
+49657		49635		22
+
+Steal Attempts	Steal Successes	Steal Failures
+22		20		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+47076
+
+Take Attempts	Take Successes	Take Failures
+47353		47025		328
+
+Steal Attempts	Steal Successes	Steal Failures
+328		326		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+52825
+
+Take Attempts	Take Successes	Take Failures
+52554		52499		55
+
+Steal Attempts	Steal Successes	Steal Failures
+55		51		4
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+50426
+
+Take Attempts	Take Successes	Take Failures
+50716		50371		345
+
+Steal Attempts	Steal Successes	Steal Failures
+345		341		4
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+49475
+
+Take Attempts	Take Successes	Take Failures
+49191		49134		57
+
+Steal Attempts	Steal Successes	Steal Failures
+57		55		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+50085
+
+Take Attempts	Take Successes	Take Failures
+50381		50004		377
+
+Steal Attempts	Steal Successes	Steal Failures
+377		375		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+49816
+
+Take Attempts	Take Successes	Take Failures
+49526		49441		85
+
+Steal Attempts	Steal Successes	Steal Failures
+85		81		4
+
+Deque Grows
+0
+
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+77712
+
+Take Attempts	Take Successes	Take Failures
+77299		77246		53
+
+Steal Attempts	Steal Successes	Steal Failures
+53		50		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+72189
+
+Take Attempts	Take Successes	Take Failures
+72607		72139		468
+
+Steal Attempts	Steal Successes	Steal Failures
+468		466		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+68287
+
+Take Attempts	Take Successes	Take Failures
+68689		68249		440
+
+Steal Attempts	Steal Successes	Steal Failures
+440		436		4
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+81614
+
+Take Attempts	Take Successes	Take Failures
+81219		81178		41
+
+Steal Attempts	Steal Successes	Steal Failures
+41		38		3
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+69960
+
+Take Attempts	Take Successes	Take Failures
+70370		69870		500
+
+Steal Attempts	Steal Successes	Steal Failures
+500		494		6
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+79941
+
+Take Attempts	Take Successes	Take Failures
+79542		79447		95
+
+Steal Attempts	Steal Successes	Steal Failures
+95		90		5
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+78928
+
+Take Attempts	Take Successes	Take Failures
+78522		78474		48
+
+Steal Attempts	Steal Successes	Steal Failures
+48		46		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+70973
+
+Take Attempts	Take Successes	Take Failures
+71383		70927		456
+
+Steal Attempts	Steal Successes	Steal Failures
+456		454		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+70123
+
+Take Attempts	Take Successes	Take Failures
+70526		70088		438
+
+Steal Attempts	Steal Successes	Steal Failures
+438		434		4
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+79778
+
+Take Attempts	Take Successes	Take Failures
+79381		79344		37
+
+Steal Attempts	Steal Successes	Steal Failures
+37		35		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+70938
+
+Take Attempts	Take Successes	Take Failures
+71342		70860		482
+
+Steal Attempts	Steal Successes	Steal Failures
+482		479		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+78963
+
+Take Attempts	Take Successes	Take Failures
+78566		78484		82
+
+Steal Attempts	Steal Successes	Steal Failures
+82		78		4
+
+Deque Grows
+0
+
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+93965
+
+Take Attempts	Take Successes	Take Failures
+94488		93894		594
+
+Steal Attempts	Steal Successes	Steal Failures
+594		592		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+105936
+
+Take Attempts	Take Successes	Take Failures
+105418		105344		74
+
+Steal Attempts	Steal Successes	Steal Failures
+74		71		3
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+91383
+
+Take Attempts	Take Successes	Take Failures
+91895		91312		583
+
+Steal Attempts	Steal Successes	Steal Failures
+583		580		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+108518
+
+Take Attempts	Take Successes	Take Failures
+108011		107938		73
+
+Steal Attempts	Steal Successes	Steal Failures
+73		71		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+93491
+
+Take Attempts	Take Successes	Take Failures
+94010		93427		583
+
+Steal Attempts	Steal Successes	Steal Failures
+583		579		4
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+106410
+
+Take Attempts	Take Successes	Take Failures
+105897		105831		66
+
+Steal Attempts	Steal Successes	Steal Failures
+66		64		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+97019
+
+Take Attempts	Take Successes	Take Failures
+97566		96937		629
+
+Steal Attempts	Steal Successes	Steal Failures
+629		623		6
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+102882
+
+Take Attempts	Take Successes	Take Failures
+102346		102259		87
+
+Steal Attempts	Steal Successes	Steal Failures
+87		82		5
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+91980
+
+Take Attempts	Take Successes	Take Failures
+92492		91930		562
+
+Steal Attempts	Steal Successes	Steal Failures
+562		557		5
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+107921
+
+Take Attempts	Take Successes	Take Failures
+107419		107364		55
+
+Steal Attempts	Steal Successes	Steal Failures
+55		50		5
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+84599
+
+Take Attempts	Take Successes	Take Failures
+85080		84538		542
+
+Steal Attempts	Steal Successes	Steal Failures
+542		539		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+115302
+
+Take Attempts	Take Successes	Take Failures
+114827		114763		64
+
+Steal Attempts	Steal Successes	Steal Failures
+64		61		3
+
+Deque Grows
+0
+
+
+Runtimes:
+SizeA	SizeB	SizeC
+0.974	1.43	2.26
+0.939	1.62	2.325
+0.833	1.541	2.391
+0.928	1.552	2.28
+0.943	1.538	2.29
+0.827	1.554	2.209
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Runtimes:
+SizeA	SizeB
+3.683	37.718
+3.671	37.671
+3.683	37.631
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+10000
+
+Take Attempts	Take Successes	Take Failures
+5073		5071		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+4932		1		4931
+
+Steal Attempts	Steal Successes	Steal Failures
+4931		4929		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+4977		1		4976
+
+Steal Attempts	Steal Successes	Steal Failures
+4976		4974		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+10000
+
+Take Attempts	Take Successes	Take Failures
+5028		5026		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+4
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+4958		1		4957
+
+Steal Attempts	Steal Successes	Steal Failures
+4957		4955		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+10000
+
+Take Attempts	Take Successes	Take Failures
+5047		5045		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+4
+
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+100000
+
+Take Attempts	Take Successes	Take Failures
+50141		50139		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+49864		1		49863
+
+Steal Attempts	Steal Successes	Steal Failures
+49863		49861		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+50031		1		50030
+
+Steal Attempts	Steal Successes	Steal Failures
+50030		50028		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+100000
+
+Take Attempts	Take Successes	Take Failures
+49974		49972		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+7
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+49938		1		49937
+
+Steal Attempts	Steal Successes	Steal Failures
+49937		49934		3
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+99999
+
+Take Attempts	Take Successes	Take Failures
+50067		50065		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		1		1
+
+Deque Grows
+7
+
+
+Runtimes:
+SizeA	SizeB
+4.041	37.861
+4.019	38.158
+4.032	38.046
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Runtimes:
+SizeA	SizeB
+1.001	12.562
+1.019	12.601
+1.088	12.707
+1.104	12.784
+0.987	12.741
+1.004	12.774
+1.183	11.976
+1.2	12.04
+1.071	13.451
+1.1	13.493
+1.062	13.048
+1.079	13.085
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1739
+
+Take Attempts	Take Successes	Take Failures
+1891		1601		290
+
+Steal Attempts	Steal Successes	Steal Failures
+290		138		152
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1661
+
+Take Attempts	Take Successes	Take Failures
+1802		1523		279
+
+Steal Attempts	Steal Successes	Steal Failures
+279		138		141
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1746
+
+Take Attempts	Take Successes	Take Failures
+1908		1610		298
+
+Steal Attempts	Steal Successes	Steal Failures
+298		139		159
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1654
+
+Take Attempts	Take Successes	Take Failures
+1807		1515		292
+
+Steal Attempts	Steal Successes	Steal Failures
+292		136		156
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1630
+
+Take Attempts	Take Successes	Take Failures
+1780		1500		280
+
+Steal Attempts	Steal Successes	Steal Failures
+280		139		141
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1770
+
+Take Attempts	Take Successes	Take Failures
+1916		1631		285
+
+Steal Attempts	Steal Successes	Steal Failures
+285		130		155
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1653
+
+Take Attempts	Take Successes	Take Failures
+1815		1516		299
+
+Steal Attempts	Steal Successes	Steal Failures
+299		138		161
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1747
+
+Take Attempts	Take Successes	Take Failures
+1902		1609		293
+
+Steal Attempts	Steal Successes	Steal Failures
+293		137		156
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1701
+
+Take Attempts	Take Successes	Take Failures
+1845		1563		282
+
+Steal Attempts	Steal Successes	Steal Failures
+282		130		152
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1699
+
+Take Attempts	Take Successes	Take Failures
+1854		1569		285
+
+Steal Attempts	Steal Successes	Steal Failures
+285		138		147
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1720
+
+Take Attempts	Take Successes	Take Failures
+1878		1588		290
+
+Steal Attempts	Steal Successes	Steal Failures
+290		146		144
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1680
+
+Take Attempts	Take Successes	Take Failures
+1819		1534		285
+
+Steal Attempts	Steal Successes	Steal Failures
+285		132		153
+
+Deque Grows
+0
+
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1733
+
+Take Attempts	Take Successes	Take Failures
+1902		1585		317
+
+Steal Attempts	Steal Successes	Steal Failures
+317		155		162
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1667
+
+Take Attempts	Take Successes	Take Failures
+1816		1512		304
+
+Steal Attempts	Steal Successes	Steal Failures
+304		148		156
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1697
+
+Take Attempts	Take Successes	Take Failures
+1850		1548		302
+
+Steal Attempts	Steal Successes	Steal Failures
+302		149		153
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1703
+
+Take Attempts	Take Successes	Take Failures
+1856		1554		302
+
+Steal Attempts	Steal Successes	Steal Failures
+302		149		153
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1750
+
+Take Attempts	Take Successes	Take Failures
+1923		1611		312
+
+Steal Attempts	Steal Successes	Steal Failures
+312		159		153
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1650
+
+Take Attempts	Take Successes	Take Failures
+1782		1491		291
+
+Steal Attempts	Steal Successes	Steal Failures
+291		139		152
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1664
+
+Take Attempts	Take Successes	Take Failures
+1825		1513		312
+
+Steal Attempts	Steal Successes	Steal Failures
+312		157		155
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1736
+
+Take Attempts	Take Successes	Take Failures
+1881		1579		302
+
+Steal Attempts	Steal Successes	Steal Failures
+302		151		151
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1723
+
+Take Attempts	Take Successes	Take Failures
+1869		1568		301
+
+Steal Attempts	Steal Successes	Steal Failures
+301		142		159
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1677
+
+Take Attempts	Take Successes	Take Failures
+1843		1535		308
+
+Steal Attempts	Steal Successes	Steal Failures
+308		155		153
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1695
+
+Take Attempts	Take Successes	Take Failures
+1842		1533		309
+
+Steal Attempts	Steal Successes	Steal Failures
+309		148		161
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1705
+
+Take Attempts	Take Successes	Take Failures
+1870		1557		313
+
+Steal Attempts	Steal Successes	Steal Failures
+313		162		151
+
+Deque Grows
+0
+
+
+Runtimes:
+SizeA	SizeB
+1.224	16.027
+1.268	16.134
+1.064	16.235
+1.113	16.338
+1.257	15.878
+1.3	15.951
+1.107	16.377
+1.15	16.468
+1.107	16.48
+1.14	16.575
+1.186	15.677
+1.236	15.797
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Runtimes:
+SizeA	SizeB
+1.741	9.76
+2.164	10.276
+1.795	9.602
+2.165	10.177
+1.82	9.911
+2.068	10.441
+1.912	9.536
+2.225	10.104
+1.77	10.043
+2.104	10.616
+1.93	9.645
+2.246	10.219
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+5058		1		5057
+
+Steal Attempts	Steal Successes	Steal Failures
+5057		5055		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+10000
+
+Take Attempts	Take Successes	Take Failures
+4947		4945		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+4
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+10000
+
+Take Attempts	Take Successes	Take Failures
+4971		4969		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+5034		1		5033
+
+Steal Attempts	Steal Successes	Steal Failures
+5033		5031		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+5064		1		5063
+
+Steal Attempts	Steal Successes	Steal Failures
+5063		5061		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+10000
+
+Take Attempts	Take Successes	Take Failures
+4941		4939		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+4
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+10000
+
+Take Attempts	Take Successes	Take Failures
+5156		5154		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+4849		1		4848
+
+Steal Attempts	Steal Successes	Steal Failures
+4848		4846		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+10000
+
+Take Attempts	Take Successes	Take Failures
+5139		5137		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+4866		1		4865
+
+Steal Attempts	Steal Successes	Steal Failures
+4865		4863		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+4982		1		4981
+
+Steal Attempts	Steal Successes	Steal Failures
+4981		4979		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+10000
+
+Take Attempts	Take Successes	Take Failures
+5023		5021		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+4
+
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+31101		1		31100
+
+Steal Attempts	Steal Successes	Steal Failures
+31100		31098		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+60000
+
+Take Attempts	Take Successes	Take Failures
+28904		28902		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+6
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+60000
+
+Take Attempts	Take Successes	Take Failures
+31251		31249		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+28754		1		28753
+
+Steal Attempts	Steal Successes	Steal Failures
+28753		28751		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+31186		1		31185
+
+Steal Attempts	Steal Successes	Steal Failures
+31185		31183		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+60000
+
+Take Attempts	Take Successes	Take Failures
+28819		28817		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+6
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+60000
+
+Take Attempts	Take Successes	Take Failures
+30700		30698		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+29305		1		29304
+
+Steal Attempts	Steal Successes	Steal Failures
+29304		29302		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+30614		1		30613
+
+Steal Attempts	Steal Successes	Steal Failures
+30613		30611		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+60000
+
+Take Attempts	Take Successes	Take Failures
+29391		29389		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+6
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+30436		1		30435
+
+Steal Attempts	Steal Successes	Steal Failures
+30435		30433		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+60000
+
+Take Attempts	Take Successes	Take Failures
+29569		29567		2
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Deque Grows
+6
+
+
+Runtimes:
+SizeA	SizeB
+2.137	10.394
+2.755	10.967
+2.113	10.63
+2.77	11.196
+1.991	10.677
+2.825	11.218
+2.146	10.761
+2.81	11.777
+2.383	10.575
+3.026	11.114
+1.993	11.204
+2.663	11.726
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB 2 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Runtimes:
+SizeA	SizeB
+0.0020	0.0090
+1.024	9.055
+1.047	9.072
+0.0020	0.0020
+0.981	9.055
+1.006	9.062
+0.0020	0.0030
+1.038	9.229
+1.046	9.246
+0.0010	0.0020
+0.973	9.094
+0.986	9.117
+0.0010	0.0020
+1.076	10.452
+1.093	10.46
+0.0020	0.0020
+1.022	9.473
+1.035	9.491
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+15		11		4
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+25		19		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		4		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+13
+
+Take Attempts	Take Successes	Take Failures
+13		10		3
+
+Steal Attempts	Steal Successes	Steal Failures
+3		1		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+21
+
+Take Attempts	Take Successes	Take Failures
+25		20		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		3		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+13
+
+Take Attempts	Take Successes	Take Failures
+13		10		3
+
+Steal Attempts	Steal Successes	Steal Failures
+3		1		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+21
+
+Take Attempts	Take Successes	Take Failures
+25		20		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		3		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+15		11		4
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+25		19		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		4		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+16
+
+Take Attempts	Take Successes	Take Failures
+18		15		3
+
+Steal Attempts	Steal Successes	Steal Failures
+3		1		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+18
+
+Take Attempts	Take Successes	Take Failures
+20		17		3
+
+Steal Attempts	Steal Successes	Steal Failures
+3		1		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+24		19		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		3		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+16		12		4
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Deque Grows
+0
+
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+13
+
+Take Attempts	Take Successes	Take Failures
+14		11		3
+
+Steal Attempts	Steal Successes	Steal Failures
+3		1		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+21
+
+Take Attempts	Take Successes	Take Failures
+24		20		4
+
+Steal Attempts	Steal Successes	Steal Failures
+4		2		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+16		12		4
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+24		19		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		3		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+16		12		4
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+24		19		5
+
+Steal Attempts	Steal Successes	Steal Failures
+5		3		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+13
+
+Take Attempts	Take Successes	Take Failures
+14		11		3
+
+Steal Attempts	Steal Successes	Steal Failures
+3		1		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+21
+
+Take Attempts	Take Successes	Take Failures
+24		20		4
+
+Steal Attempts	Steal Successes	Steal Failures
+4		2		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+15		11		4
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+25		19		6
+
+Steal Attempts	Steal Successes	Steal Failures
+6		4		2
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+13
+
+Take Attempts	Take Successes	Take Failures
+14		11		3
+
+Steal Attempts	Steal Successes	Steal Failures
+3		1		2
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+21
+
+Take Attempts	Take Successes	Take Failures
+24		20		4
+
+Steal Attempts	Steal Successes	Steal Failures
+4		2		2
+
+Deque Grows
+0
+
+
+Runtimes:
+SizeA	SizeB
+0.0040	0.0040
+0.993	9.419
+1.046	9.477
+0.0050	0.0050
+0.949	9.42
+0.992	9.449
+0.015	0.0060
+0.987	9.578
+1.021	9.606
+0.015	0.0050
+0.947	9.534
+0.985	9.566
+0.0050	0.0050
+0.99	9.891
+1.011	9.935
+0.0040	0.0060
+0.944	9.547
+0.983	9.576
+
+
+Script done on Wed 05 May 2010 09:15:37 PM CEST
