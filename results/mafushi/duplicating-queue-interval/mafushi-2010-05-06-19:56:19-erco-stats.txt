@@ -1,0 +1,2621 @@
+Script started on Thu 06 May 2010 07:56:19 PM CEST
+Logfile: mafushi-2010-05-06-19:56:19-erco.txt
+
+date
+Thu May  6 19:56:19 CEST 2010
+
+git show --pretty=oneline | head -1
+65b28904ffe99325d772a5005559df77d95b007a Use duplicating queues: check state in Interval.exec()
+
+git diff | cat
+diff --git a/Intervals/src/ch/ethz/intervals/Config.java b/Intervals/src/ch/ethz/intervals/Config.java
+index 586fce6..c18a4a6 100644
+--- a/Intervals/src/ch/ethz/intervals/Config.java
++++ b/Intervals/src/ch/ethz/intervals/Config.java
+@@ -6,7 +6,7 @@ public class Config {
+ 	/**
+ 	 * Should we collect and print statistics
+ 	 */
+-	public static final boolean STATISTICS = false;
++	public static final boolean STATISTICS = true;
+ 
+ 	/**
+ 	 * Are we using a duplicating queue?
+
+pwd
+/home/weibelt/intervals-java/Intervals
+
+Settings:
+JAVA_OPTS=
+NOBUILD=
+CLASSPATH=:/home/weibelt/intervals-java/Intervals/bin:/home/weibelt/intervals-java/Intervals/lib/*
+
+Buildfile: build.xml
+
+clean:
+   [delete] Deleting directory /home/weibelt/intervals-java/Intervals/bin
+
+create:
+    [mkdir] Created dir: /home/weibelt/intervals-java/Intervals/bin
+
+compile:
+    [javac] Compiling 79 source files to /home/weibelt/intervals-java/Intervals/bin
+    [javac] Compiling 123 source files to /home/weibelt/intervals-java/Intervals/bin
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+
+SIZES=500 1000 1500
+NS=8 -1
+ITER=5
+
+Running java erco.sor.threads.Sor 500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1000 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+Running java erco.sor.threads.Sor 1500 8 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Runtimes:
+500	1000	1500
+1588	2243	2345
+1876	2260	2336
+1848	2428	1991
+1850	2197	1958
+1888	1943	2547
+
+Running java erco.sor.intervals.Sor 500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+15228
+
+Take Attempts	Take Successes	Take Failures
+16946		13090		3856
+
+Steal Attempts	Steal Successes	Steal Failures
+13978		2735		11243
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+15825		15199		626
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+19263
+
+Take Attempts	Take Successes	Take Failures
+21466		17040		4426
+
+Steal Attempts	Steal Successes	Steal Failures
+15306		3301		12005
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+20341		19500		841
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+16451
+
+Take Attempts	Take Successes	Take Failures
+18338		14271		4067
+
+Steal Attempts	Steal Successes	Steal Failures
+14590		2913		11677
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+17184		16467		717
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+14989
+
+Take Attempts	Take Successes	Take Failures
+16616		12810		3806
+
+Steal Attempts	Steal Successes	Steal Failures
+13817		2730		11087
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+15540		14898		642
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+16211
+
+Take Attempts	Take Successes	Take Failures
+18107		14094		4013
+
+Steal Attempts	Steal Successes	Steal Failures
+14117		2902		11215
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+16996		16276		720
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+15125
+
+Take Attempts	Take Successes	Take Failures
+16734		12893		3841
+
+Steal Attempts	Steal Successes	Steal Failures
+13979		2697		11282
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+15590		14955		635
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+13710
+
+Take Attempts	Take Successes	Take Failures
+15315		11672		3643
+
+Steal Attempts	Steal Successes	Steal Failures
+13654		2494		11160
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+14166		13558		608
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+18024
+
+Take Attempts	Take Successes	Take Failures
+20109		15788		4321
+
+Steal Attempts	Steal Successes	Steal Failures
+15119		3166		11953
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+18954		18148		806
+
+Eager Executions
+0
+
+Running java erco.sor.intervals.Sor 500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+18455
+
+Take Attempts	Take Successes	Take Failures
+20442		15996		4446
+
+Steal Attempts	Steal Successes	Steal Failures
+14797		3322		11475
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+19318		18510		808
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+18766
+
+Take Attempts	Take Successes	Take Failures
+20794		16341		4453
+
+Steal Attempts	Steal Successes	Steal Failures
+15545		3313		12232
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+19654		18791		863
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+14503
+
+Take Attempts	Take Successes	Take Failures
+16080		12390		3690
+
+Steal Attempts	Steal Successes	Steal Failures
+13616		2628		10988
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+15018		14333		685
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+13337
+
+Take Attempts	Take Successes	Take Failures
+14741		11283		3458
+
+Steal Attempts	Steal Successes	Steal Failures
+13110		2391		10719
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+13674		13074		600
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+13657
+
+Take Attempts	Take Successes	Take Failures
+15344		11670		3674
+
+Steal Attempts	Steal Successes	Steal Failures
+13036		2606		10430
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+14276		13636		640
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+18295
+
+Take Attempts	Take Successes	Take Failures
+20571		16090		4481
+
+Steal Attempts	Steal Successes	Steal Failures
+14681		3376		11305
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+19466		18717		749
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+17941
+
+Take Attempts	Take Successes	Take Failures
+20011		15585		4426
+
+Steal Attempts	Steal Successes	Steal Failures
+15057		3297		11760
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+18882		18022		860
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+14047
+
+Take Attempts	Take Successes	Take Failures
+15648		11884		3764
+
+Steal Attempts	Steal Successes	Steal Failures
+13103		2701		10402
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+14585		13918		667
+
+Eager Executions
+0
+
+Running java erco.sor.intervals.Sor 500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+18103
+
+Take Attempts	Take Successes	Take Failures
+20241		15796		4445
+
+Steal Attempts	Steal Successes	Steal Failures
+15166		3279		11887
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+19075		18281		794
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+17107
+
+Take Attempts	Take Successes	Take Failures
+19026		14745		4281
+
+Steal Attempts	Steal Successes	Steal Failures
+14924		3192		11732
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+17937		17091		846
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+14966
+
+Take Attempts	Take Successes	Take Failures
+16767		12865		3902
+
+Steal Attempts	Steal Successes	Steal Failures
+13699		2843		10856
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+15708		14991		717
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+14368
+
+Take Attempts	Take Successes	Take Failures
+16101		12247		3854
+
+Steal Attempts	Steal Successes	Steal Failures
+13460		2788		10672
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+15035		14369		666
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+17746
+
+Take Attempts	Take Successes	Take Failures
+19843		15479		4364
+
+Steal Attempts	Steal Successes	Steal Failures
+14785		3229		11556
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+18708		17851		857
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+15859
+
+Take Attempts	Take Successes	Take Failures
+17662		13587		4075
+
+Steal Attempts	Steal Successes	Steal Failures
+14008		2991		11017
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+16578		15807		771
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+16883
+
+Take Attempts	Take Successes	Take Failures
+18750		14532		4218
+
+Steal Attempts	Steal Successes	Steal Failures
+14619		3112		11507
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+17644		16916		728
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+13969
+
+Take Attempts	Take Successes	Take Failures
+15510		11785		3725
+
+Steal Attempts	Steal Successes	Steal Failures
+13611		2594		11017
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+14379		13695		684
+
+Eager Executions
+0
+
+Running java erco.sor.intervals.Sor 500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+16791
+
+Take Attempts	Take Successes	Take Failures
+19083		14641		4442
+
+Steal Attempts	Steal Successes	Steal Failures
+15607		3228		12379
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+17869		17109		760
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+17843
+
+Take Attempts	Take Successes	Take Failures
+20274		15617		4657
+
+Steal Attempts	Steal Successes	Steal Failures
+16201		3407		12794
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+19024		18208		816
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+18853
+
+Take Attempts	Take Successes	Take Failures
+21134		16326		4808
+
+Steal Attempts	Steal Successes	Steal Failures
+16937		3535		13402
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+19861		19008		853
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+12661
+
+Take Attempts	Take Successes	Take Failures
+14126		10548		3578
+
+Steal Attempts	Steal Successes	Steal Failures
+12952		2487		10465
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+13035		12447		588
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+18908
+
+Take Attempts	Take Successes	Take Failures
+20940		16459		4481
+
+Steal Attempts	Steal Successes	Steal Failures
+16109		3204		12905
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+19663		18774		889
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+14869
+
+Take Attempts	Take Successes	Take Failures
+16559		12669		3890
+
+Steal Attempts	Steal Successes	Steal Failures
+14595		2635		11960
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+15304		14611		693
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+14146
+
+Take Attempts	Take Successes	Take Failures
+15704		12033		3671
+
+Steal Attempts	Steal Successes	Steal Failures
+13933		2481		11452
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+14514		13858		656
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+14930
+
+Take Attempts	Take Successes	Take Failures
+16851		12912		3939
+
+Steal Attempts	Steal Successes	Steal Failures
+14429		2745		11684
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+15657		14986		671
+
+Eager Executions
+0
+
+Running java erco.sor.intervals.Sor 500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+17575
+
+Take Attempts	Take Successes	Take Failures
+19824		15373		4451
+
+Steal Attempts	Steal Successes	Steal Failures
+15088		3326		11762
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+18699		17821		878
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+17736
+
+Take Attempts	Take Successes	Take Failures
+19890		15421		4469
+
+Steal Attempts	Steal Successes	Steal Failures
+14959		3363		11596
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+18784		17912		872
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+16051
+
+Take Attempts	Take Successes	Take Failures
+17937		13811		4126
+
+Steal Attempts	Steal Successes	Steal Failures
+14315		2999		11316
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+16810		15968		842
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+14859
+
+Take Attempts	Take Successes	Take Failures
+16576		12722		3854
+
+Steal Attempts	Steal Successes	Steal Failures
+13025		2854		10171
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+15576		14804		772
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+17705
+
+Take Attempts	Take Successes	Take Failures
+19701		15306		4395
+
+Steal Attempts	Steal Successes	Steal Failures
+14967		3254		11713
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+18560		17656		904
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+14428
+
+Take Attempts	Take Successes	Take Failures
+15899		12136		3763
+
+Steal Attempts	Steal Successes	Steal Failures
+13739		2661		11078
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+14797		14039		758
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+13600
+
+Take Attempts	Take Successes	Take Failures
+15366		11649		3717
+
+Steal Attempts	Steal Successes	Steal Failures
+13113		2665		10448
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+14314		13658		656
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+17047
+
+Take Attempts	Take Successes	Take Failures
+19092		14827		4265
+
+Steal Attempts	Steal Successes	Steal Failures
+14660		3118		11542
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+17945		17143		802
+
+Eager Executions
+0
+
+Running java erco.sor.intervals.Sor 1000 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+37421
+
+Take Attempts	Take Successes	Take Failures
+41842		32532		9310
+
+Steal Attempts	Steal Successes	Steal Failures
+31892		6964		24928
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+39496		37879		1617
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+23345
+
+Take Attempts	Take Successes	Take Failures
+26372		19085		7287
+
+Steal Attempts	Steal Successes	Steal Failures
+26013		5293		20720
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+24378		23350		1028
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+35520
+
+Take Attempts	Take Successes	Take Failures
+39349		30651		8698
+
+Steal Attempts	Steal Successes	Steal Failures
+29412		6440		22972
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+37091		35343		1748
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+35962
+
+Take Attempts	Take Successes	Take Failures
+39723		31021		8702
+
+Steal Attempts	Steal Successes	Steal Failures
+30336		6392		23944
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+37413		35663		1750
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+33497
+
+Take Attempts	Take Successes	Take Failures
+37202		28913		8289
+
+Steal Attempts	Steal Successes	Steal Failures
+29209		6046		23163
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+34959		33443		1516
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+23610
+
+Take Attempts	Take Successes	Take Failures
+26449		19451		6998
+
+Steal Attempts	Steal Successes	Steal Failures
+25570		4976		20594
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+24427		23379		1048
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+37305
+
+Take Attempts	Take Successes	Take Failures
+41740		32588		9152
+
+Steal Attempts	Steal Successes	Steal Failures
+31055		6807		24248
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+39395		37654		1741
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+31341
+
+Take Attempts	Take Successes	Take Failures
+34999		26874		8125
+
+Steal Attempts	Steal Successes	Steal Failures
+28113		5973		22140
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+32847		31290		1557
+
+Eager Executions
+0
+
+Running java erco.sor.intervals.Sor 1000 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+28377
+
+Take Attempts	Take Successes	Take Failures
+31378		23796		7582
+
+Steal Attempts	Steal Successes	Steal Failures
+26203		5498		20705
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+29294		27699		1595
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+32718
+
+Take Attempts	Take Successes	Take Failures
+36299		27899		8400
+
+Steal Attempts	Steal Successes	Steal Failures
+28479		6263		22216
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+34162		32436		1726
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+31052
+
+Take Attempts	Take Successes	Take Failures
+34446		26651		7795
+
+Steal Attempts	Steal Successes	Steal Failures
+27214		5648		21566
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+32299		30677		1622
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+35096
+
+Take Attempts	Take Successes	Take Failures
+39327		30843		8484
+
+Steal Attempts	Steal Successes	Steal Failures
+28892		6280		22612
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+37123		35479		1644
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+32079
+
+Take Attempts	Take Successes	Take Failures
+36166		27681		8485
+
+Steal Attempts	Steal Successes	Steal Failures
+28899		6291		22608
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+33972		32469		1503
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+34161
+
+Take Attempts	Take Successes	Take Failures
+38521		29580		8941
+
+Steal Attempts	Steal Successes	Steal Failures
+29360		6756		22604
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+36336		34644		1692
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+30916
+
+Take Attempts	Take Successes	Take Failures
+34407		26248		8159
+
+Steal Attempts	Steal Successes	Steal Failures
+27618		6070		21548
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+32318		30675		1643
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+33602
+
+Take Attempts	Take Successes	Take Failures
+37792		28927		8865
+
+Steal Attempts	Steal Successes	Steal Failures
+29345		6689		22656
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+35616		33922		1694
+
+Eager Executions
+0
+
+Running java erco.sor.intervals.Sor 1000 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+32349
+
+Take Attempts	Take Successes	Take Failures
+36183		27839		8344
+
+Steal Attempts	Steal Successes	Steal Failures
+29438		5944		23494
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+33783		32126		1657
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+36172
+
+Take Attempts	Take Successes	Take Failures
+40626		31432		9194
+
+Steal Attempts	Steal Successes	Steal Failures
+32711		6715		25996
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+38147		36489		1658
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+29399
+
+Take Attempts	Take Successes	Take Failures
+33325		24937		8388
+
+Steal Attempts	Steal Successes	Steal Failures
+29672		6160		23512
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+31097		29738		1359
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+31854
+
+Take Attempts	Take Successes	Take Failures
+35669		27293		8376
+
+Steal Attempts	Steal Successes	Steal Failures
+29744		6000		23744
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+33293		31567		1726
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+36885
+
+Take Attempts	Take Successes	Take Failures
+41255		32097		9158
+
+Steal Attempts	Steal Successes	Steal Failures
+31499		6767		24732
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+38864		37302		1562
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+34344
+
+Take Attempts	Take Successes	Take Failures
+38358		29486		8872
+
+Steal Attempts	Steal Successes	Steal Failures
+31480		6478		25002
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+35964		34215		1749
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+25646
+
+Take Attempts	Take Successes	Take Failures
+28781		21264		7517
+
+Steal Attempts	Steal Successes	Steal Failures
+26944		5417		21527
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+26681		25502		1179
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+31352
+
+Take Attempts	Take Successes	Take Failures
+34897		26788		8109
+
+Steal Attempts	Steal Successes	Steal Failures
+28438		5846		22592
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+32634		31062		1572
+
+Eager Executions
+0
+
+Running java erco.sor.intervals.Sor 1000 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+35951
+
+Take Attempts	Take Successes	Take Failures
+40186		31614		8572
+
+Steal Attempts	Steal Successes	Steal Failures
+29313		6320		22993
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+37934		36219		1715
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+35927
+
+Take Attempts	Take Successes	Take Failures
+40452		31443		9009
+
+Steal Attempts	Steal Successes	Steal Failures
+30250		6752		23498
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+38195		36477		1718
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+32386
+
+Take Attempts	Take Successes	Take Failures
+36236		27938		8298
+
+Steal Attempts	Steal Successes	Steal Failures
+28050		6163		21887
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+34101		32519		1582
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+34786
+
+Take Attempts	Take Successes	Take Failures
+38909		30032		8877
+
+Steal Attempts	Steal Successes	Steal Failures
+29530		6653		22877
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+36685		34964		1721
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+35362
+
+Take Attempts	Take Successes	Take Failures
+39350		30538		8812
+
+Steal Attempts	Steal Successes	Steal Failures
+29240		6582		22658
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+37120		35452		1668
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+34509
+
+Take Attempts	Take Successes	Take Failures
+37906		29423		8483
+
+Steal Attempts	Steal Successes	Steal Failures
+29828		6315		23513
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+35738		34084		1654
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+24122
+
+Take Attempts	Take Successes	Take Failures
+26535		19925		6610
+
+Steal Attempts	Steal Successes	Steal Failures
+25342		4557		20785
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+24482		23391		1091
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+24958
+
+Take Attempts	Take Successes	Take Failures
+28131		21294		6837
+
+Steal Attempts	Steal Successes	Steal Failures
+25150		4730		20420
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+26024		24895		1129
+
+Eager Executions
+0
+
+Running java erco.sor.intervals.Sor 1000 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+33774
+
+Take Attempts	Take Successes	Take Failures
+37632		29232		8400
+
+Steal Attempts	Steal Successes	Steal Failures
+28676		6270		22406
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+35502		33760		1742
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+30305
+
+Take Attempts	Take Successes	Take Failures
+34046		26023		8023
+
+Steal Attempts	Steal Successes	Steal Failures
+28192		5797		22395
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+31820		30280		1540
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+34400
+
+Take Attempts	Take Successes	Take Failures
+38816		30048		8768
+
+Steal Attempts	Steal Successes	Steal Failures
+29796		6507		23289
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+36555		34878		1677
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+31303
+
+Take Attempts	Take Successes	Take Failures
+35181		26847		8334
+
+Steal Attempts	Steal Successes	Steal Failures
+27699		6277		21422
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+33124		31554		1570
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+32137
+
+Take Attempts	Take Successes	Take Failures
+36126		27620		8506
+
+Steal Attempts	Steal Successes	Steal Failures
+28470		6337		22133
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+33957		32235		1722
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+32998
+
+Take Attempts	Take Successes	Take Failures
+36491		28268		8223
+
+Steal Attempts	Steal Successes	Steal Failures
+28034		6093		21941
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+34361		32623		1738
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+30106
+
+Take Attempts	Take Successes	Take Failures
+33807		25834		7973
+
+Steal Attempts	Steal Successes	Steal Failures
+26746		5835		20911
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+31669		30051		1618
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+32978
+
+Take Attempts	Take Successes	Take Failures
+36562		28253		8309
+
+Steal Attempts	Steal Successes	Steal Failures
+28505		6070		22435
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+34323		32620		1703
+
+Eager Executions
+0
+
+Running java erco.sor.intervals.Sor 1500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+52551
+
+Take Attempts	Take Successes	Take Failures
+58968		45601		13367
+
+Steal Attempts	Steal Successes	Steal Failures
+43690		10111		33579
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+55712		53061		2651
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+52203
+
+Take Attempts	Take Successes	Take Failures
+58640		45227		13413
+
+Steal Attempts	Steal Successes	Steal Failures
+43797		10231		33566
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+55458		52808		2650
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+44443
+
+Take Attempts	Take Successes	Take Failures
+49281		37583		11698
+
+Steal Attempts	Steal Successes	Steal Failures
+39890		8528		31362
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+46111		43571		2540
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+49264
+
+Take Attempts	Take Successes	Take Failures
+54692		42379		12313
+
+Steal Attempts	Steal Successes	Steal Failures
+41340		9181		32159
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+51560		48922		2638
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+46123
+
+Take Attempts	Take Successes	Take Failures
+51174		39388		11786
+
+Steal Attempts	Steal Successes	Steal Failures
+41080		8579		32501
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+47967		45567		2400
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+48843
+
+Take Attempts	Take Successes	Take Failures
+54523		42368		12155
+
+Steal Attempts	Steal Successes	Steal Failures
+41508		9027		32481
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+51395		49016		2379
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+46125
+
+Take Attempts	Take Successes	Take Failures
+51804		39648		12156
+
+Steal Attempts	Steal Successes	Steal Failures
+41224		9014		32210
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+48662		46428		2234
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+47449
+
+Take Attempts	Take Successes	Take Failures
+53252		40961		12291
+
+Steal Attempts	Steal Successes	Steal Failures
+41192		9168		32024
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+50129		47628		2501
+
+Eager Executions
+0
+
+Running java erco.sor.intervals.Sor 1500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+51303
+
+Take Attempts	Take Successes	Take Failures
+57511		44475		13036
+
+Steal Attempts	Steal Successes	Steal Failures
+43553		9739		33814
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+54214		51686		2528
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+51950
+
+Take Attempts	Take Successes	Take Failures
+58254		44995		13259
+
+Steal Attempts	Steal Successes	Steal Failures
+43504		9935		33569
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+54930		52285		2645
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+47943
+
+Take Attempts	Take Successes	Take Failures
+53134		40779		12355
+
+Steal Attempts	Steal Successes	Steal Failures
+42150		9158		32992
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+49937		47373		2564
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+47493
+
+Take Attempts	Take Successes	Take Failures
+52625		40535		12090
+
+Steal Attempts	Steal Successes	Steal Failures
+40966		8971		31995
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+49506		47021		2485
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+49899
+
+Take Attempts	Take Successes	Take Failures
+55127		43044		12083
+
+Steal Attempts	Steal Successes	Steal Failures
+42110		8899		33211
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+51943		49487		2456
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+46744
+
+Take Attempts	Take Successes	Take Failures
+52456		40491		11965
+
+Steal Attempts	Steal Successes	Steal Failures
+41522		8912		32610
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+49403		47187		2216
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+44304
+
+Take Attempts	Take Successes	Take Failures
+49852		37941		11911
+
+Steal Attempts	Steal Successes	Steal Failures
+40517		8836		31681
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+46777		44748		2029
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+47365
+
+Take Attempts	Take Successes	Take Failures
+52813		40745		12068
+
+Steal Attempts	Steal Successes	Steal Failures
+41113		8910		32203
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+49655		47214		2441
+
+Eager Executions
+0
+
+Running java erco.sor.intervals.Sor 1500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+49898
+
+Take Attempts	Take Successes	Take Failures
+55887		43260		12627
+
+Steal Attempts	Steal Successes	Steal Failures
+41943		9342		32601
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+52602		50224		2378
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+49462
+
+Take Attempts	Take Successes	Take Failures
+56164		42468		13696
+
+Steal Attempts	Steal Successes	Steal Failures
+43366		10475		32891
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+52943		50500		2443
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+49169
+
+Take Attempts	Take Successes	Take Failures
+54517		41537		12980
+
+Steal Attempts	Steal Successes	Steal Failures
+42867		9805		33062
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+51342		48717		2625
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+49484
+
+Take Attempts	Take Successes	Take Failures
+54754		42166		12588
+
+Steal Attempts	Steal Successes	Steal Failures
+42306		9488		32818
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+51654		48999		2655
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+49726
+
+Take Attempts	Take Successes	Take Failures
+55823		43070		12753
+
+Steal Attempts	Steal Successes	Steal Failures
+42130		9485		32645
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+52555		50084		2471
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+54139
+
+Take Attempts	Take Successes	Take Failures
+61006		46894		14112
+
+Steal Attempts	Steal Successes	Steal Failures
+44870		10848		34022
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+57742		54972		2770
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+45118
+
+Take Attempts	Take Successes	Take Failures
+49732		37699		12033
+
+Steal Attempts	Steal Successes	Steal Failures
+41358		8944		32414
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+46643		44121		2522
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+40005
+
+Take Attempts	Take Successes	Take Failures
+44584		33564		11020
+
+Steal Attempts	Steal Successes	Steal Failures
+38346		8087		30259
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+41651		39384		2267
+
+Eager Executions
+0
+
+Running java erco.sor.intervals.Sor 1500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+47168
+
+Take Attempts	Take Successes	Take Failures
+52866		40770		12096
+
+Steal Attempts	Steal Successes	Steal Failures
+40253		8978		31275
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+49748		47481		2267
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+52068
+
+Take Attempts	Take Successes	Take Failures
+58620		45270		13350
+
+Steal Attempts	Steal Successes	Steal Failures
+42959		10133		32826
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+55403		52734		2669
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+50170
+
+Take Attempts	Take Successes	Take Failures
+55650		42945		12705
+
+Steal Attempts	Steal Successes	Steal Failures
+42388		9600		32788
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+52545		49876		2669
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+47878
+
+Take Attempts	Take Successes	Take Failures
+52986		41069		11917
+
+Steal Attempts	Steal Successes	Steal Failures
+40763		8819		31944
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+49888		47359		2529
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+46108
+
+Take Attempts	Take Successes	Take Failures
+51429		39758		11671
+
+Steal Attempts	Steal Successes	Steal Failures
+39734		8616		31118
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+48374		46228		2146
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+48393
+
+Take Attempts	Take Successes	Take Failures
+54400		41770		12630
+
+Steal Attempts	Steal Successes	Steal Failures
+41217		9516		31701
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+51286		48832		2454
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+48586
+
+Take Attempts	Take Successes	Take Failures
+53881		41588		12293
+
+Steal Attempts	Steal Successes	Steal Failures
+41170		9188		31982
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+50776		48228		2548
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+46630
+
+Take Attempts	Take Successes	Take Failures
+51813		39905		11908
+
+Steal Attempts	Steal Successes	Steal Failures
+40531		8794		31737
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+48699		46263		2436
+
+Eager Executions
+0
+
+Running java erco.sor.intervals.Sor 1500 from /home/weibelt/intervals-java/Intervals/benchmarks/scripts/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+45068
+
+Take Attempts	Take Successes	Take Failures
+50936		38180		12756
+
+Steal Attempts	Steal Successes	Steal Failures
+43971		9500		34471
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+47680		45649		2031
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+51817
+
+Take Attempts	Take Successes	Take Failures
+58291		44583		13708
+
+Steal Attempts	Steal Successes	Steal Failures
+46376		10237		36139
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+54820		52396		2424
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+48494
+
+Take Attempts	Take Successes	Take Failures
+53791		41129		12662
+
+Steal Attempts	Steal Successes	Steal Failures
+43696		9283		34413
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+50412		47888		2524
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+51848
+
+Take Attempts	Take Successes	Take Failures
+57354		44365		12989
+
+Steal Attempts	Steal Successes	Steal Failures
+44976		9538		35438
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+53903		51334		2569
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+44316
+
+Take Attempts	Take Successes	Take Failures
+49557		37340		12217
+
+Steal Attempts	Steal Successes	Steal Failures
+43136		8941		34195
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+46281		44336		1945
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+47085
+
+Take Attempts	Take Successes	Take Failures
+52788		40060		12728
+
+Steal Attempts	Steal Successes	Steal Failures
+43426		9374		34052
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+49434		47281		2153
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+50139
+
+Take Attempts	Take Successes	Take Failures
+55382		42701		12681
+
+Steal Attempts	Steal Successes	Steal Failures
+44405		9262		35143
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+51963		49471		2492
+
+Eager Executions
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+48234
+
+Take Attempts	Take Successes	Take Failures
+54074		41255		12819
+
+Steal Attempts	Steal Successes	Steal Failures
+44870		9467		35403
+
+Deque Grows
+0
+
+Work Attempts	Work Successes	Work Failures
+50722		48646		2076
+
+Eager Executions
+0
+
+
+Runtimes:
+500	1000	1500
+1302	1397	1886
+1094	1658	1660
+1098	1499	1884
+1241	1449	1799
+1156	1364	1860
+
+
+Script done on Thu 06 May 2010 07:57:29 PM CEST
