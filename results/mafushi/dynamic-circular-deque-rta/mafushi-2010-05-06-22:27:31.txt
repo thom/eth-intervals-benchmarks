@@ -1,0 +1,11977 @@
+Script started on Thu 06 May 2010 10:27:31 PM CEST
+Logfile: mafushi-2010-05-06-22:27:31.txt
+
+date
+Thu May  6 22:27:31 CEST 2010
+
+git show --pretty=oneline | head -1
+a9139ab7ff989e232c3350e2ca20fbdc29a64bde Set running state to null in case we're not using duplicating queues
+
+git diff | cat
+diff --git a/Intervals/src/ch/ethz/intervals/Config.java b/Intervals/src/ch/ethz/intervals/Config.java
+index d8ee97f..268ee92 100644
+--- a/Intervals/src/ch/ethz/intervals/Config.java
++++ b/Intervals/src/ch/ethz/intervals/Config.java
+@@ -6,7 +6,7 @@ public class Config {
+ 	/**
+ 	 * Should we collect and print statistics
+ 	 */
+-	public static final boolean STATISTICS = false;
++	public static final boolean STATISTICS = true;
+ 
+ 	/**
+ 	 * Are we using a duplicating queue?
+@@ -24,6 +24,6 @@ public class Config {
+ 	 * @return WorkStealingDeque
+ 	 */
+ 	public final static WorkStealingQueue createQueue(Worker owner) {
+-		return new LazyDeque(owner);
++		return new DynamicCircularDequeRTA(owner);
+ 	}
+ }
+
+pwd
+/home/weibelt/intervals-java/Intervals
+
+Settings:
+JAVA_OPTS=
+NOBUILD=
+CLASSPATH=:/home/weibelt/intervals-java/Intervals/bin:/home/weibelt/intervals-java/Intervals/lib/*
+
+Buildfile: build.xml
+
+clean:
+   [delete] Deleting directory /home/weibelt/intervals-java/Intervals/bin
+
+create:
+    [mkdir] Created dir: /home/weibelt/intervals-java/Intervals/bin
+
+compile:
+    [javac] Compiling 79 source files to /home/weibelt/intervals-java/Intervals/bin
+    [javac] Compiling 123 source files to /home/weibelt/intervals-java/Intervals/bin
+
+BUILD SUCCESSFUL
+Total time: 6 seconds
+
+SIZES2=SizeA SizeB SizeC
+SIZES3=SizeA SizeB
+ITERFAST=6
+ITERSLOW=3
+NS=8 -1
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Runtimes:
+SizeA	SizeB	SizeC
+0.117	0.343	0.55
+0.116	0.353	0.532
+0.116	0.396	0.566
+0.154	0.369	0.567
+0.115	0.332	0.603
+0.118	0.343	0.624
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+26
+
+Take Attempts	Take Successes	Take Failures
+36		21		15
+
+Steal Attempts	Steal Successes	Steal Failures
+45		11		34
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+38		25		13
+
+Steal Attempts	Steal Successes	Steal Failures
+38		10		28
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+50
+
+Take Attempts	Take Successes	Take Failures
+50		37		13
+
+Steal Attempts	Steal Successes	Steal Failures
+57		7		50
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+44
+
+Take Attempts	Take Successes	Take Failures
+48		39		9
+
+Steal Attempts	Steal Successes	Steal Failures
+46		6		40
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+39		29		10
+
+Steal Attempts	Steal Successes	Steal Failures
+46		5		41
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+21
+
+Take Attempts	Take Successes	Take Failures
+24		16		8
+
+Steal Attempts	Steal Successes	Steal Failures
+30		5		25
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+13
+
+Take Attempts	Take Successes	Take Failures
+15		9		6
+
+Steal Attempts	Steal Successes	Steal Failures
+36		1		35
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+45		31		14
+
+Steal Attempts	Steal Successes	Steal Failures
+58		8		50
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+36		24		12
+
+Steal Attempts	Steal Successes	Steal Failures
+50		6		44
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+47
+
+Take Attempts	Take Successes	Take Failures
+54		41		13
+
+Steal Attempts	Steal Successes	Steal Failures
+56		7		49
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+38
+
+Take Attempts	Take Successes	Take Failures
+45		35		10
+
+Steal Attempts	Steal Successes	Steal Failures
+51		4		47
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+44
+
+Take Attempts	Take Successes	Take Failures
+52		36		16
+
+Steal Attempts	Steal Successes	Steal Failures
+64		11		53
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+10
+
+Take Attempts	Take Successes	Take Failures
+12		8		4
+
+Steal Attempts	Steal Successes	Steal Failures
+28		0		28
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+41
+
+Take Attempts	Take Successes	Take Failures
+47		35		12
+
+Steal Attempts	Steal Successes	Steal Failures
+53		6		47
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+21
+
+Take Attempts	Take Successes	Take Failures
+30		15		15
+
+Steal Attempts	Steal Successes	Steal Failures
+66		9		57
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+24
+
+Take Attempts	Take Successes	Take Failures
+27		21		6
+
+Steal Attempts	Steal Successes	Steal Failures
+30		2		28
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+41
+
+Take Attempts	Take Successes	Take Failures
+45		38		7
+
+Steal Attempts	Steal Successes	Steal Failures
+27		4		23
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+42
+
+Take Attempts	Take Successes	Take Failures
+48		38		10
+
+Steal Attempts	Steal Successes	Steal Failures
+38		7		31
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+26
+
+Take Attempts	Take Successes	Take Failures
+30		23		7
+
+Steal Attempts	Steal Successes	Steal Failures
+25		4		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+42
+
+Take Attempts	Take Successes	Take Failures
+44		33		11
+
+Steal Attempts	Steal Successes	Steal Failures
+35		7		28
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+34		26		8
+
+Steal Attempts	Steal Successes	Steal Failures
+33		5		28
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+18
+
+Take Attempts	Take Successes	Take Failures
+22		17		5
+
+Steal Attempts	Steal Successes	Steal Failures
+25		2		23
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+45
+
+Take Attempts	Take Successes	Take Failures
+52		41		11
+
+Steal Attempts	Steal Successes	Steal Failures
+48		7		41
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+11
+
+Take Attempts	Take Successes	Take Failures
+13		7		6
+
+Steal Attempts	Steal Successes	Steal Failures
+36		1		35
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+40
+
+Take Attempts	Take Successes	Take Failures
+47		33		14
+
+Steal Attempts	Steal Successes	Steal Failures
+46		11		35
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+26
+
+Take Attempts	Take Successes	Take Failures
+29		19		10
+
+Steal Attempts	Steal Successes	Steal Failures
+44		6		38
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+37
+
+Take Attempts	Take Successes	Take Failures
+38		29		9
+
+Steal Attempts	Steal Successes	Steal Failures
+31		6		25
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+20		13		7
+
+Steal Attempts	Steal Successes	Steal Failures
+32		4		28
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+32		24		8
+
+Steal Attempts	Steal Successes	Steal Failures
+30		5		25
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+37
+
+Take Attempts	Take Successes	Take Failures
+40		33		7
+
+Steal Attempts	Steal Successes	Steal Failures
+31		4		27
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+35		23		12
+
+Steal Attempts	Steal Successes	Steal Failures
+47		8		39
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+39
+
+Take Attempts	Take Successes	Take Failures
+47		34		13
+
+Steal Attempts	Steal Successes	Steal Failures
+53		8		45
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+29
+
+Take Attempts	Take Successes	Take Failures
+38		26		12
+
+Steal Attempts	Steal Successes	Steal Failures
+39		9		30
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+38		34		4
+
+Steal Attempts	Steal Successes	Steal Failures
+22		1		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+21
+
+Take Attempts	Take Successes	Take Failures
+21		13		8
+
+Steal Attempts	Steal Successes	Steal Failures
+30		5		25
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+45
+
+Take Attempts	Take Successes	Take Failures
+52		40		12
+
+Steal Attempts	Steal Successes	Steal Failures
+50		7		43
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+36		31		5
+
+Steal Attempts	Steal Successes	Steal Failures
+29		1		28
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+22
+
+Take Attempts	Take Successes	Take Failures
+22		16		6
+
+Steal Attempts	Steal Successes	Steal Failures
+26		3		23
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+38
+
+Take Attempts	Take Successes	Take Failures
+45		36		9
+
+Steal Attempts	Steal Successes	Steal Failures
+44		4		40
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+38		31		7
+
+Steal Attempts	Steal Successes	Steal Failures
+37		3		34
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+22
+
+Take Attempts	Take Successes	Take Failures
+35		20		15
+
+Steal Attempts	Steal Successes	Steal Failures
+36		12		24
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+40		26		14
+
+Steal Attempts	Steal Successes	Steal Failures
+34		11		23
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+44
+
+Take Attempts	Take Successes	Take Failures
+45		32		13
+
+Steal Attempts	Steal Successes	Steal Failures
+47		8		39
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+35		27		8
+
+Steal Attempts	Steal Successes	Steal Failures
+32		5		27
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+41		31		10
+
+Steal Attempts	Steal Successes	Steal Failures
+31		7		24
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+33		25		8
+
+Steal Attempts	Steal Successes	Steal Failures
+27		5		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+41
+
+Take Attempts	Take Successes	Take Failures
+43		35		8
+
+Steal Attempts	Steal Successes	Steal Failures
+27		5		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+17
+
+Take Attempts	Take Successes	Take Failures
+15		10		5
+
+Steal Attempts	Steal Successes	Steal Failures
+29		1		28
+
+Deque Grows
+0
+
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+47		30		17
+
+Steal Attempts	Steal Successes	Steal Failures
+45		14		31
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+28
+
+Take Attempts	Take Successes	Take Failures
+27		18		9
+
+Steal Attempts	Steal Successes	Steal Failures
+36		6		30
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+23
+
+Take Attempts	Take Successes	Take Failures
+26		16		10
+
+Steal Attempts	Steal Successes	Steal Failures
+30		7		23
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+45
+
+Take Attempts	Take Successes	Take Failures
+49		36		13
+
+Steal Attempts	Steal Successes	Steal Failures
+32		10		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+41
+
+Take Attempts	Take Successes	Take Failures
+37		27		10
+
+Steal Attempts	Steal Successes	Steal Failures
+42		6		36
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+38
+
+Take Attempts	Take Successes	Take Failures
+39		31		8
+
+Steal Attempts	Steal Successes	Steal Failures
+45		4		41
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+25
+
+Take Attempts	Take Successes	Take Failures
+32		21		11
+
+Steal Attempts	Steal Successes	Steal Failures
+51		8		43
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+26
+
+Take Attempts	Take Successes	Take Failures
+30		22		8
+
+Steal Attempts	Steal Successes	Steal Failures
+36		4		32
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+40		31		9
+
+Steal Attempts	Steal Successes	Steal Failures
+28		6		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+31		22		9
+
+Steal Attempts	Steal Successes	Steal Failures
+37		6		31
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+40		30		10
+
+Steal Attempts	Steal Successes	Steal Failures
+34		7		27
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+21
+
+Take Attempts	Take Successes	Take Failures
+26		17		9
+
+Steal Attempts	Steal Successes	Steal Failures
+32		6		26
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+37
+
+Take Attempts	Take Successes	Take Failures
+42		33		9
+
+Steal Attempts	Steal Successes	Steal Failures
+38		5		33
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+39		30		9
+
+Steal Attempts	Steal Successes	Steal Failures
+30		6		24
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+35		26		9
+
+Steal Attempts	Steal Successes	Steal Failures
+38		5		33
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+34		25		9
+
+Steal Attempts	Steal Successes	Steal Failures
+37		5		32
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+38
+
+Take Attempts	Take Successes	Take Failures
+51		36		15
+
+Steal Attempts	Steal Successes	Steal Failures
+43		12		31
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+22
+
+Take Attempts	Take Successes	Take Failures
+24		13		11
+
+Steal Attempts	Steal Successes	Steal Failures
+38		8		30
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+37		27		10
+
+Steal Attempts	Steal Successes	Steal Failures
+29		7		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+34		24		10
+
+Steal Attempts	Steal Successes	Steal Failures
+41		5		36
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+45
+
+Take Attempts	Take Successes	Take Failures
+45		37		8
+
+Steal Attempts	Steal Successes	Steal Failures
+29		5		24
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+24
+
+Take Attempts	Take Successes	Take Failures
+26		20		6
+
+Steal Attempts	Steal Successes	Steal Failures
+25		3		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+39
+
+Take Attempts	Take Successes	Take Failures
+43		35		8
+
+Steal Attempts	Steal Successes	Steal Failures
+30		5		25
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+26
+
+Take Attempts	Take Successes	Take Failures
+28		21		7
+
+Steal Attempts	Steal Successes	Steal Failures
+37		2		35
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+46
+
+Take Attempts	Take Successes	Take Failures
+50		36		14
+
+Steal Attempts	Steal Successes	Steal Failures
+34		11		23
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+30
+
+Take Attempts	Take Successes	Take Failures
+26		19		7
+
+Steal Attempts	Steal Successes	Steal Failures
+34		4		30
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+27
+
+Take Attempts	Take Successes	Take Failures
+33		23		10
+
+Steal Attempts	Steal Successes	Steal Failures
+36		7		29
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+41
+
+Take Attempts	Take Successes	Take Failures
+46		36		10
+
+Steal Attempts	Steal Successes	Steal Failures
+37		7		30
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+30
+
+Take Attempts	Take Successes	Take Failures
+35		24		11
+
+Steal Attempts	Steal Successes	Steal Failures
+35		8		27
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+24
+
+Take Attempts	Take Successes	Take Failures
+31		20		11
+
+Steal Attempts	Steal Successes	Steal Failures
+37		7		30
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+42
+
+Take Attempts	Take Successes	Take Failures
+43		29		14
+
+Steal Attempts	Steal Successes	Steal Failures
+45		11		34
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+20
+
+Take Attempts	Take Successes	Take Failures
+22		12		10
+
+Steal Attempts	Steal Successes	Steal Failures
+34		6		28
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+39
+
+Take Attempts	Take Successes	Take Failures
+46		38		8
+
+Steal Attempts	Steal Successes	Steal Failures
+30		5		25
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+33		25		8
+
+Steal Attempts	Steal Successes	Steal Failures
+30		5		25
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+45
+
+Take Attempts	Take Successes	Take Failures
+50		41		9
+
+Steal Attempts	Steal Successes	Steal Failures
+31		6		25
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+20
+
+Take Attempts	Take Successes	Take Failures
+20		17		3
+
+Steal Attempts	Steal Successes	Steal Failures
+15		1		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+35		28		7
+
+Steal Attempts	Steal Successes	Steal Failures
+31		3		28
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+45
+
+Take Attempts	Take Successes	Take Failures
+47		40		7
+
+Steal Attempts	Steal Successes	Steal Failures
+26		4		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+30
+
+Take Attempts	Take Successes	Take Failures
+32		26		6
+
+Steal Attempts	Steal Successes	Steal Failures
+25		3		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+18
+
+Take Attempts	Take Successes	Take Failures
+23		15		8
+
+Steal Attempts	Steal Successes	Steal Failures
+44		3		41
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+38
+
+Take Attempts	Take Successes	Take Failures
+40		31		9
+
+Steal Attempts	Steal Successes	Steal Failures
+36		5		31
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+26
+
+Take Attempts	Take Successes	Take Failures
+28		20		8
+
+Steal Attempts	Steal Successes	Steal Failures
+39		5		34
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+38
+
+Take Attempts	Take Successes	Take Failures
+45		35		10
+
+Steal Attempts	Steal Successes	Steal Failures
+36		7		29
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+30		25		5
+
+Steal Attempts	Steal Successes	Steal Failures
+24		2		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+40
+
+Take Attempts	Take Successes	Take Failures
+50		38		12
+
+Steal Attempts	Steal Successes	Steal Failures
+44		8		36
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+37		28		9
+
+Steal Attempts	Steal Successes	Steal Failures
+38		5		33
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+25
+
+Take Attempts	Take Successes	Take Failures
+26		16		10
+
+Steal Attempts	Steal Successes	Steal Failures
+37		6		31
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+28
+
+Take Attempts	Take Successes	Take Failures
+33		24		9
+
+Steal Attempts	Steal Successes	Steal Failures
+40		5		35
+
+Deque Grows
+0
+
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+38		28		10
+
+Steal Attempts	Steal Successes	Steal Failures
+28		7		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+37		26		11
+
+Steal Attempts	Steal Successes	Steal Failures
+42		7		35
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+37
+
+Take Attempts	Take Successes	Take Failures
+38		32		6
+
+Steal Attempts	Steal Successes	Steal Failures
+26		3		23
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+29
+
+Take Attempts	Take Successes	Take Failures
+32		25		7
+
+Steal Attempts	Steal Successes	Steal Failures
+27		4		23
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+38		32		6
+
+Steal Attempts	Steal Successes	Steal Failures
+24		3		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+28
+
+Take Attempts	Take Successes	Take Failures
+32		24		8
+
+Steal Attempts	Steal Successes	Steal Failures
+39		4		35
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+39		29		10
+
+Steal Attempts	Steal Successes	Steal Failures
+29		7		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+34		25		9
+
+Steal Attempts	Steal Successes	Steal Failures
+43		4		39
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+30
+
+Take Attempts	Take Successes	Take Failures
+36		26		10
+
+Steal Attempts	Steal Successes	Steal Failures
+30		7		23
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+39
+
+Take Attempts	Take Successes	Take Failures
+42		33		9
+
+Steal Attempts	Steal Successes	Steal Failures
+39		5		34
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+35		28		7
+
+Steal Attempts	Steal Successes	Steal Failures
+26		4		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+41		33		8
+
+Steal Attempts	Steal Successes	Steal Failures
+40		4		36
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+34		30		4
+
+Steal Attempts	Steal Successes	Steal Failures
+23		1		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+25
+
+Take Attempts	Take Successes	Take Failures
+30		25		5
+
+Steal Attempts	Steal Successes	Steal Failures
+23		2		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+36		30		6
+
+Steal Attempts	Steal Successes	Steal Failures
+24		3		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+27
+
+Take Attempts	Take Successes	Take Failures
+33		23		10
+
+Steal Attempts	Steal Successes	Steal Failures
+38		6		32
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+36		28		8
+
+Steal Attempts	Steal Successes	Steal Failures
+26		5		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+35		28		7
+
+Steal Attempts	Steal Successes	Steal Failures
+26		4		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+30
+
+Take Attempts	Take Successes	Take Failures
+35		27		8
+
+Steal Attempts	Steal Successes	Steal Failures
+26		5		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+36		30		6
+
+Steal Attempts	Steal Successes	Steal Failures
+25		3		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+40		32		8
+
+Steal Attempts	Steal Successes	Steal Failures
+35		4		31
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+30
+
+Take Attempts	Take Successes	Take Failures
+31		27		4
+
+Steal Attempts	Steal Successes	Steal Failures
+22		1		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+38		33		5
+
+Steal Attempts	Steal Successes	Steal Failures
+29		1		28
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+30
+
+Take Attempts	Take Successes	Take Failures
+37		28		9
+
+Steal Attempts	Steal Successes	Steal Failures
+40		4		36
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+40
+
+Take Attempts	Take Successes	Take Failures
+44		33		11
+
+Steal Attempts	Steal Successes	Steal Failures
+39		8		31
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+38		28		10
+
+Steal Attempts	Steal Successes	Steal Failures
+28		7		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+37
+
+Take Attempts	Take Successes	Take Failures
+37		26		11
+
+Steal Attempts	Steal Successes	Steal Failures
+48		6		42
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+29
+
+Take Attempts	Take Successes	Take Failures
+36		27		9
+
+Steal Attempts	Steal Successes	Steal Failures
+30		6		24
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+34		22		12
+
+Steal Attempts	Steal Successes	Steal Failures
+37		9		28
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+34		25		9
+
+Steal Attempts	Steal Successes	Steal Failures
+35		6		29
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+28
+
+Take Attempts	Take Successes	Take Failures
+30		21		9
+
+Steal Attempts	Steal Successes	Steal Failures
+30		6		24
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+27
+
+Take Attempts	Take Successes	Take Failures
+35		23		12
+
+Steal Attempts	Steal Successes	Steal Failures
+50		7		43
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+39		25		14
+
+Steal Attempts	Steal Successes	Steal Failures
+45		10		35
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+35		27		8
+
+Steal Attempts	Steal Successes	Steal Failures
+27		5		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+35		29		6
+
+Steal Attempts	Steal Successes	Steal Failures
+25		3		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+38		29		9
+
+Steal Attempts	Steal Successes	Steal Failures
+35		5		30
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+35		30		5
+
+Steal Attempts	Steal Successes	Steal Failures
+23		2		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+30
+
+Take Attempts	Take Successes	Take Failures
+35		28		7
+
+Steal Attempts	Steal Successes	Steal Failures
+25		4		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+30
+
+Take Attempts	Take Successes	Take Failures
+34		25		9
+
+Steal Attempts	Steal Successes	Steal Failures
+27		6		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+29
+
+Take Attempts	Take Successes	Take Failures
+37		23		14
+
+Steal Attempts	Steal Successes	Steal Failures
+49		9		40
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+30
+
+Take Attempts	Take Successes	Take Failures
+34		27		7
+
+Steal Attempts	Steal Successes	Steal Failures
+29		4		25
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+37		29		8
+
+Steal Attempts	Steal Successes	Steal Failures
+26		5		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+38		27		11
+
+Steal Attempts	Steal Successes	Steal Failures
+49		6		43
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+27
+
+Take Attempts	Take Successes	Take Failures
+33		24		9
+
+Steal Attempts	Steal Successes	Steal Failures
+41		6		35
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+36		28		8
+
+Steal Attempts	Steal Successes	Steal Failures
+28		5		23
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+30		23		7
+
+Steal Attempts	Steal Successes	Steal Failures
+29		4		25
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+33		26		7
+
+Steal Attempts	Steal Successes	Steal Failures
+27		4		23
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+42
+
+Take Attempts	Take Successes	Take Failures
+47		39		8
+
+Steal Attempts	Steal Successes	Steal Failures
+43		3		40
+
+Deque Grows
+0
+
+
+Runtimes:
+SizeA	SizeB	SizeC
+0.227	0.396	0.619
+0.175	0.379	0.684
+0.182	0.428	0.57
+0.194	0.418	0.656
+0.194	0.409	0.706
+0.21	0.394	0.674
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Runtimes:
+SizeA	SizeB	SizeC
+0.257	0.191	1.861
+0.218	0.206	1.752
+0.19	0.194	1.735
+0.179	0.217	1.769
+0.214	0.218	1.776
+0.228	0.187	1.527
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+7776
+
+Take Attempts	Take Successes	Take Failures
+8931		6287		2644
+
+Steal Attempts	Steal Successes	Steal Failures
+11954		1572		10382
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+5190
+
+Take Attempts	Take Successes	Take Failures
+6244		4145		2099
+
+Steal Attempts	Steal Successes	Steal Failures
+9770		1189		8581
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+7775
+
+Take Attempts	Take Successes	Take Failures
+8957		6318		2639
+
+Steal Attempts	Steal Successes	Steal Failures
+11487		1567		9920
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+9656
+
+Take Attempts	Take Successes	Take Failures
+10794		7939		2855
+
+Steal Attempts	Steal Successes	Steal Failures
+12525		1703		10822
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+6401
+
+Take Attempts	Take Successes	Take Failures
+7259		4893		2366
+
+Steal Attempts	Steal Successes	Steal Failures
+11157		1306		9851
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+5887
+
+Take Attempts	Take Successes	Take Failures
+6859		4570		2289
+
+Steal Attempts	Steal Successes	Steal Failures
+11139		1258		9881
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+6200
+
+Take Attempts	Take Successes	Take Failures
+7260		4866		2394
+
+Steal Attempts	Steal Successes	Steal Failures
+11384		1278		10106
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+5777
+
+Take Attempts	Take Successes	Take Failures
+6789		4539		2250
+
+Steal Attempts	Steal Successes	Steal Failures
+10696		1232		9464
+
+Deque Grows
+2
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+7724
+
+Take Attempts	Take Successes	Take Failures
+8843		6325		2518
+
+Steal Attempts	Steal Successes	Steal Failures
+11194		1446		9748
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+8179
+
+Take Attempts	Take Successes	Take Failures
+9384		6777		2607
+
+Steal Attempts	Steal Successes	Steal Failures
+11601		1514		10087
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+5801
+
+Take Attempts	Take Successes	Take Failures
+6758		4512		2246
+
+Steal Attempts	Steal Successes	Steal Failures
+10765		1195		9570
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+7594
+
+Take Attempts	Take Successes	Take Failures
+8467		6094		2373
+
+Steal Attempts	Steal Successes	Steal Failures
+11020		1338		9682
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+4855
+
+Take Attempts	Take Successes	Take Failures
+5738		3744		1994
+
+Steal Attempts	Steal Successes	Steal Failures
+9942		1036		8906
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+4776
+
+Take Attempts	Take Successes	Take Failures
+5654		3889		1765
+
+Steal Attempts	Steal Successes	Steal Failures
+8428		924		7504
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+7644
+
+Take Attempts	Take Successes	Take Failures
+8881		6390		2491
+
+Steal Attempts	Steal Successes	Steal Failures
+11136		1397		9739
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+8089
+
+Take Attempts	Take Successes	Take Failures
+9209		6666		2543
+
+Steal Attempts	Steal Successes	Steal Failures
+11437		1415		10022
+
+Deque Grows
+2
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+8420
+
+Take Attempts	Take Successes	Take Failures
+9246		6894		2352
+
+Steal Attempts	Steal Successes	Steal Failures
+10237		1439		8798
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+4968
+
+Take Attempts	Take Successes	Take Failures
+5723		3793		1930
+
+Steal Attempts	Steal Successes	Steal Failures
+9149		1040		8109
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+6385
+
+Take Attempts	Take Successes	Take Failures
+7385		5220		2165
+
+Steal Attempts	Steal Successes	Steal Failures
+9956		1220		8736
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+8119
+
+Take Attempts	Take Successes	Take Failures
+9183		6801		2382
+
+Steal Attempts	Steal Successes	Steal Failures
+10263		1453		8810
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+8129
+
+Take Attempts	Take Successes	Take Failures
+9069		6632		2437
+
+Steal Attempts	Steal Successes	Steal Failures
+10343		1516		8827
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+5242
+
+Take Attempts	Take Successes	Take Failures
+5956		4046		1910
+
+Steal Attempts	Steal Successes	Steal Failures
+9026		1058		7968
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+6129
+
+Take Attempts	Take Successes	Take Failures
+7171		4998		2173
+
+Steal Attempts	Steal Successes	Steal Failures
+9694		1301		8393
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+7270
+
+Take Attempts	Take Successes	Take Failures
+8079		5915		2164
+
+Steal Attempts	Steal Successes	Steal Failures
+9001		1336		7665
+
+Deque Grows
+2
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+8816
+
+Take Attempts	Take Successes	Take Failures
+9876		7386		2490
+
+Steal Attempts	Steal Successes	Steal Failures
+9963		1633		8330
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+8194
+
+Take Attempts	Take Successes	Take Failures
+8891		6600		2291
+
+Steal Attempts	Steal Successes	Steal Failures
+9575		1468		8107
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+4604
+
+Take Attempts	Take Successes	Take Failures
+5349		3526		1823
+
+Steal Attempts	Steal Successes	Steal Failures
+8230		1034		7196
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+7720
+
+Take Attempts	Take Successes	Take Failures
+8445		6294		2151
+
+Steal Attempts	Steal Successes	Steal Failures
+9472		1279		8193
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+5775
+
+Take Attempts	Take Successes	Take Failures
+6575		4620		1955
+
+Steal Attempts	Steal Successes	Steal Failures
+9056		1108		7948
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+5579
+
+Take Attempts	Take Successes	Take Failures
+6459		4496		1963
+
+Steal Attempts	Steal Successes	Steal Failures
+8529		1161		7368
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+8244
+
+Take Attempts	Take Successes	Take Failures
+9123		6804		2319
+
+Steal Attempts	Steal Successes	Steal Failures
+9539		1470		8069
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+5730
+
+Take Attempts	Take Successes	Take Failures
+6623		4580		2043
+
+Steal Attempts	Steal Successes	Steal Failures
+9043		1203		7840
+
+Deque Grows
+2
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+8173
+
+Take Attempts	Take Successes	Take Failures
+9208		6727		2481
+
+Steal Attempts	Steal Successes	Steal Failures
+10417		1532		8885
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+8226
+
+Take Attempts	Take Successes	Take Failures
+9094		6603		2491
+
+Steal Attempts	Steal Successes	Steal Failures
+10658		1531		9127
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+6812
+
+Take Attempts	Take Successes	Take Failures
+7758		5495		2263
+
+Steal Attempts	Steal Successes	Steal Failures
+10430		1325		9105
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+4079
+
+Take Attempts	Take Successes	Take Failures
+4651		3041		1610
+
+Steal Attempts	Steal Successes	Steal Failures
+7837		860		6977
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+6609
+
+Take Attempts	Take Successes	Take Failures
+7604		5401		2203
+
+Steal Attempts	Steal Successes	Steal Failures
+9763		1261		8502
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+6828
+
+Take Attempts	Take Successes	Take Failures
+7707		5576		2131
+
+Steal Attempts	Steal Successes	Steal Failures
+9165		1288		7877
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+6344
+
+Take Attempts	Take Successes	Take Failures
+7247		5051		2196
+
+Steal Attempts	Steal Successes	Steal Failures
+9600		1287		8313
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+7591
+
+Take Attempts	Take Successes	Take Failures
+8590		6231		2359
+
+Steal Attempts	Steal Successes	Steal Failures
+9896		1453		8443
+
+Deque Grows
+2
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+5458
+
+Take Attempts	Take Successes	Take Failures
+6147		4303		1844
+
+Steal Attempts	Steal Successes	Steal Failures
+8105		1095		7010
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+7301
+
+Take Attempts	Take Successes	Take Failures
+8120		6101		2019
+
+Steal Attempts	Steal Successes	Steal Failures
+8651		1253		7398
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+6544
+
+Take Attempts	Take Successes	Take Failures
+7194		5295		1899
+
+Steal Attempts	Steal Successes	Steal Failures
+8638		1115		7523
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+6363
+
+Take Attempts	Take Successes	Take Failures
+7111		5290		1821
+
+Steal Attempts	Steal Successes	Steal Failures
+8122		1076		7046
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+4910
+
+Take Attempts	Take Successes	Take Failures
+5631		3885		1746
+
+Steal Attempts	Steal Successes	Steal Failures
+7586		1024		6562
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+8915
+
+Take Attempts	Take Successes	Take Failures
+9806		7572		2234
+
+Steal Attempts	Steal Successes	Steal Failures
+8950		1451		7499
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+6034
+
+Take Attempts	Take Successes	Take Failures
+6808		4943		1865
+
+Steal Attempts	Steal Successes	Steal Failures
+7943		1125		6818
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+9137
+
+Take Attempts	Take Successes	Take Failures
+9875		7676		2199
+
+Steal Attempts	Steal Successes	Steal Failures
+8742		1458		7284
+
+Deque Grows
+2
+
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+12453
+
+Take Attempts	Take Successes	Take Failures
+13939		9647		4292
+
+Steal Attempts	Steal Successes	Steal Failures
+17674		2738		14936
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+17572
+
+Take Attempts	Take Successes	Take Failures
+19114		14173		4941
+
+Steal Attempts	Steal Successes	Steal Failures
+19810		3332		16478
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+10126
+
+Take Attempts	Take Successes	Take Failures
+11590		7915		3675
+
+Steal Attempts	Steal Successes	Steal Failures
+15834		2262		13572
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+14541
+
+Take Attempts	Take Successes	Take Failures
+16054		11596		4458
+
+Steal Attempts	Steal Successes	Steal Failures
+17589		2917		14672
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+15526
+
+Take Attempts	Take Successes	Take Failures
+17185		12415		4770
+
+Steal Attempts	Steal Successes	Steal Failures
+18390		3196		15194
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+17228
+
+Take Attempts	Take Successes	Take Failures
+18803		13977		4826
+
+Steal Attempts	Steal Successes	Steal Failures
+18414		3225		15189
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+17092
+
+Take Attempts	Take Successes	Take Failures
+18667		13813		4854
+
+Steal Attempts	Steal Successes	Steal Failures
+18748		3277		15471
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+15124
+
+Take Attempts	Take Successes	Take Failures
+16775		12011		4764
+
+Steal Attempts	Steal Successes	Steal Failures
+19110		3168		15942
+
+Deque Grows
+3
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+15043
+
+Take Attempts	Take Successes	Take Failures
+16287		13099		3188
+
+Steal Attempts	Steal Successes	Steal Failures
+13716		1917		11799
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+14358
+
+Take Attempts	Take Successes	Take Failures
+15528		12389		3139
+
+Steal Attempts	Steal Successes	Steal Failures
+13670		1899		11771
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+14954
+
+Take Attempts	Take Successes	Take Failures
+16154		13030		3124
+
+Steal Attempts	Steal Successes	Steal Failures
+13673		1892		11781
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+15285
+
+Take Attempts	Take Successes	Take Failures
+16663		13414		3249
+
+Steal Attempts	Steal Successes	Steal Failures
+13706		1993		11713
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+15102
+
+Take Attempts	Take Successes	Take Failures
+16403		13148		3255
+
+Steal Attempts	Steal Successes	Steal Failures
+13780		2001		11779
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+14946
+
+Take Attempts	Take Successes	Take Failures
+16130		12940		3190
+
+Steal Attempts	Steal Successes	Steal Failures
+13679		1981		11698
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+14976
+
+Take Attempts	Take Successes	Take Failures
+16183		12956		3227
+
+Steal Attempts	Steal Successes	Steal Failures
+13999		1972		12027
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+14998
+
+Take Attempts	Take Successes	Take Failures
+16260		13087		3173
+
+Steal Attempts	Steal Successes	Steal Failures
+13545		1944		11601
+
+Deque Grows
+2
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+19663
+
+Take Attempts	Take Successes	Take Failures
+21278		16474		4804
+
+Steal Attempts	Steal Successes	Steal Failures
+17084		3479		13605
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+13886
+
+Take Attempts	Take Successes	Take Failures
+15060		11144		3916
+
+Steal Attempts	Steal Successes	Steal Failures
+15506		2601		12905
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+14410
+
+Take Attempts	Take Successes	Take Failures
+15849		11845		4004
+
+Steal Attempts	Steal Successes	Steal Failures
+15604		2669		12935
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+18524
+
+Take Attempts	Take Successes	Take Failures
+19669		15234		4435
+
+Steal Attempts	Steal Successes	Steal Failures
+16787		3081		13706
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+12325
+
+Take Attempts	Take Successes	Take Failures
+13321		9728		3593
+
+Steal Attempts	Steal Successes	Steal Failures
+15616		2229		13387
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+11667
+
+Take Attempts	Take Successes	Take Failures
+13056		9537		3519
+
+Steal Attempts	Steal Successes	Steal Failures
+14886		2168		12718
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+14202
+
+Take Attempts	Take Successes	Take Failures
+15544		11585		3959
+
+Steal Attempts	Steal Successes	Steal Failures
+15263		2646		12617
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+14985
+
+Take Attempts	Take Successes	Take Failures
+16596		12368		4228
+
+Steal Attempts	Steal Successes	Steal Failures
+16004		2874		13130
+
+Deque Grows
+2
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+15523
+
+Take Attempts	Take Successes	Take Failures
+16821		12348		4473
+
+Steal Attempts	Steal Successes	Steal Failures
+18102		2893		15209
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+15717
+
+Take Attempts	Take Successes	Take Failures
+17265		12672		4593
+
+Steal Attempts	Steal Successes	Steal Failures
+18501		3034		15467
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+13762
+
+Take Attempts	Take Successes	Take Failures
+15405		11138		4267
+
+Steal Attempts	Steal Successes	Steal Failures
+17574		2770		14804
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+13885
+
+Take Attempts	Take Successes	Take Failures
+15502		11128		4374
+
+Steal Attempts	Steal Successes	Steal Failures
+17692		2861		14831
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+15581
+
+Take Attempts	Take Successes	Take Failures
+17458		12767		4691
+
+Steal Attempts	Steal Successes	Steal Failures
+17795		3239		14556
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+14214
+
+Take Attempts	Take Successes	Take Failures
+15855		11318		4537
+
+Steal Attempts	Steal Successes	Steal Failures
+17405		3049		14356
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+14783
+
+Take Attempts	Take Successes	Take Failures
+16022		11424		4598
+
+Steal Attempts	Steal Successes	Steal Failures
+17852		3037		14815
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+16197
+
+Take Attempts	Take Successes	Take Failures
+17566		12957		4609
+
+Steal Attempts	Steal Successes	Steal Failures
+17900		3027		14873
+
+Deque Grows
+3
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+10365
+
+Take Attempts	Take Successes	Take Failures
+11419		7826		3593
+
+Steal Attempts	Steal Successes	Steal Failures
+15621		2253		13368
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+10320
+
+Take Attempts	Take Successes	Take Failures
+11663		8131		3532
+
+Steal Attempts	Steal Successes	Steal Failures
+15329		2160		13169
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+14021
+
+Take Attempts	Take Successes	Take Failures
+15564		11401		4163
+
+Steal Attempts	Steal Successes	Steal Failures
+16182		2732		13450
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+17437
+
+Take Attempts	Take Successes	Take Failures
+18961		14448		4513
+
+Steal Attempts	Steal Successes	Steal Failures
+16769		3080		13689
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+17212
+
+Take Attempts	Take Successes	Take Failures
+18656		14217		4439
+
+Steal Attempts	Steal Successes	Steal Failures
+16491		3041		13450
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+17671
+
+Take Attempts	Take Successes	Take Failures
+18980		14512		4468
+
+Steal Attempts	Steal Successes	Steal Failures
+16707		3077		13630
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+13569
+
+Take Attempts	Take Successes	Take Failures
+14842		10831		4011
+
+Steal Attempts	Steal Successes	Steal Failures
+15789		2626		13163
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+19067
+
+Take Attempts	Take Successes	Take Failures
+20741		15923		4818
+
+Steal Attempts	Steal Successes	Steal Failures
+18294		3404		14890
+
+Deque Grows
+3
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+19068
+
+Take Attempts	Take Successes	Take Failures
+20877		15783		5094
+
+Steal Attempts	Steal Successes	Steal Failures
+19941		3506		16435
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+11285
+
+Take Attempts	Take Successes	Take Failures
+12369		9028		3341
+
+Steal Attempts	Steal Successes	Steal Failures
+14363		2040		12323
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+14758
+
+Take Attempts	Take Successes	Take Failures
+15981		11672		4309
+
+Steal Attempts	Steal Successes	Steal Failures
+17855		2714		15141
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+13054
+
+Take Attempts	Take Successes	Take Failures
+14347		10434		3913
+
+Steal Attempts	Steal Successes	Steal Failures
+17544		2325		15219
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+12002
+
+Take Attempts	Take Successes	Take Failures
+13699		9751		3948
+
+Steal Attempts	Steal Successes	Steal Failures
+17070		2353		14717
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+17068
+
+Take Attempts	Take Successes	Take Failures
+18584		14055		4529
+
+Steal Attempts	Steal Successes	Steal Failures
+17845		2964		14881
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+15463
+
+Take Attempts	Take Successes	Take Failures
+17337		12807		4530
+
+Steal Attempts	Steal Successes	Steal Failures
+18018		2978		15040
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+16964
+
+Take Attempts	Take Successes	Take Failures
+18689		14088		4601
+
+Steal Attempts	Steal Successes	Steal Failures
+17598		3164		14434
+
+Deque Grows
+3
+
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+19404
+
+Take Attempts	Take Successes	Take Failures
+21149		16114		5035
+
+Steal Attempts	Steal Successes	Steal Failures
+16579		3733		12846
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+21547
+
+Take Attempts	Take Successes	Take Failures
+23338		17846		5492
+
+Steal Attempts	Steal Successes	Steal Failures
+17035		4212		12823
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+17065
+
+Take Attempts	Take Successes	Take Failures
+17734		13143		4591
+
+Steal Attempts	Steal Successes	Steal Failures
+16455		3225		13230
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+17112
+
+Take Attempts	Take Successes	Take Failures
+17963		13581		4382
+
+Steal Attempts	Steal Successes	Steal Failures
+16170		2996		13174
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+21415
+
+Take Attempts	Take Successes	Take Failures
+23194		18152		5042
+
+Steal Attempts	Steal Successes	Steal Failures
+16277		3758		12519
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+16875
+
+Take Attempts	Take Successes	Take Failures
+17821		13356		4465
+
+Steal Attempts	Steal Successes	Steal Failures
+16170		3093		13077
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+21347
+
+Take Attempts	Take Successes	Take Failures
+23232		17957		5275
+
+Steal Attempts	Steal Successes	Steal Failures
+16778		4003		12775
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+16945
+
+Take Attempts	Take Successes	Take Failures
+17846		13357		4489
+
+Steal Attempts	Steal Successes	Steal Failures
+16013		3184		12829
+
+Deque Grows
+3
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+20220
+
+Take Attempts	Take Successes	Take Failures
+22267		16434		5833
+
+Steal Attempts	Steal Successes	Steal Failures
+18934		4427		14507
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+19420
+
+Take Attempts	Take Successes	Take Failures
+21053		15378		5675
+
+Steal Attempts	Steal Successes	Steal Failures
+19244		4190		15054
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+15500
+
+Take Attempts	Take Successes	Take Failures
+16099		11541		4558
+
+Steal Attempts	Steal Successes	Steal Failures
+16651		3169		13482
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+17310
+
+Take Attempts	Take Successes	Take Failures
+18038		13369		4669
+
+Steal Attempts	Steal Successes	Steal Failures
+17326		3193		14133
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+19622
+
+Take Attempts	Take Successes	Take Failures
+20961		16103		4858
+
+Steal Attempts	Steal Successes	Steal Failures
+17777		3398		14379
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+18400
+
+Take Attempts	Take Successes	Take Failures
+20098		15236		4862
+
+Steal Attempts	Steal Successes	Steal Failures
+16621		3435		13186
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+18584
+
+Take Attempts	Take Successes	Take Failures
+19701		14819		4882
+
+Steal Attempts	Steal Successes	Steal Failures
+17864		3383		14481
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+22654
+
+Take Attempts	Take Successes	Take Failures
+25034		19252		5782
+
+Steal Attempts	Steal Successes	Steal Failures
+18736		4383		14353
+
+Deque Grows
+3
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+18439
+
+Take Attempts	Take Successes	Take Failures
+19524		14909		4615
+
+Steal Attempts	Steal Successes	Steal Failures
+16290		3306		12984
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+18873
+
+Take Attempts	Take Successes	Take Failures
+20560		15599		4961
+
+Steal Attempts	Steal Successes	Steal Failures
+16374		3647		12727
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+21560
+
+Take Attempts	Take Successes	Take Failures
+23697		18011		5686
+
+Steal Attempts	Steal Successes	Steal Failures
+17729		4373		13356
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+18120
+
+Take Attempts	Take Successes	Take Failures
+19099		14090		5009
+
+Steal Attempts	Steal Successes	Steal Failures
+17375		3646		13729
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+21308
+
+Take Attempts	Take Successes	Take Failures
+23151		17548		5603
+
+Steal Attempts	Steal Successes	Steal Failures
+17708		4292		13416
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+16894
+
+Take Attempts	Take Successes	Take Failures
+17602		12969		4633
+
+Steal Attempts	Steal Successes	Steal Failures
+16439		3305		13134
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+19502
+
+Take Attempts	Take Successes	Take Failures
+20961		15906		5055
+
+Steal Attempts	Steal Successes	Steal Failures
+16458		3751		12707
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+17014
+
+Take Attempts	Take Successes	Take Failures
+17622		13263		4359
+
+Steal Attempts	Steal Successes	Steal Failures
+15230		3095		12135
+
+Deque Grows
+3
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+17543
+
+Take Attempts	Take Successes	Take Failures
+18254		13259		4995
+
+Steal Attempts	Steal Successes	Steal Failures
+17376		3604		13772
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+17603
+
+Take Attempts	Take Successes	Take Failures
+18277		13603		4674
+
+Steal Attempts	Steal Successes	Steal Failures
+16768		3293		13475
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+17256
+
+Take Attempts	Take Successes	Take Failures
+18115		13759		4356
+
+Steal Attempts	Steal Successes	Steal Failures
+16044		3002		13042
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+20353
+
+Take Attempts	Take Successes	Take Failures
+22213		17187		5026
+
+Steal Attempts	Steal Successes	Steal Failures
+16478		3700		12778
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+21533
+
+Take Attempts	Take Successes	Take Failures
+23758		17982		5776
+
+Steal Attempts	Steal Successes	Steal Failures
+18256		4440		13816
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+17314
+
+Take Attempts	Take Successes	Take Failures
+18147		13366		4781
+
+Steal Attempts	Steal Successes	Steal Failures
+17239		3400		13839
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+19548
+
+Take Attempts	Take Successes	Take Failures
+21280		16070		5210
+
+Steal Attempts	Steal Successes	Steal Failures
+16678		3935		12743
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+20560
+
+Take Attempts	Take Successes	Take Failures
+22402		16680		5722
+
+Steal Attempts	Steal Successes	Steal Failures
+17696		4430		13266
+
+Deque Grows
+3
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+21748
+
+Take Attempts	Take Successes	Take Failures
+23639		18329		5310
+
+Steal Attempts	Steal Successes	Steal Failures
+17038		3994		13044
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+15903
+
+Take Attempts	Take Successes	Take Failures
+16832		12483		4349
+
+Steal Attempts	Steal Successes	Steal Failures
+15978		3045		12933
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+21477
+
+Take Attempts	Take Successes	Take Failures
+23401		17961		5440
+
+Steal Attempts	Steal Successes	Steal Failures
+17481		4116		13365
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+19668
+
+Take Attempts	Take Successes	Take Failures
+21504		16121		5383
+
+Steal Attempts	Steal Successes	Steal Failures
+16716		4156		12560
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+21294
+
+Take Attempts	Take Successes	Take Failures
+23222		17237		5985
+
+Steal Attempts	Steal Successes	Steal Failures
+18145		4689		13456
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+18154
+
+Take Attempts	Take Successes	Take Failures
+18652		13670		4982
+
+Steal Attempts	Steal Successes	Steal Failures
+17039		3653		13386
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+15965
+
+Take Attempts	Take Successes	Take Failures
+16608		12173		4435
+
+Steal Attempts	Steal Successes	Steal Failures
+15933		3101		12832
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+17501
+
+Take Attempts	Take Successes	Take Failures
+18306		13852		4454
+
+Steal Attempts	Steal Successes	Steal Failures
+15906		3130		12776
+
+Deque Grows
+3
+
+Running java -Xmx2048M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+18839
+
+Take Attempts	Take Successes	Take Failures
+19561		14712		4849
+
+Steal Attempts	Steal Successes	Steal Failures
+16966		3441		13525
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+18976
+
+Take Attempts	Take Successes	Take Failures
+19910		15198		4712
+
+Steal Attempts	Steal Successes	Steal Failures
+17290		3276		14014
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+15978
+
+Take Attempts	Take Successes	Take Failures
+16821		12749		4072
+
+Steal Attempts	Steal Successes	Steal Failures
+15872		2675		13197
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+18109
+
+Take Attempts	Take Successes	Take Failures
+19950		15298		4652
+
+Steal Attempts	Steal Successes	Steal Failures
+15920		3360		12560
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+21084
+
+Take Attempts	Take Successes	Take Failures
+23015		17608		5407
+
+Steal Attempts	Steal Successes	Steal Failures
+17296		4099		13197
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+20890
+
+Take Attempts	Take Successes	Take Failures
+22842		17209		5633
+
+Steal Attempts	Steal Successes	Steal Failures
+17858		4322		13536
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+17631
+
+Take Attempts	Take Successes	Take Failures
+18685		13738		4947
+
+Steal Attempts	Steal Successes	Steal Failures
+17266		3539		13727
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+20203
+
+Take Attempts	Take Successes	Take Failures
+21788		16440		5348
+
+Steal Attempts	Steal Successes	Steal Failures
+16911		4046		12865
+
+Deque Grows
+3
+
+
+Runtimes:
+SizeA	SizeB	SizeC
+0.63	0.952	2.541
+0.667	0.876	2.575
+0.547	0.95	2.514
+0.47	0.989	2.555
+0.597	0.853	2.535
+0.452	0.828	2.62
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Runtimes:
+SizeA	SizeB	SizeC
+0.214	0.438	0.778
+0.307	0.346	0.722
+0.257	0.332	0.845
+0.24	0.281	0.722
+0.193	0.341	0.677
+0.23	0.36	0.866
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+8103
+
+Take Attempts	Take Successes	Take Failures
+8133		7929		204
+
+Steal Attempts	Steal Successes	Steal Failures
+468		201		267
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+14833
+
+Take Attempts	Take Successes	Take Failures
+14880		14720		160
+
+Steal Attempts	Steal Successes	Steal Failures
+280		158		122
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+16148
+
+Take Attempts	Take Successes	Take Failures
+16190		15922		268
+
+Steal Attempts	Steal Successes	Steal Failures
+564		265		299
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+10022
+
+Take Attempts	Take Successes	Take Failures
+10105		9902		203
+
+Steal Attempts	Steal Successes	Steal Failures
+417		201		216
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+13474
+
+Take Attempts	Take Successes	Take Failures
+13522		13234		288
+
+Steal Attempts	Steal Successes	Steal Failures
+487		285		202
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+14069
+
+Take Attempts	Take Successes	Take Failures
+14209		13757		452
+
+Steal Attempts	Steal Successes	Steal Failures
+814		449		365
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+14364
+
+Take Attempts	Take Successes	Take Failures
+14493		14156		337
+
+Steal Attempts	Steal Successes	Steal Failures
+505		334		171
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+8888
+
+Take Attempts	Take Successes	Take Failures
+8391		8261		130
+
+Steal Attempts	Steal Successes	Steal Failures
+244		127		117
+
+Deque Grows
+1
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+14021
+
+Take Attempts	Take Successes	Take Failures
+14013		13856		157
+
+Steal Attempts	Steal Successes	Steal Failures
+329		146		183
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+8385
+
+Take Attempts	Take Successes	Take Failures
+8422		8284		138
+
+Steal Attempts	Steal Successes	Steal Failures
+300		132		168
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+14284
+
+Take Attempts	Take Successes	Take Failures
+14356		14127		229
+
+Steal Attempts	Steal Successes	Steal Failures
+513		219		294
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+9638
+
+Take Attempts	Take Successes	Take Failures
+9768		9507		261
+
+Steal Attempts	Steal Successes	Steal Failures
+679		253		426
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+11169
+
+Take Attempts	Take Successes	Take Failures
+11220		11046		174
+
+Steal Attempts	Steal Successes	Steal Failures
+350		167		183
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+16353
+
+Take Attempts	Take Successes	Take Failures
+16413		16082		331
+
+Steal Attempts	Steal Successes	Steal Failures
+678		320		358
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+9276
+
+Take Attempts	Take Successes	Take Failures
+9352		9157		195
+
+Steal Attempts	Steal Successes	Steal Failures
+226		192		34
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+16775
+
+Take Attempts	Take Successes	Take Failures
+16417		16230		187
+
+Steal Attempts	Steal Successes	Steal Failures
+275		183		92
+
+Deque Grows
+1
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+10395
+
+Take Attempts	Take Successes	Take Failures
+10480		10348		132
+
+Steal Attempts	Steal Successes	Steal Failures
+304		129		175
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+13960
+
+Take Attempts	Take Successes	Take Failures
+14036		13856		180
+
+Steal Attempts	Steal Successes	Steal Failures
+390		177		213
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+11261
+
+Take Attempts	Take Successes	Take Failures
+11313		11135		178
+
+Steal Attempts	Steal Successes	Steal Failures
+383		174		209
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+13443
+
+Take Attempts	Take Successes	Take Failures
+13433		13254		179
+
+Steal Attempts	Steal Successes	Steal Failures
+538		173		365
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+6875
+
+Take Attempts	Take Successes	Take Failures
+6908		6781		127
+
+Steal Attempts	Steal Successes	Steal Failures
+244		122		122
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+17097
+
+Take Attempts	Take Successes	Take Failures
+17259		16905		354
+
+Steal Attempts	Steal Successes	Steal Failures
+773		349		424
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+14282
+
+Take Attempts	Take Successes	Take Failures
+14334		14176		158
+
+Steal Attempts	Steal Successes	Steal Failures
+230		155		75
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+12588
+
+Take Attempts	Take Successes	Take Failures
+12170		12106		64
+
+Steal Attempts	Steal Successes	Steal Failures
+141		61		80
+
+Deque Grows
+1
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+12357
+
+Take Attempts	Take Successes	Take Failures
+12424		12211		213
+
+Steal Attempts	Steal Successes	Steal Failures
+733		152		581
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+16039
+
+Take Attempts	Take Successes	Take Failures
+16127		15874		253
+
+Steal Attempts	Steal Successes	Steal Failures
+814		201		613
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+10489
+
+Take Attempts	Take Successes	Take Failures
+10534		10344		190
+
+Steal Attempts	Steal Successes	Steal Failures
+597		149		448
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+15366
+
+Take Attempts	Take Successes	Take Failures
+15463		15171		292
+
+Steal Attempts	Steal Successes	Steal Failures
+957		229		728
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+11232
+
+Take Attempts	Take Successes	Take Failures
+11387		11094		293
+
+Steal Attempts	Steal Successes	Steal Failures
+772		244		528
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+14370
+
+Take Attempts	Take Successes	Take Failures
+14478		14112		366
+
+Steal Attempts	Steal Successes	Steal Failures
+942		323		619
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+11720
+
+Take Attempts	Take Successes	Take Failures
+11900		11461		439
+
+Steal Attempts	Steal Successes	Steal Failures
+893		404		489
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+8328
+
+Take Attempts	Take Successes	Take Failures
+7938		7869		69
+
+Steal Attempts	Steal Successes	Steal Failures
+165		63		102
+
+Deque Grows
+1
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+9744
+
+Take Attempts	Take Successes	Take Failures
+9941		9438		503
+
+Steal Attempts	Steal Successes	Steal Failures
+2406		282		2124
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+10131
+
+Take Attempts	Take Successes	Take Failures
+10315		9875		440
+
+Steal Attempts	Steal Successes	Steal Failures
+1989		264		1725
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+16209
+
+Take Attempts	Take Successes	Take Failures
+16471		15843		628
+
+Steal Attempts	Steal Successes	Steal Failures
+2773		386		2387
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+18605
+
+Take Attempts	Take Successes	Take Failures
+18955		18220		735
+
+Steal Attempts	Steal Successes	Steal Failures
+3462		437		3025
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+8465
+
+Take Attempts	Take Successes	Take Failures
+8748		8113		635
+
+Steal Attempts	Steal Successes	Steal Failures
+3211		372		2839
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+12293
+
+Take Attempts	Take Successes	Take Failures
+12527		11989		538
+
+Steal Attempts	Steal Successes	Steal Failures
+2563		318		2245
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+18952
+
+Take Attempts	Take Successes	Take Failures
+19286		18503		783
+
+Steal Attempts	Steal Successes	Steal Failures
+3454		543		2911
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+5502
+
+Take Attempts	Take Successes	Take Failures
+5327		5289		38
+
+Steal Attempts	Steal Successes	Steal Failures
+163		29		134
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+14559
+
+Take Attempts	Take Successes	Take Failures
+14601		14486		115
+
+Steal Attempts	Steal Successes	Steal Failures
+247		113		134
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+9540
+
+Take Attempts	Take Successes	Take Failures
+9575		9473		102
+
+Steal Attempts	Steal Successes	Steal Failures
+170		100		70
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+14779
+
+Take Attempts	Take Successes	Take Failures
+14828		14669		159
+
+Steal Attempts	Steal Successes	Steal Failures
+281		156		125
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+10406
+
+Take Attempts	Take Successes	Take Failures
+10433		10284		149
+
+Steal Attempts	Steal Successes	Steal Failures
+272		147		125
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+15160
+
+Take Attempts	Take Successes	Take Failures
+15208		15015		193
+
+Steal Attempts	Steal Successes	Steal Failures
+316		191		125
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+14527
+
+Take Attempts	Take Successes	Take Failures
+14618		14381		237
+
+Steal Attempts	Steal Successes	Steal Failures
+390		234		156
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+6401
+
+Take Attempts	Take Successes	Take Failures
+6540		6234		306
+
+Steal Attempts	Steal Successes	Steal Failures
+339		303		36
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+14529
+
+Take Attempts	Take Successes	Take Failures
+14117		14043		74
+
+Steal Attempts	Steal Successes	Steal Failures
+104		72		32
+
+Deque Grows
+1
+
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+18515
+
+Take Attempts	Take Successes	Take Failures
+18513		18395		118
+
+Steal Attempts	Steal Successes	Steal Failures
+256		113		143
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+15100
+
+Take Attempts	Take Successes	Take Failures
+15115		15039		76
+
+Steal Attempts	Steal Successes	Steal Failures
+229		73		156
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+16198
+
+Take Attempts	Take Successes	Take Failures
+16306		16120		186
+
+Steal Attempts	Steal Successes	Steal Failures
+451		180		271
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+18595
+
+Take Attempts	Take Successes	Take Failures
+18634		18461		173
+
+Steal Attempts	Steal Successes	Steal Failures
+307		170		137
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+22981
+
+Take Attempts	Take Successes	Take Failures
+23173		22812		361
+
+Steal Attempts	Steal Successes	Steal Failures
+808		355		453
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+17504
+
+Take Attempts	Take Successes	Take Failures
+17644		17324		320
+
+Steal Attempts	Steal Successes	Steal Failures
+536		315		221
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+21697
+
+Take Attempts	Take Successes	Take Failures
+21935		21474		461
+
+Steal Attempts	Steal Successes	Steal Failures
+561		457		104
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+19311
+
+Take Attempts	Take Successes	Take Failures
+18617		18492		125
+
+Steal Attempts	Steal Successes	Steal Failures
+187		121		66
+
+Deque Grows
+1
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+15618
+
+Take Attempts	Take Successes	Take Failures
+15710		15558		152
+
+Steal Attempts	Steal Successes	Steal Failures
+325		150		175
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+24846
+
+Take Attempts	Take Successes	Take Failures
+24896		24605		291
+
+Steal Attempts	Steal Successes	Steal Failures
+743		284		459
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+18771
+
+Take Attempts	Take Successes	Take Failures
+18851		18630		221
+
+Steal Attempts	Steal Successes	Steal Failures
+446		219		227
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+14772
+
+Take Attempts	Take Successes	Take Failures
+14854		14653		201
+
+Steal Attempts	Steal Successes	Steal Failures
+386		199		187
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+22127
+
+Take Attempts	Take Successes	Take Failures
+22280		21837		443
+
+Steal Attempts	Steal Successes	Steal Failures
+982		441		541
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+21496
+
+Take Attempts	Take Successes	Take Failures
+21642		21213		429
+
+Steal Attempts	Steal Successes	Steal Failures
+819		425		394
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+13703
+
+Take Attempts	Take Successes	Take Failures
+13783		13561		222
+
+Steal Attempts	Steal Successes	Steal Failures
+289		217		72
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+18568
+
+Take Attempts	Take Successes	Take Failures
+17911		17741		170
+
+Steal Attempts	Steal Successes	Steal Failures
+338		168		170
+
+Deque Grows
+2
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+25595
+
+Take Attempts	Take Successes	Take Failures
+25674		25537		137
+
+Steal Attempts	Steal Successes	Steal Failures
+485		134		351
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+17025
+
+Take Attempts	Take Successes	Take Failures
+17026		16953		73
+
+Steal Attempts	Steal Successes	Steal Failures
+98		70		28
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+22134
+
+Take Attempts	Take Successes	Take Failures
+22181		22059		122
+
+Steal Attempts	Steal Successes	Steal Failures
+198		119		79
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+16703
+
+Take Attempts	Take Successes	Take Failures
+16771		16601		170
+
+Steal Attempts	Steal Successes	Steal Failures
+326		168		158
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+14973
+
+Take Attempts	Take Successes	Take Failures
+15005		14874		131
+
+Steal Attempts	Steal Successes	Steal Failures
+189		129		60
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+16195
+
+Take Attempts	Take Successes	Take Failures
+16301		16056		245
+
+Steal Attempts	Steal Successes	Steal Failures
+343		243		100
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+24553
+
+Take Attempts	Take Successes	Take Failures
+24897		24303		594
+
+Steal Attempts	Steal Successes	Steal Failures
+634		591		43
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+12723
+
+Take Attempts	Take Successes	Take Failures
+12066		12015		51
+
+Steal Attempts	Steal Successes	Steal Failures
+70		49		21
+
+Deque Grows
+1
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+19198
+
+Take Attempts	Take Successes	Take Failures
+19204		19067		137
+
+Steal Attempts	Steal Successes	Steal Failures
+293		125		168
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+27941
+
+Take Attempts	Take Successes	Take Failures
+28160		27811		349
+
+Steal Attempts	Steal Successes	Steal Failures
+978		337		641
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+17830
+
+Take Attempts	Take Successes	Take Failures
+17817		17619		198
+
+Steal Attempts	Steal Successes	Steal Failures
+460		186		274
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+14969
+
+Take Attempts	Take Successes	Take Failures
+15016		14839		177
+
+Steal Attempts	Steal Successes	Steal Failures
+405		168		237
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+18000
+
+Take Attempts	Take Successes	Take Failures
+18116		17834		282
+
+Steal Attempts	Steal Successes	Steal Failures
+692		269		423
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+11212
+
+Take Attempts	Take Successes	Take Failures
+11358		11088		270
+
+Steal Attempts	Steal Successes	Steal Failures
+503		262		241
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+17950
+
+Take Attempts	Take Successes	Take Failures
+18115		17714		401
+
+Steal Attempts	Steal Successes	Steal Failures
+498		394		104
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+22801
+
+Take Attempts	Take Successes	Take Failures
+22191		22056		135
+
+Steal Attempts	Steal Successes	Steal Failures
+201		132		69
+
+Deque Grows
+1
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+15142
+
+Take Attempts	Take Successes	Take Failures
+15217		15049		168
+
+Steal Attempts	Steal Successes	Steal Failures
+440		166		274
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+14262
+
+Take Attempts	Take Successes	Take Failures
+14280		14182		98
+
+Steal Attempts	Steal Successes	Steal Failures
+217		94		123
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+25047
+
+Take Attempts	Take Successes	Take Failures
+25072		24857		215
+
+Steal Attempts	Steal Successes	Steal Failures
+369		211		158
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+21393
+
+Take Attempts	Take Successes	Take Failures
+21498		21223		275
+
+Steal Attempts	Steal Successes	Steal Failures
+528		271		257
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+23809
+
+Take Attempts	Take Successes	Take Failures
+23909		23598		311
+
+Steal Attempts	Steal Successes	Steal Failures
+615		304		311
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+14430
+
+Take Attempts	Take Successes	Take Failures
+14578		14223		355
+
+Steal Attempts	Steal Successes	Steal Failures
+741		352		389
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+12493
+
+Take Attempts	Take Successes	Take Failures
+12685		12315		370
+
+Steal Attempts	Steal Successes	Steal Failures
+409		366		43
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+23325
+
+Take Attempts	Take Successes	Take Failures
+22695		22532		163
+
+Steal Attempts	Steal Successes	Steal Failures
+301		158		143
+
+Deque Grows
+2
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+23760
+
+Take Attempts	Take Successes	Take Failures
+23844		23542		302
+
+Steal Attempts	Steal Successes	Steal Failures
+613		280		333
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+18068
+
+Take Attempts	Take Successes	Take Failures
+18079		17841		238
+
+Steal Attempts	Steal Successes	Steal Failures
+550		213		337
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+22826
+
+Take Attempts	Take Successes	Take Failures
+22999		22609		390
+
+Steal Attempts	Steal Successes	Steal Failures
+847		376		471
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+17475
+
+Take Attempts	Take Successes	Take Failures
+17507		17218		289
+
+Steal Attempts	Steal Successes	Steal Failures
+593		276		317
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+23283
+
+Take Attempts	Take Successes	Take Failures
+23425		22965		460
+
+Steal Attempts	Steal Successes	Steal Failures
+1236		434		802
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+15349
+
+Take Attempts	Take Successes	Take Failures
+15531		15163		368
+
+Steal Attempts	Steal Successes	Steal Failures
+697		359		338
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+15551
+
+Take Attempts	Take Successes	Take Failures
+15799		15313		486
+
+Steal Attempts	Steal Successes	Steal Failures
+669		475		194
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+13589
+
+Take Attempts	Take Successes	Take Failures
+12851		12714		137
+
+Steal Attempts	Steal Successes	Steal Failures
+277		123		154
+
+Deque Grows
+1
+
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+24067
+
+Take Attempts	Take Successes	Take Failures
+24132		24010		122
+
+Steal Attempts	Steal Successes	Steal Failures
+318		119		199
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+34314
+
+Take Attempts	Take Successes	Take Failures
+34341		34232		109
+
+Steal Attempts	Steal Successes	Steal Failures
+177		106		71
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+24552
+
+Take Attempts	Take Successes	Take Failures
+24633		24464		169
+
+Steal Attempts	Steal Successes	Steal Failures
+378		166		212
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+22772
+
+Take Attempts	Take Successes	Take Failures
+22867		22669		198
+
+Steal Attempts	Steal Successes	Steal Failures
+464		196		268
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+21461
+
+Take Attempts	Take Successes	Take Failures
+21566		21325		241
+
+Steal Attempts	Steal Successes	Steal Failures
+460		237		223
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+29048
+
+Take Attempts	Take Successes	Take Failures
+29302		28836		466
+
+Steal Attempts	Steal Successes	Steal Failures
+862		464		398
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+22865
+
+Take Attempts	Take Successes	Take Failures
+23151		22681		470
+
+Steal Attempts	Steal Successes	Steal Failures
+514		468		46
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+20822
+
+Take Attempts	Take Successes	Take Failures
+19930		19885		45
+
+Steal Attempts	Steal Successes	Steal Failures
+77		43		34
+
+Deque Grows
+1
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+24684
+
+Take Attempts	Take Successes	Take Failures
+24717		24610		107
+
+Steal Attempts	Steal Successes	Steal Failures
+156		105		51
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+23705
+
+Take Attempts	Take Successes	Take Failures
+23706		23607		99
+
+Steal Attempts	Steal Successes	Steal Failures
+200		97		103
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+25159
+
+Take Attempts	Take Successes	Take Failures
+25208		25071		137
+
+Steal Attempts	Steal Successes	Steal Failures
+219		135		84
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+24434
+
+Take Attempts	Take Successes	Take Failures
+24555		24334		221
+
+Steal Attempts	Steal Successes	Steal Failures
+365		219		146
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+19693
+
+Take Attempts	Take Successes	Take Failures
+19731		19540		191
+
+Steal Attempts	Steal Successes	Steal Failures
+310		189		121
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+29312
+
+Take Attempts	Take Successes	Take Failures
+29519		29108		411
+
+Steal Attempts	Steal Successes	Steal Failures
+567		409		158
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+29056
+
+Take Attempts	Take Successes	Take Failures
+29521		28723		798
+
+Steal Attempts	Steal Successes	Steal Failures
+834		796		38
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+23858
+
+Take Attempts	Take Successes	Take Failures
+22960		22894		66
+
+Steal Attempts	Steal Successes	Steal Failures
+92		64		28
+
+Deque Grows
+1
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+18202
+
+Take Attempts	Take Successes	Take Failures
+18209		18151		58
+
+Steal Attempts	Steal Successes	Steal Failures
+139		55		84
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+17563
+
+Take Attempts	Take Successes	Take Failures
+17610		17519		91
+
+Steal Attempts	Steal Successes	Steal Failures
+182		88		94
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+34658
+
+Take Attempts	Take Successes	Take Failures
+34818		34547		271
+
+Steal Attempts	Steal Successes	Steal Failures
+719		267		452
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+33240
+
+Take Attempts	Take Successes	Take Failures
+33319		33065		254
+
+Steal Attempts	Steal Successes	Steal Failures
+626		251		375
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+30984
+
+Take Attempts	Take Successes	Take Failures
+31121		30865		256
+
+Steal Attempts	Steal Successes	Steal Failures
+435		253		182
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+20437
+
+Take Attempts	Take Successes	Take Failures
+20695		20250		445
+
+Steal Attempts	Steal Successes	Steal Failures
+870		442		428
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+17795
+
+Take Attempts	Take Successes	Take Failures
+18036		17665		371
+
+Steal Attempts	Steal Successes	Steal Failures
+408		367		41
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+27022
+
+Take Attempts	Take Successes	Take Failures
+26118		26024		94
+
+Steal Attempts	Steal Successes	Steal Failures
+169		92		77
+
+Deque Grows
+2
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+25028
+
+Take Attempts	Take Successes	Take Failures
+25090		24958		132
+
+Steal Attempts	Steal Successes	Steal Failures
+251		127		124
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+24505
+
+Take Attempts	Take Successes	Take Failures
+24539		24391		148
+
+Steal Attempts	Steal Successes	Steal Failures
+308		142		166
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+28105
+
+Take Attempts	Take Successes	Take Failures
+28184		27983		201
+
+Steal Attempts	Steal Successes	Steal Failures
+613		197		416
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+27327
+
+Take Attempts	Take Successes	Take Failures
+27368		27242		126
+
+Steal Attempts	Steal Successes	Steal Failures
+289		119		170
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+25898
+
+Take Attempts	Take Successes	Take Failures
+25970		25776		194
+
+Steal Attempts	Steal Successes	Steal Failures
+338		192		146
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+27040
+
+Take Attempts	Take Successes	Take Failures
+27407		26880		527
+
+Steal Attempts	Steal Successes	Steal Failures
+1007		521		486
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+19310
+
+Take Attempts	Take Successes	Take Failures
+19566		19200		366
+
+Steal Attempts	Steal Successes	Steal Failures
+406		363		43
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+22688
+
+Take Attempts	Take Successes	Take Failures
+21814		21733		81
+
+Steal Attempts	Steal Successes	Steal Failures
+134		77		57
+
+Deque Grows
+1
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+34036
+
+Take Attempts	Take Successes	Take Failures
+34076		33960		116
+
+Steal Attempts	Steal Successes	Steal Failures
+204		112		92
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+24103
+
+Take Attempts	Take Successes	Take Failures
+24177		24020		157
+
+Steal Attempts	Steal Successes	Steal Failures
+387		154		233
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+17632
+
+Take Attempts	Take Successes	Take Failures
+17732		17538		194
+
+Steal Attempts	Steal Successes	Steal Failures
+425		191		234
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+30098
+
+Take Attempts	Take Successes	Take Failures
+30267		29921		346
+
+Steal Attempts	Steal Successes	Steal Failures
+1029		344		685
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+25226
+
+Take Attempts	Take Successes	Take Failures
+25425		25102		323
+
+Steal Attempts	Steal Successes	Steal Failures
+740		320		420
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+25295
+
+Take Attempts	Take Successes	Take Failures
+25386		25123		263
+
+Steal Attempts	Steal Successes	Steal Failures
+421		261		160
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+19997
+
+Take Attempts	Take Successes	Take Failures
+20242		19778		464
+
+Steal Attempts	Steal Successes	Steal Failures
+515		461		54
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+23514
+
+Take Attempts	Take Successes	Take Failures
+22618		22540		78
+
+Steal Attempts	Steal Successes	Steal Failures
+120		76		44
+
+Deque Grows
+1
+
+Running java -Xmx2048M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+30110
+
+Take Attempts	Take Successes	Take Failures
+30136		30025		111
+
+Steal Attempts	Steal Successes	Steal Failures
+283		109		174
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+20514
+
+Take Attempts	Take Successes	Take Failures
+20545		20464		81
+
+Steal Attempts	Steal Successes	Steal Failures
+179		78		101
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+25952
+
+Take Attempts	Take Successes	Take Failures
+26002		25869		133
+
+Steal Attempts	Steal Successes	Steal Failures
+269		130		139
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+22374
+
+Take Attempts	Take Successes	Take Failures
+22396		22265		131
+
+Steal Attempts	Steal Successes	Steal Failures
+251		128		123
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+28611
+
+Take Attempts	Take Successes	Take Failures
+28852		28505		347
+
+Steal Attempts	Steal Successes	Steal Failures
+627		344		283
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+28923
+
+Take Attempts	Take Successes	Take Failures
+29193		28678		515
+
+Steal Attempts	Steal Successes	Steal Failures
+885		513		372
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+22571
+
+Take Attempts	Take Successes	Take Failures
+22844		22363		481
+
+Steal Attempts	Steal Successes	Steal Failures
+543		478		65
+
+Deque Grows
+2
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+20846
+
+Take Attempts	Take Successes	Take Failures
+19956		19881		75
+
+Steal Attempts	Steal Successes	Steal Failures
+123		71		52
+
+Deque Grows
+1
+
+
+Runtimes:
+SizeA	SizeB	SizeC
+0.885	1.321	1.629
+0.795	1.354	1.529
+0.855	1.219	1.733
+0.925	1.278	1.407
+1.025	1.178	1.416
+0.992	1.263	1.561
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Runtimes:
+SizeA	SizeB
+1.158	10.691
+1.191	10.746
+1.178	10.734
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+134		2		132
+
+Steal Attempts	Steal Successes	Steal Failures
+918		129		789
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+3
+
+Take Attempts	Take Successes	Take Failures
+728		2		726
+
+Steal Attempts	Steal Successes	Steal Failures
+4356		722		3634
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+3
+
+Take Attempts	Take Successes	Take Failures
+133		3		130
+
+Steal Attempts	Steal Successes	Steal Failures
+658		126		532
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+22
+
+Take Attempts	Take Successes	Take Failures
+255		21		234
+
+Steal Attempts	Steal Successes	Steal Failures
+1005		211		794
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+2769		2		2767
+
+Steal Attempts	Steal Successes	Steal Failures
+8313		2764		5549
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+532		2		530
+
+Steal Attempts	Steal Successes	Steal Failures
+1075		527		548
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+2791		2		2789
+
+Steal Attempts	Steal Successes	Steal Failures
+2807		2786		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+9965
+
+Take Attempts	Take Successes	Take Failures
+2704		2702		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+4
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+813		1		812
+
+Steal Attempts	Steal Successes	Steal Failures
+5684		810		4874
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+13		1		12
+
+Steal Attempts	Steal Successes	Steal Failures
+74		10		64
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+2766		1		2765
+
+Steal Attempts	Steal Successes	Steal Failures
+13829		2763		11066
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+113		1		112
+
+Steal Attempts	Steal Successes	Steal Failures
+454		110		344
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+207		1		206
+
+Steal Attempts	Steal Successes	Steal Failures
+626		204		422
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+2720		1		2719
+
+Steal Attempts	Steal Successes	Steal Failures
+5448		2717		2731
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+577		1		576
+
+Steal Attempts	Steal Successes	Steal Failures
+588		574		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+9994
+
+Take Attempts	Take Successes	Take Failures
+2808		2806		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+4
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+645		1		644
+
+Steal Attempts	Steal Successes	Steal Failures
+4508		642		3866
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+266		2		264
+
+Steal Attempts	Steal Successes	Steal Failures
+1587		261		1326
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+590		1		589
+
+Steal Attempts	Steal Successes	Steal Failures
+2949		587		2362
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+587		1		586
+
+Steal Attempts	Steal Successes	Steal Failures
+2350		584		1766
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+615		1		614
+
+Steal Attempts	Steal Successes	Steal Failures
+1850		612		1238
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+2555		1		2554
+
+Steal Attempts	Steal Successes	Steal Failures
+5118		2552		2566
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+2355		2		2353
+
+Steal Attempts	Steal Successes	Steal Failures
+2371		2350		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+9992
+
+Take Attempts	Take Successes	Take Failures
+2406		2404		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+4
+
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+135		1		134
+
+Steal Attempts	Steal Successes	Steal Failures
+938		132		806
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+480		1		479
+
+Steal Attempts	Steal Successes	Steal Failures
+2876		477		2399
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+293		1		292
+
+Steal Attempts	Steal Successes	Steal Failures
+1464		290		1174
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+291		1		290
+
+Steal Attempts	Steal Successes	Steal Failures
+1166		288		878
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+46244		1		46243
+
+Steal Attempts	Steal Successes	Steal Failures
+138737		46241		92496
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+5812		1		5811
+
+Steal Attempts	Steal Successes	Steal Failures
+11632		5809		5823
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+163		1		162
+
+Steal Attempts	Steal Successes	Steal Failures
+174		160		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+99994
+
+Take Attempts	Take Successes	Take Failures
+46599		46597		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+7
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+790		1		789
+
+Steal Attempts	Steal Successes	Steal Failures
+5520		787		4733
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+610		1		609
+
+Steal Attempts	Steal Successes	Steal Failures
+3656		607		3049
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+337		1		336
+
+Steal Attempts	Steal Successes	Steal Failures
+1684		334		1350
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+1349		1		1348
+
+Steal Attempts	Steal Successes	Steal Failures
+5396		1346		4050
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+11217		1		11216
+
+Steal Attempts	Steal Successes	Steal Failures
+33660		11213		22447
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+3
+
+Take Attempts	Take Successes	Take Failures
+42562		2		42560
+
+Steal Attempts	Steal Successes	Steal Failures
+85140		42556		42584
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+356		1		355
+
+Steal Attempts	Steal Successes	Steal Failures
+367		353		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+99991
+
+Take Attempts	Take Successes	Take Failures
+42799		42797		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+7
+
+Running java -Xmx2048M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+489		1		488
+
+Steal Attempts	Steal Successes	Steal Failures
+3416		486		2930
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+310		1		309
+
+Steal Attempts	Steal Successes	Steal Failures
+1856		307		1549
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+426		1		425
+
+Steal Attempts	Steal Successes	Steal Failures
+2129		423		1706
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+1806		1		1805
+
+Steal Attempts	Steal Successes	Steal Failures
+7226		1803		5423
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+296		1		295
+
+Steal Attempts	Steal Successes	Steal Failures
+893		293		600
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+1030		1		1029
+
+Steal Attempts	Steal Successes	Steal Failures
+2068		1027		1041
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+47736		1		47735
+
+Steal Attempts	Steal Successes	Steal Failures
+47747		47733		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+99994
+
+Take Attempts	Take Successes	Take Failures
+47924		47922		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+7
+
+
+Runtimes:
+SizeA	SizeB
+2.615	39.413
+2.58	36.303
+2.343	40.667
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Runtimes:
+SizeA	SizeB
+0.584	5.467
+0.773	5.612
+0.535	4.431
+0.631	4.592
+0.611	6.04
+0.722	6.238
+0.793	4.704
+0.876	4.838
+0.709	5.404
+0.841	5.636
+0.596	5.747
+0.678	5.91
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+2280
+
+Take Attempts	Take Successes	Take Failures
+2480		1962		518
+
+Steal Attempts	Steal Successes	Steal Failures
+2015		344		1671
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1420
+
+Take Attempts	Take Successes	Take Failures
+1542		1134		408
+
+Steal Attempts	Steal Successes	Steal Failures
+1763		252		1511
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1224
+
+Take Attempts	Take Successes	Take Failures
+1409		1013		396
+
+Steal Attempts	Steal Successes	Steal Failures
+1788		221		1567
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1703
+
+Take Attempts	Take Successes	Take Failures
+1923		1449		474
+
+Steal Attempts	Steal Successes	Steal Failures
+1820		315		1505
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1838
+
+Take Attempts	Take Successes	Take Failures
+1967		1527		440
+
+Steal Attempts	Steal Successes	Steal Failures
+1662		288		1374
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1275
+
+Take Attempts	Take Successes	Take Failures
+1379		985		394
+
+Steal Attempts	Steal Successes	Steal Failures
+1658		226		1432
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1941
+
+Take Attempts	Take Successes	Take Failures
+2117		1627		490
+
+Steal Attempts	Steal Successes	Steal Failures
+1985		309		1676
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+1319
+
+Take Attempts	Take Successes	Take Failures
+1509		1095		414
+
+Steal Attempts	Steal Successes	Steal Failures
+1733		253		1480
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1645
+
+Take Attempts	Take Successes	Take Failures
+1840		1330		510
+
+Steal Attempts	Steal Successes	Steal Failures
+2219		307		1912
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1383
+
+Take Attempts	Take Successes	Take Failures
+1556		1106		450
+
+Steal Attempts	Steal Successes	Steal Failures
+1967		257		1710
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1600
+
+Take Attempts	Take Successes	Take Failures
+1726		1261		465
+
+Steal Attempts	Steal Successes	Steal Failures
+1970		282		1688
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+2260
+
+Take Attempts	Take Successes	Take Failures
+2551		1952		599
+
+Steal Attempts	Steal Successes	Steal Failures
+2311		410		1901
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1561
+
+Take Attempts	Take Successes	Take Failures
+1725		1246		479
+
+Steal Attempts	Steal Successes	Steal Failures
+1954		317		1637
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1305
+
+Take Attempts	Take Successes	Take Failures
+1480		1015		465
+
+Steal Attempts	Steal Successes	Steal Failures
+1909		292		1617
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1407
+
+Take Attempts	Take Successes	Take Failures
+1532		1110		422
+
+Steal Attempts	Steal Successes	Steal Failures
+1773		249		1524
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+1839
+
+Take Attempts	Take Successes	Take Failures
+2069		1513		556
+
+Steal Attempts	Steal Successes	Steal Failures
+2279		353		1926
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1672
+
+Take Attempts	Take Successes	Take Failures
+1803		1379		424
+
+Steal Attempts	Steal Successes	Steal Failures
+1623		276		1347
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1674
+
+Take Attempts	Take Successes	Take Failures
+1829		1391		438
+
+Steal Attempts	Steal Successes	Steal Failures
+1761		275		1486
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1742
+
+Take Attempts	Take Successes	Take Failures
+1889		1470		419
+
+Steal Attempts	Steal Successes	Steal Failures
+1659		263		1396
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1585
+
+Take Attempts	Take Successes	Take Failures
+1696		1311		385
+
+Steal Attempts	Steal Successes	Steal Failures
+1632		230		1402
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1680
+
+Take Attempts	Take Successes	Take Failures
+1839		1432		407
+
+Steal Attempts	Steal Successes	Steal Failures
+1779		241		1538
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1631
+
+Take Attempts	Take Successes	Take Failures
+1775		1395		380
+
+Steal Attempts	Steal Successes	Steal Failures
+1661		230		1431
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1134
+
+Take Attempts	Take Successes	Take Failures
+1280		960		320
+
+Steal Attempts	Steal Successes	Steal Failures
+1326		202		1124
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+1882
+
+Take Attempts	Take Successes	Take Failures
+2088		1661		427
+
+Steal Attempts	Steal Successes	Steal Failures
+1599		284		1315
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+2067
+
+Take Attempts	Take Successes	Take Failures
+2307		1787		520
+
+Steal Attempts	Steal Successes	Steal Failures
+1983		363		1620
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1357
+
+Take Attempts	Take Successes	Take Failures
+1503		1090		413
+
+Steal Attempts	Steal Successes	Steal Failures
+1738		252		1486
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1402
+
+Take Attempts	Take Successes	Take Failures
+1549		1119		430
+
+Steal Attempts	Steal Successes	Steal Failures
+1707		269		1438
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1958
+
+Take Attempts	Take Successes	Take Failures
+2142		1642		500
+
+Steal Attempts	Steal Successes	Steal Failures
+1941		341		1600
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1215
+
+Take Attempts	Take Successes	Take Failures
+1325		944		381
+
+Steal Attempts	Steal Successes	Steal Failures
+1766		209		1557
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1178
+
+Take Attempts	Take Successes	Take Failures
+1299		929		370
+
+Steal Attempts	Steal Successes	Steal Failures
+1604		210		1394
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+2048
+
+Take Attempts	Take Successes	Take Failures
+2266		1727		539
+
+Steal Attempts	Steal Successes	Steal Failures
+2108		346		1762
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+1775
+
+Take Attempts	Take Successes	Take Failures
+1932		1454		478
+
+Steal Attempts	Steal Successes	Steal Failures
+1912		318		1594
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1538
+
+Take Attempts	Take Successes	Take Failures
+1714		1287		427
+
+Steal Attempts	Steal Successes	Steal Failures
+1769		260		1509
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1949
+
+Take Attempts	Take Successes	Take Failures
+2145		1657		488
+
+Steal Attempts	Steal Successes	Steal Failures
+1844		327		1517
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1586
+
+Take Attempts	Take Successes	Take Failures
+1775		1338		437
+
+Steal Attempts	Steal Successes	Steal Failures
+1719		283		1436
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1910
+
+Take Attempts	Take Successes	Take Failures
+2083		1596		487
+
+Steal Attempts	Steal Successes	Steal Failures
+1869		332		1537
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1429
+
+Take Attempts	Take Successes	Take Failures
+1586		1182		404
+
+Steal Attempts	Steal Successes	Steal Failures
+1623		247		1376
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1902
+
+Take Attempts	Take Successes	Take Failures
+2043		1562		481
+
+Steal Attempts	Steal Successes	Steal Failures
+1852		317		1535
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1510
+
+Take Attempts	Take Successes	Take Failures
+1616		1222		394
+
+Steal Attempts	Steal Successes	Steal Failures
+1689		234		1455
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+1176
+
+Take Attempts	Take Successes	Take Failures
+1312		950		362
+
+Steal Attempts	Steal Successes	Steal Failures
+1565		206		1359
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1840
+
+Take Attempts	Take Successes	Take Failures
+2047		1548		499
+
+Steal Attempts	Steal Successes	Steal Failures
+1975		325		1650
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1739
+
+Take Attempts	Take Successes	Take Failures
+1877		1422		455
+
+Steal Attempts	Steal Successes	Steal Failures
+1869		288		1581
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1500
+
+Take Attempts	Take Successes	Take Failures
+1674		1219		455
+
+Steal Attempts	Steal Successes	Steal Failures
+1898		286		1612
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1619
+
+Take Attempts	Take Successes	Take Failures
+1803		1322		481
+
+Steal Attempts	Steal Successes	Steal Failures
+1966		306		1660
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1246
+
+Take Attempts	Take Successes	Take Failures
+1390		1015		375
+
+Steal Attempts	Steal Successes	Steal Failures
+1687		213		1474
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1835
+
+Take Attempts	Take Successes	Take Failures
+1989		1521		468
+
+Steal Attempts	Steal Successes	Steal Failures
+1976		286		1690
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1681
+
+Take Attempts	Take Successes	Take Failures
+1859		1399		460
+
+Steal Attempts	Steal Successes	Steal Failures
+1849		293		1556
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+1540
+
+Take Attempts	Take Successes	Take Failures
+1723		1286		437
+
+Steal Attempts	Steal Successes	Steal Failures
+1757		271		1486
+
+Deque Grows
+0
+
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1799
+
+Take Attempts	Take Successes	Take Failures
+1970		1525		445
+
+Steal Attempts	Steal Successes	Steal Failures
+1652		305		1347
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1609
+
+Take Attempts	Take Successes	Take Failures
+1739		1318		421
+
+Steal Attempts	Steal Successes	Steal Failures
+1498		295		1203
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1496
+
+Take Attempts	Take Successes	Take Failures
+1607		1205		402
+
+Steal Attempts	Steal Successes	Steal Failures
+1479		274		1205
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1616
+
+Take Attempts	Take Successes	Take Failures
+1715		1333		382
+
+Steal Attempts	Steal Successes	Steal Failures
+1468		245		1223
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1707
+
+Take Attempts	Take Successes	Take Failures
+1875		1435		440
+
+Steal Attempts	Steal Successes	Steal Failures
+1598		302		1296
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1649
+
+Take Attempts	Take Successes	Take Failures
+1811		1361		450
+
+Steal Attempts	Steal Successes	Steal Failures
+1586		321		1265
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1427
+
+Take Attempts	Take Successes	Take Failures
+1496		1122		374
+
+Steal Attempts	Steal Successes	Steal Failures
+1404		244		1160
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+1697
+
+Take Attempts	Take Successes	Take Failures
+1863		1417		446
+
+Steal Attempts	Steal Successes	Steal Failures
+1666		298		1368
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1870
+
+Take Attempts	Take Successes	Take Failures
+2031		1578		453
+
+Steal Attempts	Steal Successes	Steal Failures
+1575		317		1258
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1452
+
+Take Attempts	Take Successes	Take Failures
+1557		1169		388
+
+Steal Attempts	Steal Successes	Steal Failures
+1427		258		1169
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1527
+
+Take Attempts	Take Successes	Take Failures
+1627		1239		388
+
+Steal Attempts	Steal Successes	Steal Failures
+1464		258		1206
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1698
+
+Take Attempts	Take Successes	Take Failures
+1879		1431		448
+
+Steal Attempts	Steal Successes	Steal Failures
+1617		307		1310
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1484
+
+Take Attempts	Take Successes	Take Failures
+1622		1215		407
+
+Steal Attempts	Steal Successes	Steal Failures
+1550		265		1285
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1767
+
+Take Attempts	Take Successes	Take Failures
+1898		1478		420
+
+Steal Attempts	Steal Successes	Steal Failures
+1551		282		1269
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1696
+
+Take Attempts	Take Successes	Take Failures
+1850		1427		423
+
+Steal Attempts	Steal Successes	Steal Failures
+1525		296		1229
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+1506
+
+Take Attempts	Take Successes	Take Failures
+1607		1216		391
+
+Steal Attempts	Steal Successes	Steal Failures
+1408		264		1144
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1684
+
+Take Attempts	Take Successes	Take Failures
+1796		1359		437
+
+Steal Attempts	Steal Successes	Steal Failures
+1603		298		1305
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1596
+
+Take Attempts	Take Successes	Take Failures
+1711		1306		405
+
+Steal Attempts	Steal Successes	Steal Failures
+1564		259		1305
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1606
+
+Take Attempts	Take Successes	Take Failures
+1767		1352		415
+
+Steal Attempts	Steal Successes	Steal Failures
+1527		281		1246
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1726
+
+Take Attempts	Take Successes	Take Failures
+1865		1431		434
+
+Steal Attempts	Steal Successes	Steal Failures
+1600		290		1310
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1682
+
+Take Attempts	Take Successes	Take Failures
+1798		1386		412
+
+Steal Attempts	Steal Successes	Steal Failures
+1490		287		1203
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1588
+
+Take Attempts	Take Successes	Take Failures
+1758		1329		429
+
+Steal Attempts	Steal Successes	Steal Failures
+1526		303		1223
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1603
+
+Take Attempts	Take Successes	Take Failures
+1748		1322		426
+
+Steal Attempts	Steal Successes	Steal Failures
+1519		297		1222
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+1515
+
+Take Attempts	Take Successes	Take Failures
+1641		1208		433
+
+Steal Attempts	Steal Successes	Steal Failures
+1600		292		1308
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1737
+
+Take Attempts	Take Successes	Take Failures
+1905		1470		435
+
+Steal Attempts	Steal Successes	Steal Failures
+1588		302		1286
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1878
+
+Take Attempts	Take Successes	Take Failures
+2071		1620		451
+
+Steal Attempts	Steal Successes	Steal Failures
+1572		321		1251
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1667
+
+Take Attempts	Take Successes	Take Failures
+1794		1371		423
+
+Steal Attempts	Steal Successes	Steal Failures
+1514		290		1224
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1747
+
+Take Attempts	Take Successes	Take Failures
+1886		1416		470
+
+Steal Attempts	Steal Successes	Steal Failures
+1681		325		1356
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1458
+
+Take Attempts	Take Successes	Take Failures
+1563		1177		386
+
+Steal Attempts	Steal Successes	Steal Failures
+1552		246		1306
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1570
+
+Take Attempts	Take Successes	Take Failures
+1711		1292		419
+
+Steal Attempts	Steal Successes	Steal Failures
+1493		290		1203
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1505
+
+Take Attempts	Take Successes	Take Failures
+1603		1213		390
+
+Steal Attempts	Steal Successes	Steal Failures
+1420		263		1157
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+1438
+
+Take Attempts	Take Successes	Take Failures
+1555		1153		402
+
+Steal Attempts	Steal Successes	Steal Failures
+1583		251		1332
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1669
+
+Take Attempts	Take Successes	Take Failures
+1775		1364		411
+
+Steal Attempts	Steal Successes	Steal Failures
+1544		276		1268
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1859
+
+Take Attempts	Take Successes	Take Failures
+2023		1586		437
+
+Steal Attempts	Steal Successes	Steal Failures
+1522		308		1214
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1447
+
+Take Attempts	Take Successes	Take Failures
+1562		1182		380
+
+Steal Attempts	Steal Successes	Steal Failures
+1433		259		1174
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1416
+
+Take Attempts	Take Successes	Take Failures
+1530		1140		390
+
+Steal Attempts	Steal Successes	Steal Failures
+1485		248		1237
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1541
+
+Take Attempts	Take Successes	Take Failures
+1638		1285		353
+
+Steal Attempts	Steal Successes	Steal Failures
+1355		222		1133
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1693
+
+Take Attempts	Take Successes	Take Failures
+1841		1414		427
+
+Steal Attempts	Steal Successes	Steal Failures
+1572		280		1292
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1725
+
+Take Attempts	Take Successes	Take Failures
+1882		1454		428
+
+Steal Attempts	Steal Successes	Steal Failures
+1501		297		1204
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+1650
+
+Take Attempts	Take Successes	Take Failures
+1824		1371		453
+
+Steal Attempts	Steal Successes	Steal Failures
+1648		314		1334
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1668
+
+Take Attempts	Take Successes	Take Failures
+1804		1390		414
+
+Steal Attempts	Steal Successes	Steal Failures
+1523		279		1244
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1689
+
+Take Attempts	Take Successes	Take Failures
+1876		1431		445
+
+Steal Attempts	Steal Successes	Steal Failures
+1556		317		1239
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1694
+
+Take Attempts	Take Successes	Take Failures
+1835		1397		438
+
+Steal Attempts	Steal Successes	Steal Failures
+1553		303		1250
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1577
+
+Take Attempts	Take Successes	Take Failures
+1696		1263		433
+
+Steal Attempts	Steal Successes	Steal Failures
+1520		306		1214
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1541
+
+Take Attempts	Take Successes	Take Failures
+1624		1214		410
+
+Steal Attempts	Steal Successes	Steal Failures
+1567		267		1300
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1460
+
+Take Attempts	Take Successes	Take Failures
+1550		1164		386
+
+Steal Attempts	Steal Successes	Steal Failures
+1503		248		1255
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1575
+
+Take Attempts	Take Successes	Take Failures
+1773		1327		446
+
+Steal Attempts	Steal Successes	Steal Failures
+1656		310		1346
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+1796
+
+Take Attempts	Take Successes	Take Failures
+1921		1497		424
+
+Steal Attempts	Steal Successes	Steal Failures
+1612		287		1325
+
+Deque Grows
+0
+
+
+Runtimes:
+SizeA	SizeB
+0.924	6.735
+1.031	6.857
+0.78	6.836
+0.849	6.959
+0.827	6.55
+0.904	6.671
+0.79	6.642
+0.863	6.762
+0.741	6.659
+0.818	6.779
+0.749	6.742
+0.831	6.867
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Runtimes:
+SizeA	SizeB
+1.087	4.226
+1.327	4.716
+1.183	4.997
+1.388	5.546
+1.169	4.249
+1.375	4.78
+1.055	4.567
+1.264	5.084
+0.934	4.642
+1.133	5.098
+1.014	4.335
+1.215	4.824
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+2713		2		2711
+
+Steal Attempts	Steal Successes	Steal Failures
+18971		2708		16263
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+7
+
+Take Attempts	Take Successes	Take Failures
+166		6		160
+
+Steal Attempts	Steal Successes	Steal Failures
+966		152		814
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+4
+
+Take Attempts	Take Successes	Take Failures
+172		4		168
+
+Steal Attempts	Steal Successes	Steal Failures
+850		163		687
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+246		1		245
+
+Steal Attempts	Steal Successes	Steal Failures
+985		243		742
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+296		1		295
+
+Steal Attempts	Steal Successes	Steal Failures
+893		293		600
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+3
+
+Take Attempts	Take Successes	Take Failures
+3052		2		3050
+
+Steal Attempts	Steal Successes	Steal Failures
+6120		3046		3074
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+169		1		168
+
+Steal Attempts	Steal Successes	Steal Failures
+186		165		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+9981
+
+Take Attempts	Take Successes	Take Failures
+3216		3214		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+4
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+437		1		436
+
+Steal Attempts	Steal Successes	Steal Failures
+3052		434		2618
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+32		1		31
+
+Steal Attempts	Steal Successes	Steal Failures
+188		29		159
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+118		1		117
+
+Steal Attempts	Steal Successes	Steal Failures
+589		115		474
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+251		1		250
+
+Steal Attempts	Steal Successes	Steal Failures
+1003		248		755
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+811		0		811
+
+Steal Attempts	Steal Successes	Steal Failures
+2441		809		1632
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+74		1		73
+
+Steal Attempts	Steal Successes	Steal Failures
+156		71		85
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+4151		1		4150
+
+Steal Attempts	Steal Successes	Steal Failures
+4162		4148		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+9994
+
+Take Attempts	Take Successes	Take Failures
+4143		4141		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+4
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+3764		1		3763
+
+Steal Attempts	Steal Successes	Steal Failures
+26341		3761		22580
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+16		1		15
+
+Steal Attempts	Steal Successes	Steal Failures
+87		13		74
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+588		0		588
+
+Steal Attempts	Steal Successes	Steal Failures
+2944		586		2358
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+42		1		41
+
+Steal Attempts	Steal Successes	Steal Failures
+170		39		131
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+364		1		363
+
+Steal Attempts	Steal Successes	Steal Failures
+1097		361		736
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+301		1		300
+
+Steal Attempts	Steal Successes	Steal Failures
+610		298		312
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+1770		1		1769
+
+Steal Attempts	Steal Successes	Steal Failures
+1781		1767		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+9994
+
+Take Attempts	Take Successes	Take Failures
+3172		3170		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+4
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+125		1		124
+
+Steal Attempts	Steal Successes	Steal Failures
+868		122		746
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+19		1		18
+
+Steal Attempts	Steal Successes	Steal Failures
+110		16		94
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+468		1		467
+
+Steal Attempts	Steal Successes	Steal Failures
+2339		465		1874
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+4434		1		4433
+
+Steal Attempts	Steal Successes	Steal Failures
+17738		4431		13307
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+93		1		92
+
+Steal Attempts	Steal Successes	Steal Failures
+284		90		194
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+311		1		310
+
+Steal Attempts	Steal Successes	Steal Failures
+630		308		322
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+169		1		168
+
+Steal Attempts	Steal Successes	Steal Failures
+180		166		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+9994
+
+Take Attempts	Take Successes	Take Failures
+4398		4396		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+4
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+160		1		159
+
+Steal Attempts	Steal Successes	Steal Failures
+1113		157		956
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+59		1		58
+
+Steal Attempts	Steal Successes	Steal Failures
+350		56		294
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+172		1		171
+
+Steal Attempts	Steal Successes	Steal Failures
+859		169		690
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+430		1		429
+
+Steal Attempts	Steal Successes	Steal Failures
+1722		427		1295
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+56		1		55
+
+Steal Attempts	Steal Successes	Steal Failures
+173		53		120
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+116		1		115
+
+Steal Attempts	Steal Successes	Steal Failures
+240		113		127
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+4464		1		4463
+
+Steal Attempts	Steal Successes	Steal Failures
+4475		4461		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+9994
+
+Take Attempts	Take Successes	Take Failures
+4560		4558		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+4
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+473		1		472
+
+Steal Attempts	Steal Successes	Steal Failures
+3304		470		2834
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+362		1		361
+
+Steal Attempts	Steal Successes	Steal Failures
+2168		359		1809
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+57		1		56
+
+Steal Attempts	Steal Successes	Steal Failures
+284		54		230
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+293		1		292
+
+Steal Attempts	Steal Successes	Steal Failures
+1174		290		884
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+52		1		51
+
+Steal Attempts	Steal Successes	Steal Failures
+161		49		112
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+48		1		47
+
+Steal Attempts	Steal Successes	Steal Failures
+104		45		59
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+4352		1		4351
+
+Steal Attempts	Steal Successes	Steal Failures
+4363		4349		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+9994
+
+Take Attempts	Take Successes	Take Failures
+4380		4378		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+4
+
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+3
+
+Take Attempts	Take Successes	Take Failures
+17979		3		17976
+
+Steal Attempts	Steal Successes	Steal Failures
+125823		17972		107851
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+438		2		436
+
+Steal Attempts	Steal Successes	Steal Failures
+2619		433		2186
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+4
+
+Take Attempts	Take Successes	Take Failures
+180		3		177
+
+Steal Attempts	Steal Successes	Steal Failures
+895		172		723
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+3
+
+Take Attempts	Take Successes	Take Failures
+339		2		337
+
+Steal Attempts	Steal Successes	Steal Failures
+1360		333		1027
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+20469		2		20467
+
+Steal Attempts	Steal Successes	Steal Failures
+61413		20464		40949
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+256		1		255
+
+Steal Attempts	Steal Successes	Steal Failures
+520		253		267
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+145		1		144
+
+Steal Attempts	Steal Successes	Steal Failures
+156		142		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+59985
+
+Take Attempts	Take Successes	Take Failures
+20220		20218		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+6
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+6
+
+Take Attempts	Take Successes	Take Failures
+217		5		212
+
+Steal Attempts	Steal Successes	Steal Failures
+1480		205		1275
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+428		2		426
+
+Steal Attempts	Steal Successes	Steal Failures
+2554		423		2131
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+466		1		465
+
+Steal Attempts	Steal Successes	Steal Failures
+2331		462		1869
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+3
+
+Take Attempts	Take Successes	Take Failures
+25182		2		25180
+
+Steal Attempts	Steal Successes	Steal Failures
+100732		25176		75556
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+235		2		233
+
+Steal Attempts	Steal Successes	Steal Failures
+712		230		482
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+8889		1		8888
+
+Steal Attempts	Steal Successes	Steal Failures
+17786		8886		8900
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+488		1		487
+
+Steal Attempts	Steal Successes	Steal Failures
+499		485		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+59984
+
+Take Attempts	Take Successes	Take Failures
+24122		24120		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+6
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+635		1		634
+
+Steal Attempts	Steal Successes	Steal Failures
+4438		632		3806
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+651		2		649
+
+Steal Attempts	Steal Successes	Steal Failures
+3892		646		3246
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+906		1		905
+
+Steal Attempts	Steal Successes	Steal Failures
+4531		902		3629
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+969		2		967
+
+Steal Attempts	Steal Successes	Steal Failures
+3877		964		2913
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+974		2		972
+
+Steal Attempts	Steal Successes	Steal Failures
+2928		969		1959
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+619		1		618
+
+Steal Attempts	Steal Successes	Steal Failures
+1246		616		630
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+27163		1		27162
+
+Steal Attempts	Steal Successes	Steal Failures
+27174		27160		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+59990
+
+Take Attempts	Take Successes	Take Failures
+28104		28102		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+6
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+523		1		522
+
+Steal Attempts	Steal Successes	Steal Failures
+3650		519		3131
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+390		2		388
+
+Steal Attempts	Steal Successes	Steal Failures
+2331		385		1946
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+320		1		319
+
+Steal Attempts	Steal Successes	Steal Failures
+1599		317		1282
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+3
+
+Take Attempts	Take Successes	Take Failures
+363		2		361
+
+Steal Attempts	Steal Successes	Steal Failures
+1457		357		1100
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+289		1		288
+
+Steal Attempts	Steal Successes	Steal Failures
+872		286		586
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+29016		1		29015
+
+Steal Attempts	Steal Successes	Steal Failures
+58040		29013		29027
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+700		2		698
+
+Steal Attempts	Steal Successes	Steal Failures
+716		695		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+59989
+
+Take Attempts	Take Successes	Take Failures
+28421		28419		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+6
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+6
+
+Take Attempts	Take Successes	Take Failures
+6395		5		6390
+
+Steal Attempts	Steal Successes	Steal Failures
+44714		6383		38331
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+3
+
+Take Attempts	Take Successes	Take Failures
+241		1		240
+
+Steal Attempts	Steal Successes	Steal Failures
+1444		236		1208
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+8
+
+Take Attempts	Take Successes	Take Failures
+368		8		360
+
+Steal Attempts	Steal Successes	Steal Failures
+1814		351		1463
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+4
+
+Take Attempts	Take Successes	Take Failures
+293		2		291
+
+Steal Attempts	Steal Successes	Steal Failures
+1179		286		893
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+450		2		448
+
+Steal Attempts	Steal Successes	Steal Failures
+1352		445		907
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+5
+
+Take Attempts	Take Successes	Take Failures
+25824		3		25821
+
+Steal Attempts	Steal Successes	Steal Failures
+51672		25815		25857
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+226		2		224
+
+Steal Attempts	Steal Successes	Steal Failures
+243		221		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+59971
+
+Take Attempts	Take Successes	Take Failures
+26243		26241		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+6
+
+Running java -Xmx2048M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+28528		1		28527
+
+Steal Attempts	Steal Successes	Steal Failures
+199689		28525		171164
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+4
+
+Take Attempts	Take Successes	Take Failures
+355		4		351
+
+Steal Attempts	Steal Successes	Steal Failures
+2107		346		1761
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+1
+
+Take Attempts	Take Successes	Take Failures
+1668		1		1667
+
+Steal Attempts	Steal Successes	Steal Failures
+8339		1665		6674
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+4
+
+Take Attempts	Take Successes	Take Failures
+329		3		326
+
+Steal Attempts	Steal Successes	Steal Failures
+1319		321		998
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+168		2		166
+
+Steal Attempts	Steal Successes	Steal Failures
+510		163		347
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+3
+
+Take Attempts	Take Successes	Take Failures
+422		3		419
+
+Steal Attempts	Steal Successes	Steal Failures
+858		415		443
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+2
+
+Take Attempts	Take Successes	Take Failures
+87		2		85
+
+Steal Attempts	Steal Successes	Steal Failures
+103		82		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+59984
+
+Take Attempts	Take Successes	Take Failures
+28470		28468		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+6
+
+
+Runtimes:
+SizeA	SizeB
+1.77	8.015
+2.069	8.54
+1.765	10.307
+2.123	10.926
+1.611	10.846
+1.85	11.339
+1.878	9.178
+2.214	9.682
+1.826	10.052
+2.046	10.727
+1.84	9.11
+2.212	9.592
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB 8 from /home/weibelt/intervals-java/Intervals/runtime
+
+Runtimes:
+SizeA	SizeB
+0.015000000000000003	0.0070
+0.657	4.004
+0.713	4.101
+0.0080	0.0060
+0.645	4.558
+0.661	4.577
+0.0070	0.009000000000000001
+0.535	4.418
+0.562	4.615
+0.0060	0.0060
+0.491	4.317
+0.588	4.347
+0.0060	0.027
+0.515	4.49
+0.533	4.525
+0.0070	0.0060
+0.453	4.002
+0.472	4.024
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+10
+
+Take Attempts	Take Successes	Take Failures
+9		4		5
+
+Steal Attempts	Steal Successes	Steal Failures
+19		3		16
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+10
+
+Take Attempts	Take Successes	Take Failures
+13		8		5
+
+Steal Attempts	Steal Successes	Steal Failures
+18		3		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+9
+
+Take Attempts	Take Successes	Take Failures
+9		5		4
+
+Steal Attempts	Steal Successes	Steal Failures
+17		2		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+16
+
+Take Attempts	Take Successes	Take Failures
+17		13		4
+
+Steal Attempts	Steal Successes	Steal Failures
+17		2		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+8
+
+Take Attempts	Take Successes	Take Failures
+10		6		4
+
+Steal Attempts	Steal Successes	Steal Failures
+16		2		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+7
+
+Take Attempts	Take Successes	Take Failures
+7		4		3
+
+Steal Attempts	Steal Successes	Steal Failures
+19		1		18
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+17
+
+Take Attempts	Take Successes	Take Failures
+26		17		9
+
+Steal Attempts	Steal Successes	Steal Failures
+22		7		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+11
+
+Take Attempts	Take Successes	Take Failures
+14		5		9
+
+Steal Attempts	Steal Successes	Steal Failures
+29		6		23
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+8
+
+Take Attempts	Take Successes	Take Failures
+11		6		5
+
+Steal Attempts	Steal Successes	Steal Failures
+20		3		17
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+22
+
+Take Attempts	Take Successes	Take Failures
+26		19		7
+
+Steal Attempts	Steal Successes	Steal Failures
+21		5		16
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+8
+
+Take Attempts	Take Successes	Take Failures
+6		3		3
+
+Steal Attempts	Steal Successes	Steal Failures
+15		1		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+16
+
+Take Attempts	Take Successes	Take Failures
+18		13		5
+
+Steal Attempts	Steal Successes	Steal Failures
+19		3		16
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+11
+
+Take Attempts	Take Successes	Take Failures
+9		6		3
+
+Steal Attempts	Steal Successes	Steal Failures
+15		1		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+7
+
+Take Attempts	Take Successes	Take Failures
+8		5		3
+
+Steal Attempts	Steal Successes	Steal Failures
+21		1		20
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+9
+
+Take Attempts	Take Successes	Take Failures
+16		8		8
+
+Steal Attempts	Steal Successes	Steal Failures
+27		6		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+7
+
+Take Attempts	Take Successes	Take Failures
+11		3		8
+
+Steal Attempts	Steal Successes	Steal Failures
+35		5		30
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+7
+
+Take Attempts	Take Successes	Take Failures
+10		4		6
+
+Steal Attempts	Steal Successes	Steal Failures
+22		4		18
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+12
+
+Take Attempts	Take Successes	Take Failures
+15		10		5
+
+Steal Attempts	Steal Successes	Steal Failures
+21		3		18
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+8
+
+Take Attempts	Take Successes	Take Failures
+10		4		6
+
+Steal Attempts	Steal Successes	Steal Failures
+20		4		16
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+25
+
+Take Attempts	Take Successes	Take Failures
+30		20		10
+
+Steal Attempts	Steal Successes	Steal Failures
+28		7		21
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+13
+
+Take Attempts	Take Successes	Take Failures
+11		6		5
+
+Steal Attempts	Steal Successes	Steal Failures
+18		3		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+7
+
+Take Attempts	Take Successes	Take Failures
+7		4		3
+
+Steal Attempts	Steal Successes	Steal Failures
+15		1		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+9
+
+Take Attempts	Take Successes	Take Failures
+9		6		3
+
+Steal Attempts	Steal Successes	Steal Failures
+19		1		18
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+7
+
+Take Attempts	Take Successes	Take Failures
+13		7		6
+
+Steal Attempts	Steal Successes	Steal Failures
+19		4		15
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+21		14		7
+
+Steal Attempts	Steal Successes	Steal Failures
+24		5		19
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+9
+
+Take Attempts	Take Successes	Take Failures
+8		4		4
+
+Steal Attempts	Steal Successes	Steal Failures
+19		2		17
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+9
+
+Take Attempts	Take Successes	Take Failures
+9		5		4
+
+Steal Attempts	Steal Successes	Steal Failures
+17		2		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+14
+
+Take Attempts	Take Successes	Take Failures
+18		13		5
+
+Steal Attempts	Steal Successes	Steal Failures
+21		3		18
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+8
+
+Take Attempts	Take Successes	Take Failures
+8		5		3
+
+Steal Attempts	Steal Successes	Steal Failures
+15		1		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+7
+
+Take Attempts	Take Successes	Take Failures
+8		5		3
+
+Steal Attempts	Steal Successes	Steal Failures
+15		1		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+14
+
+Take Attempts	Take Successes	Take Failures
+18		11		7
+
+Steal Attempts	Steal Successes	Steal Failures
+25		5		20
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+8
+
+Take Attempts	Take Successes	Take Failures
+15		7		8
+
+Steal Attempts	Steal Successes	Steal Failures
+29		5		24
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+8
+
+Take Attempts	Take Successes	Take Failures
+12		8		4
+
+Steal Attempts	Steal Successes	Steal Failures
+16		2		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+17
+
+Take Attempts	Take Successes	Take Failures
+19		13		6
+
+Steal Attempts	Steal Successes	Steal Failures
+22		4		18
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+5
+
+Take Attempts	Take Successes	Take Failures
+5		3		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+14
+
+Take Attempts	Take Successes	Take Failures
+18		13		5
+
+Steal Attempts	Steal Successes	Steal Failures
+23		3		20
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+9
+
+Take Attempts	Take Successes	Take Failures
+12		8		4
+
+Steal Attempts	Steal Successes	Steal Failures
+16		2		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+9
+
+Take Attempts	Take Successes	Take Failures
+9		5		4
+
+Steal Attempts	Steal Successes	Steal Failures
+16		2		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+17
+
+Take Attempts	Take Successes	Take Failures
+20		15		5
+
+Steal Attempts	Steal Successes	Steal Failures
+17		3		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+9
+
+Take Attempts	Take Successes	Take Failures
+11		6		5
+
+Steal Attempts	Steal Successes	Steal Failures
+30		1		29
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+10
+
+Take Attempts	Take Successes	Take Failures
+10		3		7
+
+Steal Attempts	Steal Successes	Steal Failures
+24		5		19
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+5
+
+Take Attempts	Take Successes	Take Failures
+7		3		4
+
+Steal Attempts	Steal Successes	Steal Failures
+17		2		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+10
+
+Take Attempts	Take Successes	Take Failures
+10		6		4
+
+Steal Attempts	Steal Successes	Steal Failures
+16		2		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+17
+
+Take Attempts	Take Successes	Take Failures
+17		12		5
+
+Steal Attempts	Steal Successes	Steal Failures
+18		3		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+7
+
+Take Attempts	Take Successes	Take Failures
+9		5		4
+
+Steal Attempts	Steal Successes	Steal Failures
+18		2		16
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+9
+
+Take Attempts	Take Successes	Take Failures
+9		7		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+10
+
+Take Attempts	Take Successes	Take Failures
+18		10		8
+
+Steal Attempts	Steal Successes	Steal Failures
+22		6		16
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+20
+
+Take Attempts	Take Successes	Take Failures
+25		15		10
+
+Steal Attempts	Steal Successes	Steal Failures
+32		7		25
+
+Deque Grows
+0
+
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+18
+
+Take Attempts	Take Successes	Take Failures
+16		9		7
+
+Steal Attempts	Steal Successes	Steal Failures
+27		5		22
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+14
+
+Take Attempts	Take Successes	Take Failures
+13		7		6
+
+Steal Attempts	Steal Successes	Steal Failures
+22		4		18
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+12
+
+Take Attempts	Take Successes	Take Failures
+15		7		8
+
+Steal Attempts	Steal Successes	Steal Failures
+22		6		16
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+18
+
+Take Attempts	Take Successes	Take Failures
+19		11		8
+
+Steal Attempts	Steal Successes	Steal Failures
+23		6		17
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+14
+
+Take Attempts	Take Successes	Take Failures
+13		8		5
+
+Steal Attempts	Steal Successes	Steal Failures
+22		3		19
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+12
+
+Take Attempts	Take Successes	Take Failures
+12		8		4
+
+Steal Attempts	Steal Successes	Steal Failures
+18		2		16
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+12
+
+Take Attempts	Take Successes	Take Failures
+22		9		13
+
+Steal Attempts	Steal Successes	Steal Failures
+42		10		32
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+30
+
+Take Attempts	Take Successes	Take Failures
+37		21		16
+
+Steal Attempts	Steal Successes	Steal Failures
+44		14		30
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+21
+
+Take Attempts	Take Successes	Take Failures
+27		19		8
+
+Steal Attempts	Steal Successes	Steal Failures
+26		6		20
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+17		11		6
+
+Steal Attempts	Steal Successes	Steal Failures
+21		4		17
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+10
+
+Take Attempts	Take Successes	Take Failures
+13		7		6
+
+Steal Attempts	Steal Successes	Steal Failures
+19		4		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+24
+
+Take Attempts	Take Successes	Take Failures
+26		20		6
+
+Steal Attempts	Steal Successes	Steal Failures
+20		4		16
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+13
+
+Take Attempts	Take Successes	Take Failures
+15		10		5
+
+Steal Attempts	Steal Successes	Steal Failures
+21		3		18
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+14
+
+Take Attempts	Take Successes	Take Failures
+13		9		4
+
+Steal Attempts	Steal Successes	Steal Failures
+17		2		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+20
+
+Take Attempts	Take Successes	Take Failures
+23		18		5
+
+Steal Attempts	Steal Successes	Steal Failures
+17		3		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+13
+
+Take Attempts	Take Successes	Take Failures
+14		9		5
+
+Steal Attempts	Steal Successes	Steal Failures
+29		1		28
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+11
+
+Take Attempts	Take Successes	Take Failures
+12		6		6
+
+Steal Attempts	Steal Successes	Steal Failures
+20		4		16
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+12
+
+Take Attempts	Take Successes	Take Failures
+12		8		4
+
+Steal Attempts	Steal Successes	Steal Failures
+17		2		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+10
+
+Take Attempts	Take Successes	Take Failures
+10		7		3
+
+Steal Attempts	Steal Successes	Steal Failures
+16		1		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+35		32		3
+
+Steal Attempts	Steal Successes	Steal Failures
+15		1		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+11
+
+Take Attempts	Take Successes	Take Failures
+13		9		4
+
+Steal Attempts	Steal Successes	Steal Failures
+21		2		19
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+9
+
+Take Attempts	Take Successes	Take Failures
+11		8		3
+
+Steal Attempts	Steal Successes	Steal Failures
+19		1		18
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+41		35		6
+
+Steal Attempts	Steal Successes	Steal Failures
+19		4		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+8
+
+Take Attempts	Take Successes	Take Failures
+13		5		8
+
+Steal Attempts	Steal Successes	Steal Failures
+27		5		22
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+11
+
+Take Attempts	Take Successes	Take Failures
+12		6		6
+
+Steal Attempts	Steal Successes	Steal Failures
+23		4		19
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+21
+
+Take Attempts	Take Successes	Take Failures
+26		17		9
+
+Steal Attempts	Steal Successes	Steal Failures
+22		7		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+38		29		9
+
+Steal Attempts	Steal Successes	Steal Failures
+24		7		17
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+13		8		5
+
+Steal Attempts	Steal Successes	Steal Failures
+17		3		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+13		10		3
+
+Steal Attempts	Steal Successes	Steal Failures
+15		1		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+12
+
+Take Attempts	Take Successes	Take Failures
+12		10		2
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+12
+
+Take Attempts	Take Successes	Take Failures
+20		12		8
+
+Steal Attempts	Steal Successes	Steal Failures
+21		6		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+8
+
+Take Attempts	Take Successes	Take Failures
+13		3		10
+
+Steal Attempts	Steal Successes	Steal Failures
+32		7		25
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+10
+
+Take Attempts	Take Successes	Take Failures
+10		7		3
+
+Steal Attempts	Steal Successes	Steal Failures
+19		1		18
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+41		34		7
+
+Steal Attempts	Steal Successes	Steal Failures
+22		5		17
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+11
+
+Take Attempts	Take Successes	Take Failures
+15		7		8
+
+Steal Attempts	Steal Successes	Steal Failures
+26		6		20
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+23
+
+Take Attempts	Take Successes	Take Failures
+24		18		6
+
+Steal Attempts	Steal Successes	Steal Failures
+21		4		17
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+9
+
+Take Attempts	Take Successes	Take Failures
+13		8		5
+
+Steal Attempts	Steal Successes	Steal Failures
+17		3		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+12		6		6
+
+Steal Attempts	Steal Successes	Steal Failures
+20		4		16
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+12
+
+Take Attempts	Take Successes	Take Failures
+18		10		8
+
+Steal Attempts	Steal Successes	Steal Failures
+21		6		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+14		8		6
+
+Steal Attempts	Steal Successes	Steal Failures
+29		3		26
+
+Deque Grows
+0
+
+Running java -Xmx2048M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Statistics for (Intervals-Worker-0)
+
+Puts
+11
+
+Take Attempts	Take Successes	Take Failures
+13		6		7
+
+Steal Attempts	Steal Successes	Steal Failures
+21		5		16
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-1)
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+38		30		8
+
+Steal Attempts	Steal Successes	Steal Failures
+24		6		18
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-2)
+
+Puts
+13
+
+Take Attempts	Take Successes	Take Failures
+12		8		4
+
+Steal Attempts	Steal Successes	Steal Failures
+17		2		15
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-3)
+
+Puts
+22
+
+Take Attempts	Take Successes	Take Failures
+23		19		4
+
+Steal Attempts	Steal Successes	Steal Failures
+16		2		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-4)
+
+Puts
+13
+
+Take Attempts	Take Successes	Take Failures
+13		9		4
+
+Steal Attempts	Steal Successes	Steal Failures
+19		2		17
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-5)
+
+Puts
+10
+
+Take Attempts	Take Successes	Take Failures
+12		9		3
+
+Steal Attempts	Steal Successes	Steal Failures
+15		1		14
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-6)
+
+Puts
+10
+
+Take Attempts	Take Successes	Take Failures
+18		9		9
+
+Steal Attempts	Steal Successes	Steal Failures
+23		7		16
+
+Deque Grows
+0
+
+
+Statistics for (Intervals-Worker-7)
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		9		9
+
+Steal Attempts	Steal Successes	Steal Failures
+29		6		23
+
+Deque Grows
+0
+
+
+Runtimes:
+SizeA	SizeB
+0.016	0.014
+0.637	4.385
+0.708	4.444
+0.016	0.019
+0.623	4.352
+0.68	4.411
+0.015	0.016
+0.494	4.073
+0.55	4.131
+0.016	0.018
+0.626	4.697
+0.701	4.77
+0.015	0.016
+0.627	4.512
+0.683	4.568
+0.015	0.015
+0.626	4.59
+0.681	4.645
+
+
+Script done on Thu 06 May 2010 10:37:08 PM CEST
