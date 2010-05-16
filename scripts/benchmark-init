@@ -6,6 +6,11 @@ date
 echo
 
 cd ../
+
+echo 'git branch'
+git branch --no-color 2> /dev/null | sed -e '/^[^*]/d'
+echo
+
 echo 'git show --pretty=oneline | head -1'
 git show --pretty=oneline | head -1
 echo
