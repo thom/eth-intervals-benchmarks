@@ -35,8 +35,60 @@ EOS
   def process_file(file)
     File.open(file, "r") do |infile|
       while (line = infile.gets)
-        # TODO: process file
-        puts line
+        # Match beginning of benchmarks
+        if (/^begin\((.*)\)/ =~ line)
+          headings = true
+          name = $1
+          i = 0
+          results = Array.new
+          average_results = Array.new
+          next
+        end
+
+        # Process headings
+        if headings
+          headings = false
+          benchmarks = true
+          titles = line.split(/\s+/)
+          next
+        end
+
+        # Match end of benchmarks
+        if (/^end\(#{name}\)/ =~ line)
+          benchmarks = false
+
+          #results.each { |result| p result }
+
+          # TODO: Fix for benchmarks printing interim times
+          for k in (0..results[0].size-1)
+            average_results[k] = 0
+            for j in (0..results.size-1)
+              # puts j.to_s + ", " + k.to_s + ": " + results[j][k]
+              average_results[k] += results[j][k].to_f
+            end
+          end
+
+          average_results.map! { |average_result|
+            average_result / results.size
+          }
+
+          titles.map! { |title|
+            name + " (" + title + ")"
+          }
+
+          titles.zip(average_results).each { |row|
+            row.each { |element|
+              print element.to_s + "\t"
+            }
+            print "\n"
+          }
+        end
+
+        # Process benchmarks
+        if benchmarks
+          results[i] = line.split(/\s+/)
+          i += 1
+        end
       end
     end
   end
