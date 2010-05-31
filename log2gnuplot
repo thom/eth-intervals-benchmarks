@@ -1,0 +1,47 @@
+#!/usr/bin/env ruby 
+
+require 'trollop'
+
+class Log2Gnuplot
+  VERSION = '0.0.1'
+  
+  attr_reader :options
+
+  def initialize
+    @options = Trollop::options do
+      version "log2gnuplot #{VERSION} (c) 2010 Thomas Weibel"
+      banner <<-EOS
+Converts benchmark logs into Gnuplot data files
+
+Usage:
+       log2gnuplot [options]
+where [options] are:
+EOS
+
+      opt :file, "log file", :type => String
+    end
+
+    Trollop::die :file, "file name must be given" if @options[:file] == nil
+    Trollop::die :file, "file must exist" unless File.exist?(@options[:file]) if @options[:file]
+  end
+
+  # Parse options, check arguments, then process the command
+  def run
+    process_file(@options[:file])
+  end
+  
+  protected
+  
+  def process_file(file)
+    File.open(file, "r") do |infile|
+      while (line = infile.gets)
+        # TODO: process file
+        puts line
+      end
+    end
+  end
+end
+
+# Create and run the application
+app = Log2Gnuplot.new
+app.run
