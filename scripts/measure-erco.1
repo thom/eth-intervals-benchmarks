@@ -44,8 +44,9 @@ do
 	done
 
 	echo
-	echo "Runtimes:"
+	echo "begin(SOR)"
 	$SCRIPTS/re '^Sor.*?([0-9]*)$' '$1' $PROF > $TMPDIR/prof-num
 	$SCRIPTS/columnize $SIZES < $TMPDIR/prof-num
+	echo "end(SOR)"
 	echo
 done

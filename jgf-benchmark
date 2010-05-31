@@ -37,7 +37,8 @@ do
 	fi
 done
 
-echo "Runtimes:"
+echo "begin(${CLSNAME})"
 $SCRIPTS/re '([0-9.]*) \(s\)' '$1' $PROF > $TMPDIR/prof-num
 $SCRIPTS/columnize $FOUND < $TMPDIR/prof-num
+echo "end(${CLSNAME})"
 echo

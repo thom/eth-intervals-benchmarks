@@ -32,8 +32,9 @@ do
 	done
 
 	echo
-	echo "Runtimes:"
+	echo "begin(${k})"
 	$SCRIPTS/re '^ch.ethz.intervals.TestGameOfLife\$.*: ([0-9]*.[0-9]*)' '$1' $PROF > $TMPDIR/prof-num
 	$SCRIPTS/columnize $PATTERN < $TMPDIR/prof-num
+	echo "end(${k})"
 	echo
 done
