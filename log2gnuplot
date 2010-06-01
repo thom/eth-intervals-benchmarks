@@ -93,8 +93,14 @@ EOS
             average_result / (results.size / interim_results)
           }
 
+          if (/^jgfmt\.section.\.JGF(.*)Bench$/ =~ name)
+            nice_name = $1
+          else
+            nice_name = name
+          end
+
           titles.map! { |title|
-            name + " (" + title + ")"
+            '"' + nice_name + " (" + title + ")" + '"'
           }
 
           if @options[:desc] 
