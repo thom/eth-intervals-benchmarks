@@ -1,0 +1,50 @@
+#!/usr/bin/env ruby 
+
+require 'tempfile'
+
+usage = "USAGE: convert ['DESC' FILE]+\n\n"
+
+if ARGV.size == 0
+  puts usage
+  exit
+end
+
+if ARGV.size % 2 != 0
+  puts usage
+  exit
+end
+
+titles, files = [], []
+ARGV.each_slice(2){ |title, file| 
+  titles << title
+  files << file
+}
+
+files.each { |file|
+  if not File.exists?(file)
+    puts usage
+    puts "No such file #{file}"
+    exit
+  end
+}
+
+first = true
+outputs = Array.new
+
+titles.zip(files).each { |title, file|
+  desc = "-d" if first
+  outputs << %x[./log2gnuplot #{desc} -t #{title} -f #{file}]
+  first = false
+}
+
+tmpfiles = Array.new
+
+outputs.each { |output|
+  tmpfile = Tempfile.new('convert')
+  file = File.new(tmpfile.path,'w')
+  file.puts output
+  file.close
+  tmpfiles << tmpfile.path
+}
+
+puts %x[paste #{tmpfiles.join(" ")}]
