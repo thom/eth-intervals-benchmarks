@@ -19,6 +19,8 @@ where [options] are:
 EOS
 
       opt :file, "log file", :type => String
+      opt :title, "title", :type => String
+      opt :desc, "description column"
     end
 
     Trollop::die :file, "file name must be given" if @options[:file] == nil
@@ -34,6 +36,15 @@ EOS
   
   def process_file(file)
     File.open(file, "r") do |infile|
+      # Print title
+      if @options[:title] != nil
+        title_row = ""
+        if @options[:desc]
+          title_row += "Name\t"
+        end
+        print title_row + @options[:title] + "\n"
+      end
+
       while (line = infile.gets)
         # Match beginning of benchmarks
         if (/^begin\((.*)\)/ =~ line)
@@ -86,12 +97,18 @@ EOS
             name + " (" + title + ")"
           }
 
-          titles.zip(average_results).each { |row|
-            row.each { |element|
-              print element.to_s + "\t"
+          if @options[:desc] 
+            titles.zip(average_results).each { |row|
+              row.each { |element|
+                print element.to_s + "\t"
+              }
+              print "\n"
             }
-            print "\n"
-          }
+          else
+            average_results.each { |row|
+              print row.to_s + "\n"
+            }
+          end
         end
 
         # Process benchmarks
