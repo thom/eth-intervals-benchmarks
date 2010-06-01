@@ -57,19 +57,29 @@ EOS
         if (/^end\(#{name}\)/ =~ line)
           benchmarks = false
 
-          #results.each { |result| p result }
+          case name
+          when "jgfmt.section3.JGFMolDynBench"
+            interim_results = 2
+          when "jgfmt.section3.JGFMonteCarloBench"
+            interim_results = 2
+          when "jgfmt.section3.JGFRayTracerBench"
+            interim_results = 3
+          else
+            interim_results = 1
+          end
 
-          # TODO: Fix for benchmarks printing interim times
           for k in (0..results[0].size-1)
             average_results[k] = 0
             for j in (0..results.size-1)
               # puts j.to_s + ", " + k.to_s + ": " + results[j][k]
-              average_results[k] += results[j][k].to_f
+              if ((j+1) % interim_results == 0)
+                average_results[k] += results[j][k].to_f
+              end
             end
           end
 
           average_results.map! { |average_result|
-            average_result / results.size
+            average_result / (results.size / interim_results)
           }
 
           titles.map! { |title|
