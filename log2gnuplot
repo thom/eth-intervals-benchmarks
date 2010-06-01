@@ -100,7 +100,13 @@ EOS
           end
 
           titles.map! { |title|
-            '"' + nice_name + " (" + title + ")" + '"'
+            if (/^Size(.)$/ =~ title)
+              nice_title = $1
+            else
+              nice_title = title
+            end
+
+            '"' + nice_name + " (" + nice_title + ")" + '"'
           }
 
           if @options[:desc] 
