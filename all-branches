@@ -1,0 +1,95 @@
+#!/bin/bash
+
+HOST=$1
+CORES=$2
+
+if [ -z ${3} ]
+then
+	STATS=false
+else
+	STATS=true
+fi
+
+# TODO: sort and group
+branches=(
+duplicating-queue
+duplicating-queue-interval
+duplicating-queue-threadpool
+duplicating-work-stealing-deque
+dynamic-circular-deque
+dynamic-circular-deque-rta
+dynamic-work-stealing-deque
+dynamic-work-stealing-deque-no-steal-loop
+idempotent-deque
+idempotent-deque-no-steal-loop
+idempotent-fifo-queue
+idempotent-fifo-queue-no-steal-loop
+idempotent-lifo-queue
+idempotent-lifo-queue-no-steal-loop
+idempotent-work-stealing-deque
+idempotent-work-stealing-deque-no-steal-loop
+lazy-deque-cas
+lazy-deque-orig
+master
+no-pending-work-items-first-put
+no-pending-work-items-last-put
+no-pending-work-items-random-put
+pending-work-items-exist
+queues
+thread-pool
+thread-pool-concurrent-queues
+work-stealing-deque
+work-stealing-deque-lazy-top
+work-stealing-deque-no-steal-loop
+work-stealing-deque-no-steal-loop-lazy-top
+work-stealing-lazy-deque
+)
+
+ITER=1
+
+echo "$HOST ($CORES cores), stats=$STATS"
+
+function stats_begin {
+        if ${STATS}
+	then    
+		sed -i 's/public static final boolean STATISTICS = false/public static final boolean STATISTICS = true/g' src/ch/ethz/intervals/Config.java
+	fi
+}
+
+function stats_end {
+	if ${STATS}
+	then
+		cd ..
+		git co src/ch/ethz/interals/Config.java
+		cd -
+	fi
+}
+
+function move_results {
+	if ${STATS}
+	then
+		mv results/${HOST}-* results/${HOST}/${1}-stats
+	else
+		mv results/${HOST}-* results/${HOST}/${1}
+	fi
+}
+
+# Intervals
+for branch in ${branches[@]}; do
+	cd ..
+	git co ${branch}
+	stats_begin
+	cd -
+	NS="-1" ITERFAST=$ITER ITERSLOW=$ITER ./all-benchmarks
+	move_results ${branch}
+	stats_end
+done
+
+# Threads
+cd ..
+git co master
+stats_begin
+cd -
+NS="${CORES}" ITERFAST=$ITER ITERSLOW=$ITER ./all-benchmarks
+move_results "${CORES}-threads"
+stats_end
