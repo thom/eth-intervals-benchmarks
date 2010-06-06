@@ -12,42 +12,63 @@ fi
 
 # TODO: sort and group
 branches=(
-duplicating-queue
-duplicating-queue-interval
-duplicating-queue-threadpool
-duplicating-work-stealing-deque
-dynamic-circular-deque
-dynamic-circular-deque-rta
-dynamic-work-stealing-deque
-dynamic-work-stealing-deque-no-steal-loop
-idempotent-deque
-idempotent-deque-no-steal-loop
-idempotent-fifo-queue
-idempotent-fifo-queue-no-steal-loop
-idempotent-lifo-queue
-idempotent-lifo-queue-no-steal-loop
-idempotent-work-stealing-deque
-idempotent-work-stealing-deque-no-steal-loop
-lazy-deque-cas
-lazy-deque-orig
-master
-no-pending-work-items-first-put
-no-pending-work-items-last-put
-no-pending-work-items-random-put
-pending-work-items-exist
-queues
-thread-pool
-thread-pool-concurrent-queues
-work-stealing-deque
-work-stealing-deque-lazy-top
-work-stealing-deque-no-steal-loop
-work-stealing-deque-no-steal-loop-lazy-top
-work-stealing-lazy-deque
+	# Lazy deques
+	lazy-deque-orig
+	lazy-deque-cas
+
+	# Dynamic circular deques
+	dynamic-circular-deque
+	dynamic-circular-deque-rta
+
+	# Duplicating queues
+	duplicating-queue
+	duplicating-queue-interval
+	duplicating-queue-threadpool
+
+	# Idempotent queues
+	idempotent-fifo-queue
+	idempotent-fifo-queue-no-steal-loop
+	idempotent-lifo-queue
+	idempotent-lifo-queue-no-steal-loop
+	idempotent-deque
+	idempotent-deque-no-steal-loop
+
+	# Work-stealing lazy deque
+	work-stealing-lazy-deque
+
+	# Work-stealing deque
+	work-stealing-deque
+	work-stealing-deque-lazy-top
+	work-stealing-deque-no-steal-loop
+	work-stealing-deque-no-steal-loop-lazy-top
+
+	# Duplicating work-stealing deque
+	duplicating-work-stealing-deque
+
+	# Idempotent work-stealing deque
+	idempotent-work-stealing-deque
+	idempotent-work-stealing-deque-no-steal-loop
+
+	# Dynamic work-stealing deque
+	dynamic-work-stealing-deque
+	dynamic-work-stealing-deque-no-steal-loop
+
+	# Pending work items exist
+	pending-work-items-exist
+
+	# No pending work items
+	no-pending-work-items-first-put
+	no-pending-work-items-last-put
+	no-pending-work-items-random-put
+
+	# Use concurrent queues in thread pool
+	thread-pool-concurrent-queues
 )
 
 ITER=1
 
 echo "$HOST ($CORES cores), stats=$STATS"
+echo
 
 function stats_begin {
         if ${STATS}
