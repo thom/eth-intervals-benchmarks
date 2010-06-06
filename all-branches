@@ -10,7 +10,6 @@ else
 	STATS=true
 fi
 
-# TODO: sort and group
 branches=(
 	# Lazy deques
 	lazy-deque-orig
@@ -98,7 +97,7 @@ function move_results {
 # Intervals
 for branch in ${branches[@]}; do
 	cd ..
-	git co ${branch}
+	git co origin/${branch}
 	stats_begin
 	cd -
 	NS="-1" ITERFAST=$ITER ITERSLOW=$ITER ./all-benchmarks
