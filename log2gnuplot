@@ -40,9 +40,9 @@ EOS
       if @options[:title] != nil
         title_row = ""
         if @options[:desc]
-          title_row += "Name\t"
+          title_row += "\"Name\"\t"
         end
-        print title_row + @options[:title] + "\n"
+        print title_row + "\"" +@options[:title] + "\"\n"
       end
 
       while (line = infile.gets)

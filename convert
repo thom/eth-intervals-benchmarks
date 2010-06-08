@@ -33,7 +33,7 @@ outputs = Array.new
 
 titles.zip(files).each { |title, file|
   desc = "-d" if first
-  outputs << %x[./log2gnuplot #{desc} -t #{title} -f #{file}]
+  outputs << %x[./log2gnuplot #{desc} -t "#{title}" -f #{file}]
   first = false
 }
 
