@@ -64,6 +64,8 @@ branches=(
 	thread-pool-concurrent-queues
 )
 
+cfg=src/ch/ethz/intervals/Config.java
+
 ITER=1
 
 echo "$HOST ($CORES cores), stats=$STATS"
@@ -72,44 +74,50 @@ echo
 function stats_begin {
         if ${STATS}
 	then    
-		sed -i 's/public static final boolean STATISTICS = false/public static final boolean STATISTICS = true/g' src/ch/ethz/intervals/Config.java
-	fi
-}
-
-function stats_end {
-	if ${STATS}
-	then
-		cd ..
-		git co src/ch/ethz/interals/Config.java
-		cd -
+		if [ -e ${cfg} ]
+		then
+			sed -i 's/public static final boolean STATISTICS = false/public static final boolean STATISTICS = true/g' ${cfg}
+		fi
 	fi
 }
 
 function move_results {
-	if ${STATS}
+	if [ -e results/${HOST}-* ]
 	then
-		mv results/${HOST}-* results/${HOST}/${1}-stats
-	else
-		mv results/${HOST}-* results/${HOST}/${1}
+		if ${STATS}
+		then
+			mv results/${HOST}-* results/${HOST}/${1}-stats
+		else
+			mv results/${HOST}-* results/${HOST}/${1}
+		fi
+	fi
+}
+
+function git_co_cfg {
+	if [ -e ${cfg} ]
+	then
+		git co ${cfg}
 	fi
 }
 
 # Intervals
 for branch in ${branches[@]}; do
 	cd ..
-	git co origin/${branch}
+	git_co_cfg
+	git co ${branch}
 	stats_begin
 	cd -
 	NS="-1" ITERFAST=$ITER ITERSLOW=$ITER ./all-benchmarks
 	move_results ${branch}
-	stats_end
+	echo
+	echo
 done
 
 # Threads
 cd ..
+git_co_cfg
 git co master
 stats_begin
 cd -
 NS="${CORES}" ITERFAST=$ITER ITERSLOW=$ITER ./all-benchmarks
 move_results "${CORES}-threads"
-stats_end
