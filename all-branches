@@ -86,9 +86,9 @@ function move_results {
 	then
 		if ${STATS}
 		then
-			mv results/${HOST}-* results/${HOST}/${1}-stats
+			mv results/${HOST}-20* results/${HOST}-stats/${1}
 		else
-			mv results/${HOST}-* results/${HOST}/${1}
+			mv results/${HOST}-20* results/${HOST}/${1}
 		fi
 	fi
 }
@@ -99,6 +99,9 @@ function git_co_cfg {
 		git co ${cfg}
 	fi
 }
+
+# Removes old benchmark results
+rm results/${HOST}-20*
 
 # Intervals
 for branch in ${branches[@]}; do
