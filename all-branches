@@ -1,4 +1,5 @@
 #!/bin/bash
+: ${2?"Usage: $0 HOST CORES [STATS]. Warning: Removes old benchmark logs results/${HOST}-20*"}
 
 HOST=$1
 CORES=$2
