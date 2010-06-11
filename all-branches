@@ -102,13 +102,13 @@ function git_co_cfg {
 }
 
 # Removes old benchmark results
-rm results/${HOST}-20*
+rm -f results/${HOST}-20*
 
 # Intervals
 for branch in ${branches[@]}; do
 	cd ..
 	git_co_cfg
-	git co ${branch}
+	git co origin/${branch}
 	stats_begin
 	cd -
 	NS="-1" ITERFAST=$ITER ITERSLOW=$ITER ./all-benchmarks
