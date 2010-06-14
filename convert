@@ -4,6 +4,8 @@ require 'tempfile'
 
 usage = "USAGE: convert ['DESC' FILE]+\n\n"
 
+kbest = 3
+
 if ARGV.size == 0
   puts usage
   exit
@@ -33,7 +35,7 @@ outputs = Array.new
 
 titles.zip(files).each { |title, file|
   desc = "-d" if first
-  outputs << %x[./log2gnuplot #{desc} -t "#{title}" -f #{file}]
+  outputs << %x[./log2gnuplot #{desc} -t "#{title}" -k #{kbest} -f #{file}]
   first = false
 }
 

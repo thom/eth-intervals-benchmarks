@@ -19,12 +19,14 @@ where [options] are:
 EOS
 
       opt :file, "log file", :type => String
+      opt :kbest, "k-best, use 0 for average over all", :type => Integer, :default => 0
       opt :title, "title", :type => String
       opt :desc, "description column"
     end
 
     Trollop::die :file, "file name must be given" if @options[:file] == nil
     Trollop::die :file, "file must exist" unless File.exist?(@options[:file]) if @options[:file]
+    Trollop::die :kbest, "must be >= 0" unless @options[:kbest] >= 0
   end
 
   # Parse options, check arguments, then process the command
@@ -52,7 +54,7 @@ EOS
           name = $1
           i = 0
           results = Array.new
-          average_results = Array.new
+          columns = Array.new
           next
         end
 
@@ -80,17 +82,33 @@ EOS
           end
 
           for k in (0..results[0].size-1)
-            average_results[k] = 0
+            columns[k] = Array.new
             for j in (0..results.size-1)
               # puts j.to_s + ", " + k.to_s + ": " + results[j][k]
               if ((j+1) % interim_results == 0)
-                average_results[k] += results[j][k].to_f
+                columns[k] << results[j][k].to_f
               end
             end
           end
 
-          average_results.map! { |average_result|
-            average_result / (results.size / interim_results)
+          kbest = @options[:kbest]
+          denominator = (results.size / interim_results)
+
+          unless kbest <= denominator
+            puts "Error: argument --kbest must be <= " + denominator.to_s
+            exit 1
+          end
+
+          average_results = columns.map { |column|
+            if kbest == 0
+              column.inject { |result, element|
+                result + element
+              } / denominator
+            else
+              column.sort[0..kbest-1].inject { |result, element|
+                result + element
+              } / kbest
+            end
           }
 
           if (/^jgfmt\.section.\.JGF(.*)Bench$/ =~ name)
