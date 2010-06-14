@@ -22,8 +22,6 @@ branches=(
 
 	# Duplicating queues
 	duplicating-queue
-	duplicating-queue-interval
-	duplicating-queue-threadpool
 
 	# Idempotent queues
 	idempotent-fifo-queue
@@ -58,14 +56,6 @@ branches=(
 
 	# Pending work items exist
 	pending-work-items-exist
-
-	# No pending work items
-	no-pending-work-items-first-put
-	no-pending-work-items-last-put
-	no-pending-work-items-random-put
-
-	# Use concurrent queues in thread pool
-	thread-pool-concurrent-queues
 )
 
 cfg=src/ch/ethz/intervals/Config.java
