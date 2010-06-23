@@ -110,7 +110,7 @@ for branch in ${branches[@]}; do
 	git co origin/${branch}
 	stats_begin
 	cd -
-	JAVA_OPTS=${OPTS} ITERFAST=${ITER} ITERSLOW=${ITER} ./all-benchmarks
+	JAVA_OPTS=${OPTS} NS="-1" ITERFAST=${ITER} ITERSLOW=${ITER} ./all-benchmarks
 	move_results ${branch}
 	echo
 	echo
