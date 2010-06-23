@@ -1,11 +1,15 @@
 #!/bin/bash
 
-JAVA_OPTS="-Xmx2048M"
 SIZES2="SizeA SizeB SizeC"
 SIZES3="SizeA SizeB"
 MYDIR=$(dirname $0)
 DIR=$(cd $MYDIR; pwd)
 JGF=$(cd $MYDIR/..; pwd)
+
+if [ -z "$JAVA_OPTS" ]
+then
+	JAVA_OPTS="-Xmx2048M"
+fi
 
 $DIR/benchmark-init $1
 
