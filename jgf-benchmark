@@ -18,7 +18,7 @@ TMPDIR=/tmp
 PROF=$TMPDIR/prof
 
 export CLASSPATH=$CLASSPATH:$BINDIR/bin:$BINDIR/lib/*:$BINDIR/test/jgfmt/section3/Data/
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$BINDIR/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$BINDIR/lib
 
 rm -f $PROF
 for x in $ALL
