@@ -110,18 +110,18 @@ for branch in ${branches[@]}; do
 	echo
 done
 
-# Intervals (NUMA)
-#for branch in ${branches[@]}; do
-#	cd ..
-#	git_co_cfg
-#	git co origin/${branch}
-#	stats_begin
-#	cd -
-#	JAVA_OPTS=${NUMA_OPTS} NS="-1" ITERFAST=${ITER} ITERSLOW=${ITER} ./all-benchmarks
-#	move_results "${branch}-numa"
-#	echo
-#	echo
-#done
+ Intervals (NUMA)
+for branch in ${branches[@]}; do
+	cd ..
+	git_co_cfg
+	git co origin/${branch}
+	stats_begin
+	cd -
+	JAVA_OPTS=${NUMA_OPTS} NS="-1" ITERFAST=${ITER} ITERSLOW=${ITER} ./all-benchmarks
+	move_results "${branch}-numa"
+	echo
+	echo
+done
 
 # Threads
 cd ..
@@ -133,10 +133,10 @@ JAVA_OPTS=${OPTS} NS="${CORES}" ITERFAST=${ITER} ITERSLOW=${ITER} ./all-benchmar
 move_results "${CORES}-threads"
 
 # Threads (NUMA)
-#cd ..
-#git_co_cfg
-#git co master
-#stats_begin
-#cd -
-#JAVA_OPTS=${NUMA_OPTS} NS="${CORES}" ITERFAST=${ITER} ITERSLOW=${ITER} ./all-benchmarks
-#move_results "${CORES}-threads-numa"
+cd ..
+git_co_cfg
+git co master
+stats_begin
+cd -
+JAVA_OPTS=${NUMA_OPTS} NS="${CORES}" ITERFAST=${ITER} ITERSLOW=${ITER} ./all-benchmarks
+move_results "${CORES}-threads-numa"
