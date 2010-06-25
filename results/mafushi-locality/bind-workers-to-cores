@@ -1,14 +1,14 @@
-Script started on Thu 24 Jun 2010 03:25:25 PM CEST
-Logfile: mafushi-2010-06-24-15:25:25.txt
+Script started on Fri 25 Jun 2010 04:47:35 PM CEST
+Logfile: mafushi-2010-06-25-16:47:35.txt
 
 date
-Thu Jun 24 15:25:25 CEST 2010
+Fri Jun 25 16:47:35 CEST 2010
 
 git branch
 * (no branch)
 
 git show --pretty=oneline | head -1
-33d05085e77ed0afcfa906fc118f7fb0f5e33397 Update libAffinity build script
+9e05ec05aae4ecebfff959ead59fdf0560939bba Use Integer[] instead of int[]
 
 git diff | cat
 
@@ -34,7 +34,7 @@ compile:
     [javac] Compiling 123 source files to /home/weibelt/intervals-java/Intervals/bin
 
 BUILD SUCCESSFUL
-Total time: 7 seconds
+Total time: 6 seconds
 
 SIZES2=SizeA SizeB SizeC
 SIZES3=SizeA SizeB
@@ -77,16 +77,16 @@ Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSize
 
 begin(jgfmt.section2.JGFCryptBench)
 SizeA	SizeB	SizeC
-0.244	0.807	1.877
-0.205	0.803	1.867
-0.202	0.804	1.866
-0.203	0.801	1.866
-0.201	0.803	1.866
-0.203	0.802	1.869
-0.203	0.803	1.864
-0.203	0.82	1.866
-0.215	0.802	1.866
-0.205	0.809	1.882
+0.244	0.804	1.876
+0.203	0.804	1.867
+0.202	0.804	1.863
+0.203	0.806	1.865
+0.203	0.803	1.867
+0.203	0.802	1.864
+0.204	0.803	1.867
+0.203	0.821	1.865
+0.205	0.803	1.865
+0.212	0.803	1.882
 end(jgfmt.section2.JGFCryptBench)
 
 Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
@@ -124,16 +124,16 @@ Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSiz
 
 begin(jgfmt.section2.JGFLUFactBench)
 SizeA	SizeB	SizeC
-0.382	0.775	3.56
-0.367	0.791	3.71
-0.365	0.798	3.797
-0.366	0.8	3.736
-0.367	0.812	3.741
-0.366	0.806	3.496
-0.378	0.813	3.543
-0.382	0.815	3.55
-0.377	0.804	3.582
-0.377	0.801	3.531
+0.374	0.782	3.68
+0.356	0.781	3.695
+0.357	0.787	3.685
+0.364	0.785	3.691
+0.366	0.799	3.688
+0.359	0.791	3.564
+0.387	0.786	3.683
+0.359	0.792	3.582
+0.358	0.798	3.683
+0.359	0.785	3.57
 end(jgfmt.section2.JGFLUFactBench)
 
 Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
@@ -171,16 +171,16 @@ Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeC 
 
 begin(jgfmt.section2.JGFSORBench)
 SizeA	SizeB	SizeC
-0.637	0.91	1.292
-0.637	0.911	1.304
-0.62	0.911	1.299
-0.624	0.898	1.328
-0.623	0.901	1.301
-0.63	0.913	1.305
-0.625	0.903	1.305
-0.631	0.903	1.284
-0.621	0.913	1.309
-0.653	0.891	1.31
+0.635	0.912	1.284
+0.64	0.914	1.211
+0.631	0.909	1.284
+0.63	0.902	1.219
+0.628	0.905	1.214
+0.654	0.913	1.282
+0.639	0.92	1.29
+0.641	0.907	1.215
+0.63	0.92	1.284
+0.639	0.907	1.307
 end(jgfmt.section2.JGFSORBench)
 
 Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
@@ -207,16 +207,16 @@ Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSiz
 
 begin(jgfmt.section2.JGFSeriesBench)
 SizeA	SizeB
-4.544	44.559
-4.551	44.662
-4.575	44.601
-4.552	44.686
-4.549	44.557
-4.554	44.597
-4.55	44.608
-4.549	44.596
-4.543	44.549
-4.556	44.638
+4.544	44.562
+4.561	44.652
+4.544	44.561
+4.546	44.597
+4.547	44.601
+4.54	44.65
+4.55	44.563
+4.543	44.621
+4.545	44.57
+4.551	44.582
 end(jgfmt.section2.JGFSeriesBench)
 
 Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
@@ -243,26 +243,26 @@ Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSiz
 
 begin(jgfmt.section3.JGFMolDynBench)
 SizeA	SizeB
-1.328	18.496
-1.386	18.591
-1.301	18.584
-1.355	18.668
-1.343	21.217
-1.393	21.294
-1.297	21.375
-1.346	21.451
-1.375	18.589
-1.425	18.681
-1.298	18.493
-1.348	18.574
-1.304	21.252
-1.354	21.326
-1.299	21.45
-1.349	21.524
-1.31	21.453
-1.363	21.551
-1.3	18.483
-1.349	18.559
+1.303	18.784
+1.364	18.888
+1.338	18.308
+1.393	18.39
+1.346	18.501
+1.402	18.59
+1.298	18.489
+1.353	18.571
+1.343	18.513
+1.398	18.617
+1.299	21.178
+1.353	21.265
+1.339	18.492
+1.394	18.578
+1.337	21.213
+1.391	21.299
+1.297	18.492
+1.355	18.602
+1.302	21.285
+1.358	21.367
 end(jgfmt.section3.JGFMolDynBench)
 
 Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
@@ -289,26 +289,26 @@ Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenc
 
 begin(jgfmt.section3.JGFMonteCarloBench)
 SizeA	SizeB
-1.583	7.394
-1.891	7.834
-1.56	7.396
-1.85	7.839
-1.565	7.406
-1.874	7.859
-1.567	7.389
-1.859	7.835
-1.565	7.409
-1.882	7.852
-1.562	7.42
-1.95	7.87
-1.594	7.436
-1.881	7.881
-1.562	7.443
-1.844	7.892
-1.582	7.406
-1.838	7.852
-1.591	7.404
-1.879	7.896
+1.571	7.443
+1.915	7.89
+1.57	7.446
+2.118	7.895
+1.567	7.462
+2.11	7.932
+1.574	7.467
+2.122	7.92
+1.57	7.609
+2.119	8.082
+1.572	7.44
+1.932	7.887
+1.565	7.451
+1.942	7.91
+1.569	7.505
+2.032	7.96
+1.602	7.47
+2.15	7.935
+1.679	7.444
+2.098	7.902
 end(jgfmt.section3.JGFMonteCarloBench)
 
 Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
@@ -335,37 +335,37 @@ Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBench
 
 begin(jgfmt.section3.JGFRayTracerBench)
 SizeA	SizeB
-0.024	0.015
-0.976	8.869
-1.034	8.919
-0.015	0.015
-0.926	9.284
-0.974	9.333
-0.017	0.02
-0.927	8.91
-0.978	8.964
-0.016	0.021
-0.917	9.261
-0.966	9.331
-0.015	0.016
-0.928	9.295
-0.976	9.345
-0.016	0.015
-0.926	9.263
-0.976	9.312
-0.016	0.015
-0.922	8.9
-0.971	8.948
-0.015	0.02
-0.961	8.904
-1.01	8.962
+0.025	0.02
+0.987	8.849
+1.049	8.904
 0.016	0.016
-0.959	8.816
-1.009	8.865
+0.968	8.856
+1.02	8.907
+0.016	0.016
+0.969	8.814
+1.022	8.869
+0.016	0.025
+0.973	8.916
+1.025	8.995
+0.016	0.017
+0.926	8.887
+0.977	8.939
+0.016	0.016
+1.025	8.861
+1.076	8.911
 0.016	0.015
-0.92	8.86
-0.969	8.909
+0.93	8.879
+0.98	8.93
+0.016	0.016
+0.924	8.896
+0.975	8.948
+0.016	0.021
+1.025	8.885
+1.076	8.942
+0.016	0.015
+0.932	8.896
+0.991	8.947
 end(jgfmt.section3.JGFRayTracerBench)
 
 
-Script done on Thu 24 Jun 2010 03:43:31 PM CEST
+Script done on Fri 25 Jun 2010 05:05:34 PM CEST
