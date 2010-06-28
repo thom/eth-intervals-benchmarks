@@ -1,0 +1,371 @@
+Script started on Mon 28 Jun 2010 01:25:35 AM CEST
+Logfile: marvin-2010-06-28-01:25:35.txt
+
+date
+Mon Jun 28 01:25:35 CEST 2010
+
+git branch
+* work-stealing-deque-no-steal-loop-lazy-top
+
+git show --pretty=oneline | head -1
+455fb9ef065d50caa2c2545fdb4c9d0da121c1cc Lazy top
+
+git diff | cat
+
+pwd
+/home/thom/workspace/intervals-java/Intervals
+
+Settings:
+JAVA_OPTS=-server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA
+NOBUILD=
+CLASSPATH=:/home/thom/workspace/intervals-java/Intervals/bin:/home/thom/workspace/intervals-java/Intervals/lib/*
+LD_LIBRARY_PATH=:/usr/lib:/usr/local/lib:/usr/local/lib/oprofile:/home/thom/workspace/intervals-java/Intervals/lib
+
+Buildfile: build.xml
+
+clean:
+   [delete] Deleting directory /home/thom/workspace/intervals-java/Intervals/bin
+
+create:
+    [mkdir] Created dir: /home/thom/workspace/intervals-java/Intervals/bin
+
+compile:
+    [javac] Compiling 87 source files to /home/thom/workspace/intervals-java/Intervals/bin
+    [javac] Compiling 123 source files to /home/thom/workspace/intervals-java/Intervals/bin
+
+BUILD SUCCESSFUL
+Total time: 4 seconds
+
+SIZES2=SizeA SizeB SizeC
+SIZES3=SizeA SizeB
+ITERFAST=10
+ITERSLOW=10
+NS=-1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+begin(jgfmt.section2.JGFCryptBench)
+SizeA	SizeB	SizeC
+0.193	0.712	1.639
+0.211	0.716	1.627
+0.19	0.71	1.671
+0.194	0.719	1.663
+0.195	0.709	1.639
+0.191	0.712	1.642
+0.191	0.717	1.645
+0.198	0.728	1.661
+0.184	0.714	1.628
+0.191	0.71	1.68
+end(jgfmt.section2.JGFCryptBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+begin(jgfmt.section2.JGFLUFactBench)
+SizeA	SizeB	SizeC
+0.457	1.042	9.341
+0.342	1.118	9.425
+0.333	1.141	9.47
+0.343	1.039	9.427
+0.335	1.23	9.398
+0.493	1.099	9.397
+0.456	1.101	9.439
+0.415	1.074	9.427
+0.342	1.028	9.444
+0.335	1.111	9.369
+end(jgfmt.section2.JGFLUFactBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+begin(jgfmt.section2.JGFSORBench)
+SizeA	SizeB	SizeC
+0.897	1.448	2.174
+0.852	1.377	2.194
+0.883	1.391	2.177
+0.928	1.444	2.191
+0.893	1.418	2.158
+0.882	1.407	2.207
+0.855	1.381	2.216
+0.854	1.438	2.169
+0.896	1.42	2.143
+0.858	1.436	2.143
+end(jgfmt.section2.JGFSORBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+begin(jgfmt.section2.JGFSeriesBench)
+SizeA	SizeB
+4.329	41.931
+4.351	41.698
+4.366	41.449
+4.391	41.224
+4.376	41.498
+4.347	41.649
+4.327	41.978
+4.358	41.739
+4.311	41.628
+4.34	41.247
+end(jgfmt.section2.JGFSeriesBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+begin(jgfmt.section3.JGFMolDynBench)
+SizeA	SizeB
+1.353	21.05
+1.409	21.138
+1.339	17.487
+1.379	17.566
+1.363	21.186
+1.413	21.27
+1.357	21.272
+1.406	21.357
+1.292	21.29
+1.34	21.371
+1.337	21.232
+1.391	21.313
+1.388	21.312
+1.43	21.411
+1.345	21.315
+1.397	21.397
+1.336	20.394
+1.385	20.475
+1.34	21.267
+1.389	21.342
+end(jgfmt.section3.JGFMolDynBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+begin(jgfmt.section3.JGFMonteCarloBench)
+SizeA	SizeB
+1.744	8.277
+2.615	8.912
+1.734	8.519
+2.545	9.147
+1.818	8.497
+2.653	9.085
+1.792	8.445
+2.796	9.085
+1.729	8.238
+2.55	8.821
+1.708	8.572
+2.53	9.177
+1.695	8.457
+2.523	9.069
+1.755	8.233
+2.617	8.848
+1.735	8.4
+2.55	9.007
+1.738	8.506
+2.562	9.117
+end(jgfmt.section3.JGFMonteCarloBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+begin(jgfmt.section3.JGFRayTracerBench)
+SizeA	SizeB
+0.0040	0.0040
+1.133	10.691
+1.169	10.728
+0.0060	0.0050
+1.102	10.562
+1.132	10.602
+0.0040	0.0040
+1.118	10.626
+1.157	10.667
+0.0040	0.0050
+1.134	10.611
+1.172	10.644
+0.0040	0.0040
+1.092	10.598
+1.13	10.637
+0.0050	0.0050
+1.104	10.604
+1.137	10.633
+0.0050	0.0050
+1.105	10.606
+1.151	10.636
+0.0050	0.0050
+1.104	11.078
+1.14	11.107
+0.0060	0.0040
+1.099	10.635
+1.132	10.672
+0.0050	0.0040
+1.096	10.505
+1.152	10.554
+end(jgfmt.section3.JGFRayTracerBench)
+
+
+Script done on Mon 28 Jun 2010 01:44:42 AM CEST
