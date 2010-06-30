@@ -1,0 +1,11604 @@
+Script started on Wed 30 Jun 2010 03:44:11 AM CEST
+Logfile: marvin-2010-06-30-03:44:11.txt
+
+date
+Wed Jun 30 03:44:11 CEST 2010
+
+git branch
+* dynamic-work-stealing-deque
+
+git show --pretty=oneline | head -1
+25dd2ad1001b5959012248431063cc843914c9cf Use DynamicWorkStealingDeque
+
+git diff | cat
+diff --git a/Intervals/src/ch/ethz/intervals/Config.java b/Intervals/src/ch/ethz/intervals/Config.java
+index 32ff4dd..c4e53a8 100644
+--- a/Intervals/src/ch/ethz/intervals/Config.java
++++ b/Intervals/src/ch/ethz/intervals/Config.java
+@@ -6,7 +6,7 @@ public class Config {
+ 	/**
+ 	 * Should we collect and print statistics
+ 	 */
+-	public static final boolean STATISTICS = false;
++	public static final boolean STATISTICS = true;
+ 
+ 	/**
+ 	 * Are we using a duplicating queue?
+
+pwd
+/home/thom/workspace/intervals-java/Intervals
+
+Settings:
+JAVA_OPTS=-server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA
+NOBUILD=
+CLASSPATH=:/home/thom/workspace/intervals-java/Intervals/bin:/home/thom/workspace/intervals-java/Intervals/lib/*
+LD_LIBRARY_PATH=:/usr/lib:/usr/local/lib:/usr/local/lib/oprofile:/home/thom/workspace/intervals-java/Intervals/lib
+
+Buildfile: build.xml
+
+clean:
+   [delete] Deleting directory /home/thom/workspace/intervals-java/Intervals/bin
+
+create:
+    [mkdir] Created dir: /home/thom/workspace/intervals-java/Intervals/bin
+
+compile:
+    [javac] Compiling 87 source files to /home/thom/workspace/intervals-java/Intervals/bin
+    [javac] Compiling 123 source files to /home/thom/workspace/intervals-java/Intervals/bin
+
+BUILD SUCCESSFUL
+Total time: 3 seconds
+
+SIZES2=SizeA SizeB SizeC
+SIZES3=SizeA SizeB
+ITERFAST=10
+ITERSLOW=10
+NS=-1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+14		12
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+82		82		0
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	14		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+39
+
+Take Attempts	Take Successes	Take Failures
+43		43		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+10		9
+
+Puts
+29
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Remove Attempts	Removes
+10		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+16		14
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+84		84		0
+
+Steal Attempts	Steal Successes	Steal Failures
+16		0		16
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	16		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+40		40		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+12		11
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+44		44		0
+
+Steal Attempts	Steal Successes	Steal Failures
+12		0		12
+
+Pending Work
+Remove Attempts	Removes
+12		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+16		14
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+84		84		0
+
+Steal Attempts	Steal Successes	Steal Failures
+16		0		16
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	16		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+37
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+12		11
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+43		43		0
+
+Steal Attempts	Steal Successes	Steal Failures
+12		0		12
+
+Pending Work
+Remove Attempts	Removes
+12		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+16		14
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+84		84		0
+
+Steal Attempts	Steal Successes	Steal Failures
+16		0		16
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	16		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+37
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+12		11
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+43		43		0
+
+Steal Attempts	Steal Successes	Steal Failures
+12		0		12
+
+Pending Work
+Remove Attempts	Removes
+12		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+11		9
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+79		79		0
+
+Steal Attempts	Steal Successes	Steal Failures
+11		0		11
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	11		0
+
+Deque Grows
+14
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+37		37		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+6		5
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+42		42		0
+
+Steal Attempts	Steal Successes	Steal Failures
+6		0		6
+
+Pending Work
+Remove Attempts	Removes
+6		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+15		13
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+83		83		0
+
+Steal Attempts	Steal Successes	Steal Failures
+15		0		15
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	15		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+39
+
+Take Attempts	Take Successes	Take Failures
+43		43		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+11		10
+
+Puts
+29
+
+Take Attempts	Take Successes	Take Failures
+40		40		0
+
+Steal Attempts	Steal Successes	Steal Failures
+11		0		11
+
+Pending Work
+Remove Attempts	Removes
+11		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+16		14
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+84		84		0
+
+Steal Attempts	Steal Successes	Steal Failures
+16		0		16
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	16		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+12		11
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+43		43		0
+
+Steal Attempts	Steal Successes	Steal Failures
+12		0		12
+
+Pending Work
+Remove Attempts	Removes
+12		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+37
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+14		12
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+82		82		0
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	14		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+38
+
+Take Attempts	Take Successes	Take Failures
+42		42		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+10		9
+
+Puts
+30
+
+Take Attempts	Take Successes	Take Failures
+40		40		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Remove Attempts	Removes
+10		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+11		9
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+79		79		0
+
+Steal Attempts	Steal Successes	Steal Failures
+11		0		11
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	11		0
+
+Deque Grows
+14
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+6		5
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+42		42		0
+
+Steal Attempts	Steal Successes	Steal Failures
+6		0		6
+
+Pending Work
+Remove Attempts	Removes
+6		0
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+37		37		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+14		12
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+82		82		0
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	14		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+38
+
+Take Attempts	Take Successes	Take Failures
+42		42		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+10		9
+
+Puts
+30
+
+Take Attempts	Take Successes	Take Failures
+40		40		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Remove Attempts	Removes
+10		0
+
+Deque Grows
+1
+
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+14		12
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+82		82		0
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	14		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+37
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+10		9
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Remove Attempts	Removes
+10		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+14		12
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+82		82		0
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	14		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+38
+
+Take Attempts	Take Successes	Take Failures
+42		42		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+10		9
+
+Puts
+30
+
+Take Attempts	Take Successes	Take Failures
+40		40		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Remove Attempts	Removes
+10		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+13		11
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+81		81		0
+
+Steal Attempts	Steal Successes	Steal Failures
+13		0		13
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	13		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+37
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+9		8
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+40		40		0
+
+Steal Attempts	Steal Successes	Steal Failures
+9		0		9
+
+Pending Work
+Remove Attempts	Removes
+9		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+15		13
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+83		83		0
+
+Steal Attempts	Steal Successes	Steal Failures
+15		0		15
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	15		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+39
+
+Take Attempts	Take Successes	Take Failures
+43		43		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+11		10
+
+Puts
+29
+
+Take Attempts	Take Successes	Take Failures
+40		40		0
+
+Steal Attempts	Steal Successes	Steal Failures
+11		0		11
+
+Pending Work
+Remove Attempts	Removes
+11		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+10		8
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+78		78		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	10		0
+
+Deque Grows
+16
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+8
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+8
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+14		12
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+82		82		0
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	14		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+10		9
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+42		42		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Remove Attempts	Removes
+10		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+40		40		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+15		13
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+83		83		0
+
+Steal Attempts	Steal Successes	Steal Failures
+15		0		15
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	15		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+36
+
+Take Attempts	Take Successes	Take Failures
+40		40		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+11		10
+
+Puts
+32
+
+Take Attempts	Take Successes	Take Failures
+43		43		0
+
+Steal Attempts	Steal Successes	Steal Failures
+11		0		11
+
+Pending Work
+Remove Attempts	Removes
+11		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+16		14
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+84		84		0
+
+Steal Attempts	Steal Successes	Steal Failures
+16		0		16
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	16		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+37
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+12		11
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+43		43		0
+
+Steal Attempts	Steal Successes	Steal Failures
+12		0		12
+
+Pending Work
+Remove Attempts	Removes
+12		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+16		14
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+84		84		0
+
+Steal Attempts	Steal Successes	Steal Failures
+16		0		16
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	16		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+41
+
+Take Attempts	Take Successes	Take Failures
+45		45		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+12		11
+
+Puts
+27
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+12		0		12
+
+Pending Work
+Remove Attempts	Removes
+12		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+10		8
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+78		78		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	10		0
+
+Deque Grows
+16
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+8
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+8
+
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+10		8
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+78		78		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	10		0
+
+Deque Grows
+16
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+8
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+8
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+12		10
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+80		80		0
+
+Steal Attempts	Steal Successes	Steal Failures
+12		0		12
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	12		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+8		7
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+8		0		8
+
+Pending Work
+Remove Attempts	Removes
+8		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+17		15
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+85		85		0
+
+Steal Attempts	Steal Successes	Steal Failures
+17		0		17
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	17		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+13		12
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+44		44		0
+
+Steal Attempts	Steal Successes	Steal Failures
+13		0		13
+
+Pending Work
+Remove Attempts	Removes
+13		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+37
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+10		8
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+78		78		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	10		0
+
+Deque Grows
+16
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+8
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+8
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+12		10
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+80		80		0
+
+Steal Attempts	Steal Successes	Steal Failures
+12		0		12
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	12		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+8		7
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+8		0		8
+
+Pending Work
+Remove Attempts	Removes
+8		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+10		8
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+78		78		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	10		0
+
+Deque Grows
+16
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+8
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+8
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+12		10
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+80		80		0
+
+Steal Attempts	Steal Successes	Steal Failures
+12		0		12
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	12		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+8		7
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+8		0		8
+
+Pending Work
+Remove Attempts	Removes
+8		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+10		8
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+78		78		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	10		0
+
+Deque Grows
+16
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+8
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+8
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+15		13
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+83		83		0
+
+Steal Attempts	Steal Successes	Steal Failures
+15		0		15
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	15		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+39
+
+Take Attempts	Take Successes	Take Failures
+43		43		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+11		10
+
+Puts
+29
+
+Take Attempts	Take Successes	Take Failures
+40		40		0
+
+Steal Attempts	Steal Successes	Steal Failures
+11		0		11
+
+Pending Work
+Remove Attempts	Removes
+11		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFCryptBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+15		13
+
+Puts
+68
+
+Take Attempts	Take Successes	Take Failures
+83		83		0
+
+Steal Attempts	Steal Successes	Steal Failures
+15		0		15
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	15		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+35
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+11		10
+
+Puts
+33
+
+Take Attempts	Take Successes	Take Failures
+44		44		0
+
+Steal Attempts	Steal Successes	Steal Failures
+11		0		11
+
+Pending Work
+Remove Attempts	Removes
+11		0
+
+Deque Grows
+1
+
+
+begin(jgfmt.section2.JGFCryptBench)
+SizeA	SizeB	SizeC
+0.181	0.745	1.648
+0.184	0.761	1.665
+0.178	0.749	1.755
+0.18	0.774	1.653
+0.185	0.728	1.678
+0.178	0.724	1.647
+0.181	0.73	1.663
+0.177	0.738	1.653
+0.182	0.818	1.828
+0.171	0.715	1.666
+end(jgfmt.section2.JGFCryptBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+2317		2315
+
+Puts
+16318
+
+Take Attempts	Take Successes	Take Failures
+18651		18366		285
+
+Steal Attempts	Steal Successes	Steal Failures
+2333		0		2333
+
+Pending Work
+Adds	Remove Attempts	Removes
+16	2333		16
+
+Deque Grows
+15
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+1150		1149
+
+Puts
+7908
+
+Take Attempts	Take Successes	Take Failures
+9062		8932		130
+
+Steal Attempts	Steal Successes	Steal Failures
+1154		0		1154
+
+Pending Work
+Remove Attempts	Removes
+1154		4
+
+Deque Grows
+8
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+1167		1166
+
+Puts
+8410
+
+Take Attempts	Take Successes	Take Failures
+9589		9434		155
+
+Steal Attempts	Steal Successes	Steal Failures
+1179		0		1179
+
+Pending Work
+Remove Attempts	Removes
+1179		12
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+2857		2855
+
+Puts
+16331
+
+Take Attempts	Take Successes	Take Failures
+19191		18379		812
+
+Steal Attempts	Steal Successes	Steal Failures
+2860		0		2860
+
+Pending Work
+Adds	Remove Attempts	Removes
+3	2860		3
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+1444		1443
+
+Puts
+8212
+
+Take Attempts	Take Successes	Take Failures
+9659		9236		423
+
+Steal Attempts	Steal Successes	Steal Failures
+1447		0		1447
+
+Pending Work
+Remove Attempts	Removes
+1447		3
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+1413		1412
+
+Puts
+8119
+
+Take Attempts	Take Successes	Take Failures
+9532		9143		389
+
+Steal Attempts	Steal Successes	Steal Failures
+1413		0		1413
+
+Pending Work
+Remove Attempts	Removes
+1413		0
+
+Deque Grows
+2
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+1451		1449
+
+Puts
+16295
+
+Take Attempts	Take Successes	Take Failures
+17785		17785		0
+
+Steal Attempts	Steal Successes	Steal Failures
+1490		0		1490
+
+Pending Work
+Adds	Remove Attempts	Removes
+39	1490		39
+
+Deque Grows
+5
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+734		733
+
+Puts
+8349
+
+Take Attempts	Take Successes	Take Failures
+9109		9109		0
+
+Steal Attempts	Steal Successes	Steal Failures
+760		0		760
+
+Pending Work
+Remove Attempts	Removes
+760		26
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+717		716
+
+Puts
+7946
+
+Take Attempts	Take Successes	Take Failures
+8676		8676		0
+
+Steal Attempts	Steal Successes	Steal Failures
+730		0		730
+
+Pending Work
+Remove Attempts	Removes
+730		13
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+3136		3134
+
+Puts
+16334
+
+Take Attempts	Take Successes	Take Failures
+19470		18382		1088
+
+Steal Attempts	Steal Successes	Steal Failures
+3136		0		3136
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	3136		0
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+1568		1567
+
+Puts
+8168
+
+Take Attempts	Take Successes	Take Failures
+9736		9192		544
+
+Steal Attempts	Steal Successes	Steal Failures
+1568		0		1568
+
+Pending Work
+Remove Attempts	Removes
+1568		0
+
+Deque Grows
+5
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+1568		1567
+
+Puts
+8166
+
+Take Attempts	Take Successes	Take Failures
+9734		9190		544
+
+Steal Attempts	Steal Successes	Steal Failures
+1568		0		1568
+
+Pending Work
+Remove Attempts	Removes
+1568		0
+
+Deque Grows
+2
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+2011		2009
+
+Puts
+16312
+
+Take Attempts	Take Successes	Take Failures
+18345		18341		4
+
+Steal Attempts	Steal Successes	Steal Failures
+2033		0		2033
+
+Pending Work
+Adds	Remove Attempts	Removes
+22	2033		22
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+1019		1018
+
+Puts
+8376
+
+Take Attempts	Take Successes	Take Failures
+9404		9400		4
+
+Steal Attempts	Steal Successes	Steal Failures
+1028		0		1028
+
+Pending Work
+Remove Attempts	Removes
+1028		9
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+992		991
+
+Puts
+7936
+
+Take Attempts	Take Successes	Take Failures
+8941		8941		0
+
+Steal Attempts	Steal Successes	Steal Failures
+1005		0		1005
+
+Pending Work
+Remove Attempts	Removes
+1005		13
+
+Deque Grows
+6
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+2990		2988
+
+Puts
+16325
+
+Take Attempts	Take Successes	Take Failures
+19324		18373		951
+
+Steal Attempts	Steal Successes	Steal Failures
+2999		0		2999
+
+Pending Work
+Adds	Remove Attempts	Removes
+9	2999		9
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+1455		1454
+
+Puts
+8147
+
+Take Attempts	Take Successes	Take Failures
+9602		9171		431
+
+Steal Attempts	Steal Successes	Steal Failures
+1455		0		1455
+
+Pending Work
+Remove Attempts	Removes
+1455		0
+
+Deque Grows
+5
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+1535		1534
+
+Puts
+8178
+
+Take Attempts	Take Successes	Take Failures
+9722		9202		520
+
+Steal Attempts	Steal Successes	Steal Failures
+1544		0		1544
+
+Pending Work
+Remove Attempts	Removes
+1544		9
+
+Deque Grows
+2
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+2409		2407
+
+Puts
+16326
+
+Take Attempts	Take Successes	Take Failures
+18743		18374		369
+
+Steal Attempts	Steal Successes	Steal Failures
+2417		0		2417
+
+Pending Work
+Adds	Remove Attempts	Removes
+8	2417		8
+
+Deque Grows
+15
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+1252		1251
+
+Puts
+8032
+
+Take Attempts	Take Successes	Take Failures
+9292		9056		236
+
+Steal Attempts	Steal Successes	Steal Failures
+1260		0		1260
+
+Pending Work
+Remove Attempts	Removes
+1260		8
+
+Deque Grows
+8
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+1157		1156
+
+Puts
+8294
+
+Take Attempts	Take Successes	Take Failures
+9451		9318		133
+
+Steal Attempts	Steal Successes	Steal Failures
+1157		0		1157
+
+Pending Work
+Remove Attempts	Removes
+1157		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+3084		3082
+
+Puts
+16316
+
+Take Attempts	Take Successes	Take Failures
+19418		18364		1054
+
+Steal Attempts	Steal Successes	Steal Failures
+3102		0		3102
+
+Pending Work
+Adds	Remove Attempts	Removes
+18	3102		18
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+1542		1541
+
+Puts
+8324
+
+Take Attempts	Take Successes	Take Failures
+9876		9348		528
+
+Steal Attempts	Steal Successes	Steal Failures
+1552		0		1552
+
+Pending Work
+Remove Attempts	Removes
+1552		10
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+1542		1541
+
+Puts
+7992
+
+Take Attempts	Take Successes	Take Failures
+9542		9016		526
+
+Steal Attempts	Steal Successes	Steal Failures
+1550		0		1550
+
+Pending Work
+Remove Attempts	Removes
+1550		8
+
+Deque Grows
+6
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+1818		1816
+
+Puts
+16283
+
+Take Attempts	Take Successes	Take Failures
+18152		18152		0
+
+Steal Attempts	Steal Successes	Steal Failures
+1869		0		1869
+
+Pending Work
+Adds	Remove Attempts	Removes
+51	1869		51
+
+Deque Grows
+15
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+911		910
+
+Puts
+8158
+
+Take Attempts	Take Successes	Take Failures
+9111		9111		0
+
+Steal Attempts	Steal Successes	Steal Failures
+953		0		953
+
+Pending Work
+Remove Attempts	Removes
+953		42
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+907		906
+
+Puts
+8125
+
+Take Attempts	Take Successes	Take Failures
+9041		9041		0
+
+Steal Attempts	Steal Successes	Steal Failures
+916		0		916
+
+Pending Work
+Remove Attempts	Removes
+916		9
+
+Deque Grows
+8
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+2419		2417
+
+Puts
+16313
+
+Take Attempts	Take Successes	Take Failures
+18753		18361		392
+
+Steal Attempts	Steal Successes	Steal Failures
+2440		0		2440
+
+Pending Work
+Adds	Remove Attempts	Removes
+21	2440		21
+
+Deque Grows
+14
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+1212		1211
+
+Puts
+8369
+
+Take Attempts	Take Successes	Take Failures
+9598		9393		205
+
+Steal Attempts	Steal Successes	Steal Failures
+1229		0		1229
+
+Pending Work
+Remove Attempts	Removes
+1229		17
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+1207		1206
+
+Puts
+7944
+
+Take Attempts	Take Successes	Take Failures
+9155		8968		187
+
+Steal Attempts	Steal Successes	Steal Failures
+1211		0		1211
+
+Pending Work
+Remove Attempts	Removes
+1211		4
+
+Deque Grows
+7
+
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+3953		3951
+
+Puts
+33268
+
+Take Attempts	Take Successes	Take Failures
+37287		35316		1971
+
+Steal Attempts	Steal Successes	Steal Failures
+4019		0		4019
+
+Pending Work
+Adds	Remove Attempts	Removes
+66	4019		66
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+1997		1996
+
+Puts
+16897
+
+Take Attempts	Take Successes	Take Failures
+18906		17921		985
+
+Steal Attempts	Steal Successes	Steal Failures
+2009		0		2009
+
+Pending Work
+Remove Attempts	Removes
+2009		12
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+1956		1955
+
+Puts
+16371
+
+Take Attempts	Take Successes	Take Failures
+18381		17395		986
+
+Steal Attempts	Steal Successes	Steal Failures
+2010		0		2010
+
+Pending Work
+Remove Attempts	Removes
+2010		54
+
+Deque Grows
+6
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+3668		3666
+
+Puts
+33294
+
+Take Attempts	Take Successes	Take Failures
+37002		35342		1660
+
+Steal Attempts	Steal Successes	Steal Failures
+3708		0		3708
+
+Pending Work
+Adds	Remove Attempts	Removes
+40	3708		40
+
+Deque Grows
+14
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+1833		1832
+
+Puts
+16601
+
+Take Attempts	Take Successes	Take Failures
+18454		17625		829
+
+Steal Attempts	Steal Successes	Steal Failures
+1853		0		1853
+
+Pending Work
+Remove Attempts	Removes
+1853		20
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+1835		1834
+
+Puts
+16693
+
+Take Attempts	Take Successes	Take Failures
+18548		17717		831
+
+Steal Attempts	Steal Successes	Steal Failures
+1855		0		1855
+
+Pending Work
+Remove Attempts	Removes
+1855		20
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+4435		4433
+
+Puts
+33307
+
+Take Attempts	Take Successes	Take Failures
+37769		35355		2414
+
+Steal Attempts	Steal Successes	Steal Failures
+4462		0		4462
+
+Pending Work
+Adds	Remove Attempts	Removes
+27	4462		27
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2227		2226
+
+Puts
+16494
+
+Take Attempts	Take Successes	Take Failures
+18742		17518		1224
+
+Steal Attempts	Steal Successes	Steal Failures
+2248		0		2248
+
+Pending Work
+Remove Attempts	Removes
+2248		21
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2208		2207
+
+Puts
+16813
+
+Take Attempts	Take Successes	Take Failures
+19027		17837		1190
+
+Steal Attempts	Steal Successes	Steal Failures
+2214		0		2214
+
+Pending Work
+Remove Attempts	Removes
+2214		6
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+4733		4731
+
+Puts
+33316
+
+Take Attempts	Take Successes	Take Failures
+38067		35364		2703
+
+Steal Attempts	Steal Successes	Steal Failures
+4751		0		4751
+
+Pending Work
+Adds	Remove Attempts	Removes
+18	4751		18
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2359		2358
+
+Puts
+16555
+
+Take Attempts	Take Successes	Take Failures
+18920		17579		1341
+
+Steal Attempts	Steal Successes	Steal Failures
+2365		0		2365
+
+Pending Work
+Remove Attempts	Removes
+2365		6
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2374		2373
+
+Puts
+16761
+
+Take Attempts	Take Successes	Take Failures
+19147		17785		1362
+
+Steal Attempts	Steal Successes	Steal Failures
+2386		0		2386
+
+Pending Work
+Remove Attempts	Removes
+2386		12
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+5138		5136
+
+Puts
+33313
+
+Take Attempts	Take Successes	Take Failures
+38472		35361		3111
+
+Steal Attempts	Steal Successes	Steal Failures
+5159		0		5159
+
+Pending Work
+Adds	Remove Attempts	Removes
+21	5159		21
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2518		2517
+
+Puts
+16409
+
+Take Attempts	Take Successes	Take Failures
+18930		17433		1497
+
+Steal Attempts	Steal Successes	Steal Failures
+2521		0		2521
+
+Pending Work
+Remove Attempts	Removes
+2521		3
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2620		2619
+
+Puts
+16904
+
+Take Attempts	Take Successes	Take Failures
+19542		17928		1614
+
+Steal Attempts	Steal Successes	Steal Failures
+2638		0		2638
+
+Pending Work
+Remove Attempts	Removes
+2638		18
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+4115		4113
+
+Puts
+33255
+
+Take Attempts	Take Successes	Take Failures
+37449		35303		2146
+
+Steal Attempts	Steal Successes	Steal Failures
+4194		0		4194
+
+Pending Work
+Adds	Remove Attempts	Removes
+79	4194		79
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2066		2065
+
+Puts
+15498
+
+Take Attempts	Take Successes	Take Failures
+17572		16522		1050
+
+Steal Attempts	Steal Successes	Steal Failures
+2074		0		2074
+
+Pending Work
+Remove Attempts	Removes
+2074		8
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2049		2048
+
+Puts
+17757
+
+Take Attempts	Take Successes	Take Failures
+19877		18781		1096
+
+Steal Attempts	Steal Successes	Steal Failures
+2120		0		2120
+
+Pending Work
+Remove Attempts	Removes
+2120		71
+
+Deque Grows
+2
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+3961		3959
+
+Puts
+33297
+
+Take Attempts	Take Successes	Take Failures
+37295		35345		1950
+
+Steal Attempts	Steal Successes	Steal Failures
+3998		0		3998
+
+Pending Work
+Adds	Remove Attempts	Removes
+37	3998		37
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+1961		1960
+
+Puts
+16923
+
+Take Attempts	Take Successes	Take Failures
+18908		17947		961
+
+Steal Attempts	Steal Successes	Steal Failures
+1985		0		1985
+
+Pending Work
+Remove Attempts	Removes
+1985		24
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2000		1999
+
+Puts
+16374
+
+Take Attempts	Take Successes	Take Failures
+18387		17398		989
+
+Steal Attempts	Steal Successes	Steal Failures
+2013		0		2013
+
+Pending Work
+Remove Attempts	Removes
+2013		13
+
+Deque Grows
+2
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+4252		4250
+
+Puts
+33275
+
+Take Attempts	Take Successes	Take Failures
+37586		35323		2263
+
+Steal Attempts	Steal Successes	Steal Failures
+4311		0		4311
+
+Pending Work
+Adds	Remove Attempts	Removes
+59	4311		59
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2108		2107
+
+Puts
+16802
+
+Take Attempts	Take Successes	Take Failures
+18961		17826		1135
+
+Steal Attempts	Steal Successes	Steal Failures
+2159		0		2159
+
+Pending Work
+Remove Attempts	Removes
+2159		51
+
+Deque Grows
+3
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2144		2143
+
+Puts
+16473
+
+Take Attempts	Take Successes	Take Failures
+18625		17497		1128
+
+Steal Attempts	Steal Successes	Steal Failures
+2152		0		2152
+
+Pending Work
+Remove Attempts	Removes
+2152		8
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+5125		5123
+
+Puts
+33324
+
+Take Attempts	Take Successes	Take Failures
+38459		35372		3087
+
+Steal Attempts	Steal Successes	Steal Failures
+5135		0		5135
+
+Pending Work
+Adds	Remove Attempts	Removes
+10	5135		10
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2584		2583
+
+Puts
+16582
+
+Take Attempts	Take Successes	Take Failures
+19172		17606		1566
+
+Steal Attempts	Steal Successes	Steal Failures
+2590		0		2590
+
+Pending Work
+Remove Attempts	Removes
+2590		6
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2541		2540
+
+Puts
+16742
+
+Take Attempts	Take Successes	Take Failures
+19287		17766		1521
+
+Steal Attempts	Steal Successes	Steal Failures
+2545		0		2545
+
+Pending Work
+Remove Attempts	Removes
+2545		4
+
+Deque Grows
+6
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+3297		3295
+
+Puts
+33276
+
+Take Attempts	Take Successes	Take Failures
+36631		35324		1307
+
+Steal Attempts	Steal Successes	Steal Failures
+3355		0		3355
+
+Pending Work
+Adds	Remove Attempts	Removes
+58	3355		58
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+1652		1651
+
+Puts
+17207
+
+Take Attempts	Take Successes	Take Failures
+18897		18231		666
+
+Steal Attempts	Steal Successes	Steal Failures
+1690		0		1690
+
+Pending Work
+Remove Attempts	Removes
+1690		38
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+1645		1644
+
+Puts
+16069
+
+Take Attempts	Take Successes	Take Failures
+17734		17093		641
+
+Steal Attempts	Steal Successes	Steal Failures
+1665		0		1665
+
+Pending Work
+Remove Attempts	Removes
+1665		20
+
+Deque Grows
+2
+
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+4889		4887
+
+Puts
+39677
+
+Take Attempts	Take Successes	Take Failures
+44567		41725		2842
+
+Steal Attempts	Steal Successes	Steal Failures
+4890		0		4890
+
+Pending Work
+Adds	Remove Attempts	Removes
+1	4890		1
+
+Deque Grows
+14
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2395		2394
+
+Puts
+19733
+
+Take Attempts	Take Successes	Take Failures
+22128		20757		1371
+
+Steal Attempts	Steal Successes	Steal Failures
+2395		0		2395
+
+Pending Work
+Remove Attempts	Removes
+2395		0
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2494		2493
+
+Puts
+19944
+
+Take Attempts	Take Successes	Take Failures
+22439		20968		1471
+
+Steal Attempts	Steal Successes	Steal Failures
+2495		0		2495
+
+Pending Work
+Remove Attempts	Removes
+2495		1
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+4822		4820
+
+Puts
+39678
+
+Take Attempts	Take Successes	Take Failures
+44500		41726		2774
+
+Steal Attempts	Steal Successes	Steal Failures
+4822		0		4822
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	4822		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2400		2399
+
+Puts
+19842
+
+Take Attempts	Take Successes	Take Failures
+22242		20866		1376
+
+Steal Attempts	Steal Successes	Steal Failures
+2400		0		2400
+
+Pending Work
+Remove Attempts	Removes
+2400		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2422		2421
+
+Puts
+19836
+
+Take Attempts	Take Successes	Take Failures
+22258		20860		1398
+
+Steal Attempts	Steal Successes	Steal Failures
+2422		0		2422
+
+Pending Work
+Remove Attempts	Removes
+2422		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+4797		4795
+
+Puts
+39678
+
+Take Attempts	Take Successes	Take Failures
+44475		41726		2749
+
+Steal Attempts	Steal Successes	Steal Failures
+4797		0		4797
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	4797		0
+
+Deque Grows
+15
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2408		2407
+
+Puts
+19888
+
+Take Attempts	Take Successes	Take Failures
+22296		20912		1384
+
+Steal Attempts	Steal Successes	Steal Failures
+2408		0		2408
+
+Pending Work
+Remove Attempts	Removes
+2408		0
+
+Deque Grows
+8
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2389		2388
+
+Puts
+19790
+
+Take Attempts	Take Successes	Take Failures
+22179		20814		1365
+
+Steal Attempts	Steal Successes	Steal Failures
+2389		0		2389
+
+Pending Work
+Remove Attempts	Removes
+2389		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+4805		4803
+
+Puts
+39678
+
+Take Attempts	Take Successes	Take Failures
+44483		41726		2757
+
+Steal Attempts	Steal Successes	Steal Failures
+4805		0		4805
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	4805		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2392		2391
+
+Puts
+19820
+
+Take Attempts	Take Successes	Take Failures
+22212		20844		1368
+
+Steal Attempts	Steal Successes	Steal Failures
+2392		0		2392
+
+Pending Work
+Remove Attempts	Removes
+2392		0
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2413		2412
+
+Puts
+19858
+
+Take Attempts	Take Successes	Take Failures
+22271		20882		1389
+
+Steal Attempts	Steal Successes	Steal Failures
+2413		0		2413
+
+Pending Work
+Remove Attempts	Removes
+2413		0
+
+Deque Grows
+6
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+4937		4935
+
+Puts
+39676
+
+Take Attempts	Take Successes	Take Failures
+44615		41724		2891
+
+Steal Attempts	Steal Successes	Steal Failures
+4939		0		4939
+
+Pending Work
+Adds	Remove Attempts	Removes
+2	4939		2
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2440		2439
+
+Puts
+19679
+
+Take Attempts	Take Successes	Take Failures
+22120		20703		1417
+
+Steal Attempts	Steal Successes	Steal Failures
+2441		0		2441
+
+Pending Work
+Remove Attempts	Removes
+2441		1
+
+Deque Grows
+5
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2497		2496
+
+Puts
+19997
+
+Take Attempts	Take Successes	Take Failures
+22495		21021		1474
+
+Steal Attempts	Steal Successes	Steal Failures
+2498		0		2498
+
+Pending Work
+Remove Attempts	Removes
+2498		1
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+4815		4813
+
+Puts
+39678
+
+Take Attempts	Take Successes	Take Failures
+44493		41726		2767
+
+Steal Attempts	Steal Successes	Steal Failures
+4815		0		4815
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	4815		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2393		2392
+
+Puts
+19933
+
+Take Attempts	Take Successes	Take Failures
+22326		20957		1369
+
+Steal Attempts	Steal Successes	Steal Failures
+2393		0		2393
+
+Pending Work
+Remove Attempts	Removes
+2393		0
+
+Deque Grows
+10
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2422		2421
+
+Puts
+19745
+
+Take Attempts	Take Successes	Take Failures
+22167		20769		1398
+
+Steal Attempts	Steal Successes	Steal Failures
+2422		0		2422
+
+Pending Work
+Remove Attempts	Removes
+2422		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+4911		4909
+
+Puts
+39675
+
+Take Attempts	Take Successes	Take Failures
+44589		41723		2866
+
+Steal Attempts	Steal Successes	Steal Failures
+4914		0		4914
+
+Pending Work
+Adds	Remove Attempts	Removes
+3	4914		3
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2435		2434
+
+Puts
+19827
+
+Take Attempts	Take Successes	Take Failures
+22263		20851		1412
+
+Steal Attempts	Steal Successes	Steal Failures
+2436		0		2436
+
+Pending Work
+Remove Attempts	Removes
+2436		1
+
+Deque Grows
+5
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2476		2475
+
+Puts
+19848
+
+Take Attempts	Take Successes	Take Failures
+22326		20872		1454
+
+Steal Attempts	Steal Successes	Steal Failures
+2478		0		2478
+
+Pending Work
+Remove Attempts	Removes
+2478		2
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+4830		4828
+
+Puts
+39674
+
+Take Attempts	Take Successes	Take Failures
+44508		41722		2786
+
+Steal Attempts	Steal Successes	Steal Failures
+4834		0		4834
+
+Pending Work
+Adds	Remove Attempts	Removes
+4	4834		4
+
+Deque Grows
+14
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2398		2397
+
+Puts
+19751
+
+Take Attempts	Take Successes	Take Failures
+22150		20775		1375
+
+Steal Attempts	Steal Successes	Steal Failures
+2399		0		2399
+
+Pending Work
+Remove Attempts	Removes
+2399		1
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2432		2431
+
+Puts
+19923
+
+Take Attempts	Take Successes	Take Failures
+22358		20947		1411
+
+Steal Attempts	Steal Successes	Steal Failures
+2435		0		2435
+
+Pending Work
+Remove Attempts	Removes
+2435		3
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+4894		4892
+
+Puts
+39677
+
+Take Attempts	Take Successes	Take Failures
+44572		41725		2847
+
+Steal Attempts	Steal Successes	Steal Failures
+4895		0		4895
+
+Pending Work
+Adds	Remove Attempts	Removes
+1	4895		1
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2410		2409
+
+Puts
+19744
+
+Take Attempts	Take Successes	Take Failures
+22154		20768		1386
+
+Steal Attempts	Steal Successes	Steal Failures
+2410		0		2410
+
+Pending Work
+Remove Attempts	Removes
+2410		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2484		2483
+
+Puts
+19933
+
+Take Attempts	Take Successes	Take Failures
+22418		20957		1461
+
+Steal Attempts	Steal Successes	Steal Failures
+2485		0		2485
+
+Pending Work
+Remove Attempts	Removes
+2485		1
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+4874		4872
+
+Puts
+39677
+
+Take Attempts	Take Successes	Take Failures
+44552		41725		2827
+
+Steal Attempts	Steal Successes	Steal Failures
+4875		0		4875
+
+Pending Work
+Adds	Remove Attempts	Removes
+1	4875		1
+
+Deque Grows
+14
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2437		2436
+
+Puts
+19708
+
+Take Attempts	Take Successes	Take Failures
+22145		20732		1413
+
+Steal Attempts	Steal Successes	Steal Failures
+2437		0		2437
+
+Pending Work
+Remove Attempts	Removes
+2437		0
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2437		2436
+
+Puts
+19969
+
+Take Attempts	Take Successes	Take Failures
+22407		20993		1414
+
+Steal Attempts	Steal Successes	Steal Failures
+2438		0		2438
+
+Pending Work
+Remove Attempts	Removes
+2438		1
+
+Deque Grows
+7
+
+
+begin(jgfmt.section2.JGFLUFactBench)
+SizeA	SizeB	SizeC
+0.47	1.045	9.53
+0.488	1.075	9.449
+0.338	1.033	9.477
+0.503	1.106	9.453
+0.604	1.106	9.477
+0.503	1.008	9.435
+0.469	1.004	9.544
+0.536	1.064	9.464
+0.364	1.094	9.465
+0.543	1.004	9.417
+end(jgfmt.section2.JGFLUFactBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+279		277
+
+Puts
+99901
+
+Take Attempts	Take Successes	Take Failures
+100180		100180		0
+
+Steal Attempts	Steal Successes	Steal Failures
+279		0		279
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	279		0
+
+Deque Grows
+2772
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+275		274
+
+Puts
+50447
+
+Take Attempts	Take Successes	Take Failures
+50722		50722		0
+
+Steal Attempts	Steal Successes	Steal Failures
+275		0		275
+
+Pending Work
+Remove Attempts	Removes
+275		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+49454
+
+Take Attempts	Take Successes	Take Failures
+49458		49458		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+2771
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+149		147
+
+Puts
+99901
+
+Take Attempts	Take Successes	Take Failures
+100050		100050		0
+
+Steal Attempts	Steal Successes	Steal Failures
+149		0		149
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	149		0
+
+Deque Grows
+1425
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+117		116
+
+Puts
+51365
+
+Take Attempts	Take Successes	Take Failures
+51482		51482		0
+
+Steal Attempts	Steal Successes	Steal Failures
+117		0		117
+
+Pending Work
+Remove Attempts	Removes
+117		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+32		31
+
+Puts
+48536
+
+Take Attempts	Take Successes	Take Failures
+48568		48568		0
+
+Steal Attempts	Steal Successes	Steal Failures
+32		0		32
+
+Pending Work
+Remove Attempts	Removes
+32		0
+
+Deque Grows
+1424
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+522		520
+
+Puts
+99901
+
+Take Attempts	Take Successes	Take Failures
+100423		100423		0
+
+Steal Attempts	Steal Successes	Steal Failures
+522		0		522
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	522		0
+
+Deque Grows
+3614
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+519		518
+
+Puts
+51219
+
+Take Attempts	Take Successes	Take Failures
+51738		51738		0
+
+Steal Attempts	Steal Successes	Steal Failures
+519		0		519
+
+Pending Work
+Remove Attempts	Removes
+519		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+48682
+
+Take Attempts	Take Successes	Take Failures
+48685		48685		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+3613
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+301		299
+
+Puts
+99901
+
+Take Attempts	Take Successes	Take Failures
+100202		100202		0
+
+Steal Attempts	Steal Successes	Steal Failures
+301		0		301
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	301		0
+
+Deque Grows
+1362
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+298		297
+
+Puts
+49516
+
+Take Attempts	Take Successes	Take Failures
+49814		49814		0
+
+Steal Attempts	Steal Successes	Steal Failures
+298		0		298
+
+Pending Work
+Remove Attempts	Removes
+298		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+50385
+
+Take Attempts	Take Successes	Take Failures
+50388		50388		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+1361
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+418		416
+
+Puts
+99901
+
+Take Attempts	Take Successes	Take Failures
+100319		100319		0
+
+Steal Attempts	Steal Successes	Steal Failures
+418		0		418
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	418		0
+
+Deque Grows
+3967
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+414		413
+
+Puts
+52100
+
+Take Attempts	Take Successes	Take Failures
+52514		52514		0
+
+Steal Attempts	Steal Successes	Steal Failures
+414		0		414
+
+Pending Work
+Remove Attempts	Removes
+414		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+47801
+
+Take Attempts	Take Successes	Take Failures
+47805		47805		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+3966
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+172		170
+
+Puts
+99901
+
+Take Attempts	Take Successes	Take Failures
+100073		100073		0
+
+Steal Attempts	Steal Successes	Steal Failures
+172		0		172
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	172		0
+
+Deque Grows
+616
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+169		168
+
+Puts
+49480
+
+Take Attempts	Take Successes	Take Failures
+49649		49649		0
+
+Steal Attempts	Steal Successes	Steal Failures
+169		0		169
+
+Pending Work
+Remove Attempts	Removes
+169		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+50421
+
+Take Attempts	Take Successes	Take Failures
+50424		50424		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+615
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+22		20
+
+Puts
+99901
+
+Take Attempts	Take Successes	Take Failures
+99923		99923		0
+
+Steal Attempts	Steal Successes	Steal Failures
+22		0		22
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	22		0
+
+Deque Grows
+233
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+17		16
+
+Puts
+42350
+
+Take Attempts	Take Successes	Take Failures
+42367		42367		0
+
+Steal Attempts	Steal Successes	Steal Failures
+17		0		17
+
+Pending Work
+Remove Attempts	Removes
+17		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+57551
+
+Take Attempts	Take Successes	Take Failures
+57556		57556		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+232
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+54		52
+
+Puts
+99901
+
+Take Attempts	Take Successes	Take Failures
+99955		99955		0
+
+Steal Attempts	Steal Successes	Steal Failures
+54		0		54
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	54		0
+
+Deque Grows
+13127
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+39		38
+
+Puts
+42340
+
+Take Attempts	Take Successes	Take Failures
+42379		42379		0
+
+Steal Attempts	Steal Successes	Steal Failures
+39		0		39
+
+Pending Work
+Remove Attempts	Removes
+39		0
+
+Deque Grows
+12862
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+15		14
+
+Puts
+57561
+
+Take Attempts	Take Successes	Take Failures
+57576		57576		0
+
+Steal Attempts	Steal Successes	Steal Failures
+15		0		15
+
+Pending Work
+Remove Attempts	Removes
+15		0
+
+Deque Grows
+265
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+243		241
+
+Puts
+99901
+
+Take Attempts	Take Successes	Take Failures
+100144		100144		0
+
+Steal Attempts	Steal Successes	Steal Failures
+243		0		243
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	243		0
+
+Deque Grows
+1197
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+234		233
+
+Puts
+49688
+
+Take Attempts	Take Successes	Take Failures
+49922		49922		0
+
+Steal Attempts	Steal Successes	Steal Failures
+234		0		234
+
+Pending Work
+Remove Attempts	Removes
+234		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+9		8
+
+Puts
+50213
+
+Take Attempts	Take Successes	Take Failures
+50222		50222		0
+
+Steal Attempts	Steal Successes	Steal Failures
+9		0		9
+
+Pending Work
+Remove Attempts	Removes
+9		0
+
+Deque Grows
+1196
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+172		170
+
+Puts
+99901
+
+Take Attempts	Take Successes	Take Failures
+100073		100073		0
+
+Steal Attempts	Steal Successes	Steal Failures
+172		0		172
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	172		0
+
+Deque Grows
+281
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+169		168
+
+Puts
+49250
+
+Take Attempts	Take Successes	Take Failures
+49419		49419		0
+
+Steal Attempts	Steal Successes	Steal Failures
+169		0		169
+
+Pending Work
+Remove Attempts	Removes
+169		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+50651
+
+Take Attempts	Take Successes	Take Failures
+50654		50654		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+280
+
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+122		120
+
+Puts
+149901
+
+Take Attempts	Take Successes	Take Failures
+150023		150023		0
+
+Steal Attempts	Steal Successes	Steal Failures
+122		0		122
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	122		0
+
+Deque Grows
+133
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+30		29
+
+Puts
+65054
+
+Take Attempts	Take Successes	Take Failures
+65084		65084		0
+
+Steal Attempts	Steal Successes	Steal Failures
+30		0		30
+
+Pending Work
+Remove Attempts	Removes
+30		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+92		91
+
+Puts
+84847
+
+Take Attempts	Take Successes	Take Failures
+84939		84939		0
+
+Steal Attempts	Steal Successes	Steal Failures
+92		0		92
+
+Pending Work
+Remove Attempts	Removes
+92		0
+
+Deque Grows
+132
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+160		158
+
+Puts
+149901
+
+Take Attempts	Take Successes	Take Failures
+150061		150061		0
+
+Steal Attempts	Steal Successes	Steal Failures
+160		0		160
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	160		0
+
+Deque Grows
+134
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+60		59
+
+Puts
+74475
+
+Take Attempts	Take Successes	Take Failures
+74535		74535		0
+
+Steal Attempts	Steal Successes	Steal Failures
+60		0		60
+
+Pending Work
+Remove Attempts	Removes
+60		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+100		99
+
+Puts
+75426
+
+Take Attempts	Take Successes	Take Failures
+75526		75526		0
+
+Steal Attempts	Steal Successes	Steal Failures
+100		0		100
+
+Pending Work
+Remove Attempts	Removes
+100		0
+
+Deque Grows
+133
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+168		166
+
+Puts
+149901
+
+Take Attempts	Take Successes	Take Failures
+150069		150069		0
+
+Steal Attempts	Steal Successes	Steal Failures
+168		0		168
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	168		0
+
+Deque Grows
+152
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+35		34
+
+Puts
+74127
+
+Take Attempts	Take Successes	Take Failures
+74162		74162		0
+
+Steal Attempts	Steal Successes	Steal Failures
+35		0		35
+
+Pending Work
+Remove Attempts	Removes
+35		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+133		132
+
+Puts
+75774
+
+Take Attempts	Take Successes	Take Failures
+75907		75907		0
+
+Steal Attempts	Steal Successes	Steal Failures
+133		0		133
+
+Pending Work
+Remove Attempts	Removes
+133		0
+
+Deque Grows
+151
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+173		171
+
+Puts
+149901
+
+Take Attempts	Take Successes	Take Failures
+150074		150074		0
+
+Steal Attempts	Steal Successes	Steal Failures
+173		0		173
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	173		0
+
+Deque Grows
+3892
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+168		167
+
+Puts
+75673
+
+Take Attempts	Take Successes	Take Failures
+75841		75841		0
+
+Steal Attempts	Steal Successes	Steal Failures
+168		0		168
+
+Pending Work
+Remove Attempts	Removes
+168		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+74228
+
+Take Attempts	Take Successes	Take Failures
+74233		74233		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+3891
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+106		104
+
+Puts
+149901
+
+Take Attempts	Take Successes	Take Failures
+150007		150007		0
+
+Steal Attempts	Steal Successes	Steal Failures
+106		0		106
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	106		0
+
+Deque Grows
+3404
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+69		68
+
+Puts
+76231
+
+Take Attempts	Take Successes	Take Failures
+76300		76300		0
+
+Steal Attempts	Steal Successes	Steal Failures
+69		0		69
+
+Pending Work
+Remove Attempts	Removes
+69		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+37		36
+
+Puts
+73670
+
+Take Attempts	Take Successes	Take Failures
+73707		73707		0
+
+Steal Attempts	Steal Successes	Steal Failures
+37		0		37
+
+Pending Work
+Remove Attempts	Removes
+37		0
+
+Deque Grows
+3403
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+85		83
+
+Puts
+149901
+
+Take Attempts	Take Successes	Take Failures
+149986		149986		0
+
+Steal Attempts	Steal Successes	Steal Failures
+85		0		85
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	85		0
+
+Deque Grows
+153
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+37		36
+
+Puts
+75569
+
+Take Attempts	Take Successes	Take Failures
+75606		75606		0
+
+Steal Attempts	Steal Successes	Steal Failures
+37		0		37
+
+Pending Work
+Remove Attempts	Removes
+37		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+48		47
+
+Puts
+74332
+
+Take Attempts	Take Successes	Take Failures
+74380		74380		0
+
+Steal Attempts	Steal Successes	Steal Failures
+48		0		48
+
+Pending Work
+Remove Attempts	Removes
+48		0
+
+Deque Grows
+152
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+130		128
+
+Puts
+149901
+
+Take Attempts	Take Successes	Take Failures
+150031		150031		0
+
+Steal Attempts	Steal Successes	Steal Failures
+130		0		130
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	130		0
+
+Deque Grows
+121
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+112		111
+
+Puts
+74748
+
+Take Attempts	Take Successes	Take Failures
+74860		74860		0
+
+Steal Attempts	Steal Successes	Steal Failures
+112		0		112
+
+Pending Work
+Remove Attempts	Removes
+112		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+18		17
+
+Puts
+75153
+
+Take Attempts	Take Successes	Take Failures
+75171		75171		0
+
+Steal Attempts	Steal Successes	Steal Failures
+18		0		18
+
+Pending Work
+Remove Attempts	Removes
+18		0
+
+Deque Grows
+120
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+108		106
+
+Puts
+149901
+
+Take Attempts	Take Successes	Take Failures
+150009		150009		0
+
+Steal Attempts	Steal Successes	Steal Failures
+108		0		108
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	108		0
+
+Deque Grows
+219
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+35		34
+
+Puts
+75731
+
+Take Attempts	Take Successes	Take Failures
+75766		75766		0
+
+Steal Attempts	Steal Successes	Steal Failures
+35		0		35
+
+Pending Work
+Remove Attempts	Removes
+35		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+73		72
+
+Puts
+74170
+
+Take Attempts	Take Successes	Take Failures
+74243		74243		0
+
+Steal Attempts	Steal Successes	Steal Failures
+73		0		73
+
+Pending Work
+Remove Attempts	Removes
+73		0
+
+Deque Grows
+218
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+72		70
+
+Puts
+149901
+
+Take Attempts	Take Successes	Take Failures
+149973		149973		0
+
+Steal Attempts	Steal Successes	Steal Failures
+72		0		72
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	72		0
+
+Deque Grows
+163
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+40		39
+
+Puts
+73668
+
+Take Attempts	Take Successes	Take Failures
+73708		73708		0
+
+Steal Attempts	Steal Successes	Steal Failures
+40		0		40
+
+Pending Work
+Remove Attempts	Removes
+40		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+32		31
+
+Puts
+76233
+
+Take Attempts	Take Successes	Take Failures
+76265		76265		0
+
+Steal Attempts	Steal Successes	Steal Failures
+32		0		32
+
+Pending Work
+Remove Attempts	Removes
+32		0
+
+Deque Grows
+162
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+79		77
+
+Puts
+149901
+
+Take Attempts	Take Successes	Take Failures
+149980		149980		0
+
+Steal Attempts	Steal Successes	Steal Failures
+79		0		79
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	79		0
+
+Deque Grows
+259
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+40		39
+
+Puts
+74280
+
+Take Attempts	Take Successes	Take Failures
+74320		74320		0
+
+Steal Attempts	Steal Successes	Steal Failures
+40		0		40
+
+Pending Work
+Remove Attempts	Removes
+40		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+39		38
+
+Puts
+75621
+
+Take Attempts	Take Successes	Take Failures
+75660		75660		0
+
+Steal Attempts	Steal Successes	Steal Failures
+39		0		39
+
+Pending Work
+Remove Attempts	Removes
+39		0
+
+Deque Grows
+258
+
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+328		326
+
+Puts
+199901
+
+Take Attempts	Take Successes	Take Failures
+200229		200229		0
+
+Steal Attempts	Steal Successes	Steal Failures
+328		0		328
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	328		0
+
+Deque Grows
+2733
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+323		322
+
+Puts
+99699
+
+Take Attempts	Take Successes	Take Failures
+100022		100022		0
+
+Steal Attempts	Steal Successes	Steal Failures
+323		0		323
+
+Pending Work
+Remove Attempts	Removes
+323		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+5		4
+
+Puts
+100202
+
+Take Attempts	Take Successes	Take Failures
+100207		100207		0
+
+Steal Attempts	Steal Successes	Steal Failures
+5		0		5
+
+Pending Work
+Remove Attempts	Removes
+5		0
+
+Deque Grows
+2732
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+98		96
+
+Puts
+199901
+
+Take Attempts	Take Successes	Take Failures
+199999		199999		0
+
+Steal Attempts	Steal Successes	Steal Failures
+98		0		98
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	98		0
+
+Deque Grows
+125
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+32		31
+
+Puts
+100747
+
+Take Attempts	Take Successes	Take Failures
+100779		100779		0
+
+Steal Attempts	Steal Successes	Steal Failures
+32		0		32
+
+Pending Work
+Remove Attempts	Removes
+32		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+66		65
+
+Puts
+99154
+
+Take Attempts	Take Successes	Take Failures
+99220		99220		0
+
+Steal Attempts	Steal Successes	Steal Failures
+66		0		66
+
+Pending Work
+Remove Attempts	Removes
+66		0
+
+Deque Grows
+124
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+99		97
+
+Puts
+199901
+
+Take Attempts	Take Successes	Take Failures
+200000		200000		0
+
+Steal Attempts	Steal Successes	Steal Failures
+99		0		99
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	99		0
+
+Deque Grows
+228
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+83		82
+
+Puts
+98961
+
+Take Attempts	Take Successes	Take Failures
+99044		99044		0
+
+Steal Attempts	Steal Successes	Steal Failures
+83		0		83
+
+Pending Work
+Remove Attempts	Removes
+83		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+16		15
+
+Puts
+100940
+
+Take Attempts	Take Successes	Take Failures
+100956		100956		0
+
+Steal Attempts	Steal Successes	Steal Failures
+16		0		16
+
+Pending Work
+Remove Attempts	Removes
+16		0
+
+Deque Grows
+227
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+177		175
+
+Puts
+199901
+
+Take Attempts	Take Successes	Take Failures
+200078		200078		0
+
+Steal Attempts	Steal Successes	Steal Failures
+177		0		177
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	177		0
+
+Deque Grows
+874
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+174		173
+
+Puts
+100097
+
+Take Attempts	Take Successes	Take Failures
+100271		100271		0
+
+Steal Attempts	Steal Successes	Steal Failures
+174		0		174
+
+Pending Work
+Remove Attempts	Removes
+174		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+99804
+
+Take Attempts	Take Successes	Take Failures
+99807		99807		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+873
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+159		157
+
+Puts
+199901
+
+Take Attempts	Take Successes	Take Failures
+200060		200060		0
+
+Steal Attempts	Steal Successes	Steal Failures
+159		0		159
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	159		0
+
+Deque Grows
+153
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+37		36
+
+Puts
+100713
+
+Take Attempts	Take Successes	Take Failures
+100750		100750		0
+
+Steal Attempts	Steal Successes	Steal Failures
+37		0		37
+
+Pending Work
+Remove Attempts	Removes
+37		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+122		121
+
+Puts
+99188
+
+Take Attempts	Take Successes	Take Failures
+99310		99310		0
+
+Steal Attempts	Steal Successes	Steal Failures
+122		0		122
+
+Pending Work
+Remove Attempts	Removes
+122		0
+
+Deque Grows
+152
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+145		143
+
+Puts
+199901
+
+Take Attempts	Take Successes	Take Failures
+200046		200046		0
+
+Steal Attempts	Steal Successes	Steal Failures
+145		0		145
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	145		0
+
+Deque Grows
+220
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+70		69
+
+Puts
+97511
+
+Take Attempts	Take Successes	Take Failures
+97581		97581		0
+
+Steal Attempts	Steal Successes	Steal Failures
+70		0		70
+
+Pending Work
+Remove Attempts	Removes
+70		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+75		74
+
+Puts
+102390
+
+Take Attempts	Take Successes	Take Failures
+102465		102465		0
+
+Steal Attempts	Steal Successes	Steal Failures
+75		0		75
+
+Pending Work
+Remove Attempts	Removes
+75		0
+
+Deque Grows
+219
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+46		44
+
+Puts
+199901
+
+Take Attempts	Take Successes	Take Failures
+199947		199947		0
+
+Steal Attempts	Steal Successes	Steal Failures
+46		0		46
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	46		0
+
+Deque Grows
+353
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+38		37
+
+Puts
+103680
+
+Take Attempts	Take Successes	Take Failures
+103718		103718		0
+
+Steal Attempts	Steal Successes	Steal Failures
+38		0		38
+
+Pending Work
+Remove Attempts	Removes
+38		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+8		7
+
+Puts
+96221
+
+Take Attempts	Take Successes	Take Failures
+96229		96229		0
+
+Steal Attempts	Steal Successes	Steal Failures
+8		0		8
+
+Pending Work
+Remove Attempts	Removes
+8		0
+
+Deque Grows
+352
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+117		115
+
+Puts
+199901
+
+Take Attempts	Take Successes	Take Failures
+200018		200018		0
+
+Steal Attempts	Steal Successes	Steal Failures
+117		0		117
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	117		0
+
+Deque Grows
+233
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+80		79
+
+Puts
+99153
+
+Take Attempts	Take Successes	Take Failures
+99233		99233		0
+
+Steal Attempts	Steal Successes	Steal Failures
+80		0		80
+
+Pending Work
+Remove Attempts	Removes
+80		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+37		36
+
+Puts
+100748
+
+Take Attempts	Take Successes	Take Failures
+100785		100785		0
+
+Steal Attempts	Steal Successes	Steal Failures
+37		0		37
+
+Pending Work
+Remove Attempts	Removes
+37		0
+
+Deque Grows
+232
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+140		138
+
+Puts
+199901
+
+Take Attempts	Take Successes	Take Failures
+200041		200041		0
+
+Steal Attempts	Steal Successes	Steal Failures
+140		0		140
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	140		0
+
+Deque Grows
+243
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+50		49
+
+Puts
+99121
+
+Take Attempts	Take Successes	Take Failures
+99171		99171		0
+
+Steal Attempts	Steal Successes	Steal Failures
+50		0		50
+
+Pending Work
+Remove Attempts	Removes
+50		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+90		89
+
+Puts
+100780
+
+Take Attempts	Take Successes	Take Failures
+100870		100870		0
+
+Steal Attempts	Steal Successes	Steal Failures
+90		0		90
+
+Pending Work
+Remove Attempts	Removes
+90		0
+
+Deque Grows
+242
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSORBenchSizeC -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+89		87
+
+Puts
+199901
+
+Take Attempts	Take Successes	Take Failures
+199990		199990		0
+
+Steal Attempts	Steal Successes	Steal Failures
+89		0		89
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	89		0
+
+Deque Grows
+252
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+32		31
+
+Puts
+99931
+
+Take Attempts	Take Successes	Take Failures
+99963		99963		0
+
+Steal Attempts	Steal Successes	Steal Failures
+32		0		32
+
+Pending Work
+Remove Attempts	Removes
+32		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+57		56
+
+Puts
+99970
+
+Take Attempts	Take Successes	Take Failures
+100027		100027		0
+
+Steal Attempts	Steal Successes	Steal Failures
+57		0		57
+
+Pending Work
+Remove Attempts	Removes
+57		0
+
+Deque Grows
+251
+
+
+begin(jgfmt.section2.JGFSORBench)
+SizeA	SizeB	SizeC
+0.837	1.172	1.728
+0.838	1.189	1.669
+0.849	1.127	1.709
+0.824	1.175	1.693
+0.865	1.157	1.681
+0.795	1.127	1.71
+0.883	1.145	1.746
+0.888	1.166	1.734
+0.78	1.177	1.682
+0.767	1.173	1.724
+end(jgfmt.section2.JGFSORBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+27		25
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10028		10028		0
+
+Steal Attempts	Steal Successes	Steal Failures
+27		0		27
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	27		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+25		24
+
+Puts
+24
+
+Take Attempts	Take Successes	Take Failures
+49		49		0
+
+Steal Attempts	Steal Successes	Steal Failures
+25		0		25
+
+Pending Work
+Remove Attempts	Removes
+25		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9977
+
+Take Attempts	Take Successes	Take Failures
+9979		9979		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+25		23
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10026		10026		0
+
+Steal Attempts	Steal Successes	Steal Failures
+25		0		25
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	25		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+23		22
+
+Puts
+22
+
+Take Attempts	Take Successes	Take Failures
+45		45		0
+
+Steal Attempts	Steal Successes	Steal Failures
+23		0		23
+
+Pending Work
+Remove Attempts	Removes
+23		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9979
+
+Take Attempts	Take Successes	Take Failures
+9981		9981		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+28		26
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10029		10029		0
+
+Steal Attempts	Steal Successes	Steal Failures
+28		0		28
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	28		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+26		25
+
+Puts
+25
+
+Take Attempts	Take Successes	Take Failures
+51		51		0
+
+Steal Attempts	Steal Successes	Steal Failures
+26		0		26
+
+Pending Work
+Remove Attempts	Removes
+26		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9976
+
+Take Attempts	Take Successes	Take Failures
+9978		9978		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+22		20
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10023		10023		0
+
+Steal Attempts	Steal Successes	Steal Failures
+22		0		22
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	22		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+20		19
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+20		0		20
+
+Pending Work
+Remove Attempts	Removes
+20		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9982
+
+Take Attempts	Take Successes	Take Failures
+9984		9984		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+26		24
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10027		10027		0
+
+Steal Attempts	Steal Successes	Steal Failures
+26		0		26
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	26		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+24		23
+
+Puts
+23
+
+Take Attempts	Take Successes	Take Failures
+47		47		0
+
+Steal Attempts	Steal Successes	Steal Failures
+24		0		24
+
+Pending Work
+Remove Attempts	Removes
+24		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9978
+
+Take Attempts	Take Successes	Take Failures
+9980		9980		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+25		23
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10026		10026		0
+
+Steal Attempts	Steal Successes	Steal Failures
+25		0		25
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	25		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+23		22
+
+Puts
+22
+
+Take Attempts	Take Successes	Take Failures
+45		45		0
+
+Steal Attempts	Steal Successes	Steal Failures
+23		0		23
+
+Pending Work
+Remove Attempts	Removes
+23		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9979
+
+Take Attempts	Take Successes	Take Failures
+9981		9981		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+24		22
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10025		10025		0
+
+Steal Attempts	Steal Successes	Steal Failures
+24		0		24
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	24		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+22		21
+
+Puts
+21
+
+Take Attempts	Take Successes	Take Failures
+43		43		0
+
+Steal Attempts	Steal Successes	Steal Failures
+22		0		22
+
+Pending Work
+Remove Attempts	Removes
+22		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9980
+
+Take Attempts	Take Successes	Take Failures
+9982		9982		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+26		24
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10027		10027		0
+
+Steal Attempts	Steal Successes	Steal Failures
+26		0		26
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	26		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+24		23
+
+Puts
+23
+
+Take Attempts	Take Successes	Take Failures
+47		47		0
+
+Steal Attempts	Steal Successes	Steal Failures
+24		0		24
+
+Pending Work
+Remove Attempts	Removes
+24		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9978
+
+Take Attempts	Take Successes	Take Failures
+9980		9980		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+18		16
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10019		10019		0
+
+Steal Attempts	Steal Successes	Steal Failures
+18		0		18
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	18		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+16		15
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+31		31		0
+
+Steal Attempts	Steal Successes	Steal Failures
+16		0		16
+
+Pending Work
+Remove Attempts	Removes
+16		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9986
+
+Take Attempts	Take Successes	Take Failures
+9988		9988		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+27		25
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10028		10028		0
+
+Steal Attempts	Steal Successes	Steal Failures
+27		0		27
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	27		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+25		24
+
+Puts
+24
+
+Take Attempts	Take Successes	Take Failures
+49		49		0
+
+Steal Attempts	Steal Successes	Steal Failures
+25		0		25
+
+Pending Work
+Remove Attempts	Removes
+25		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9977
+
+Take Attempts	Take Successes	Take Failures
+9979		9979		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+77		75
+
+Puts
+100001
+
+Take Attempts	Take Successes	Take Failures
+100078		100078		0
+
+Steal Attempts	Steal Successes	Steal Failures
+77		0		77
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	77		0
+
+Deque Grows
+100
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+75		74
+
+Puts
+74
+
+Take Attempts	Take Successes	Take Failures
+149		149		0
+
+Steal Attempts	Steal Successes	Steal Failures
+75		0		75
+
+Pending Work
+Remove Attempts	Removes
+75		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+99927
+
+Take Attempts	Take Successes	Take Failures
+99929		99929		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+99
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+66		64
+
+Puts
+100001
+
+Take Attempts	Take Successes	Take Failures
+100067		100067		0
+
+Steal Attempts	Steal Successes	Steal Failures
+66		0		66
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	66		0
+
+Deque Grows
+100
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+64		63
+
+Puts
+63
+
+Take Attempts	Take Successes	Take Failures
+127		127		0
+
+Steal Attempts	Steal Successes	Steal Failures
+64		0		64
+
+Pending Work
+Remove Attempts	Removes
+64		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+99938
+
+Take Attempts	Take Successes	Take Failures
+99940		99940		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+99
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+73		71
+
+Puts
+100001
+
+Take Attempts	Take Successes	Take Failures
+100074		100074		0
+
+Steal Attempts	Steal Successes	Steal Failures
+73		0		73
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	73		0
+
+Deque Grows
+100
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+71		70
+
+Puts
+70
+
+Take Attempts	Take Successes	Take Failures
+141		141		0
+
+Steal Attempts	Steal Successes	Steal Failures
+71		0		71
+
+Pending Work
+Remove Attempts	Removes
+71		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+99931
+
+Take Attempts	Take Successes	Take Failures
+99933		99933		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+99
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+56		54
+
+Puts
+100001
+
+Take Attempts	Take Successes	Take Failures
+100057		100057		0
+
+Steal Attempts	Steal Successes	Steal Failures
+56		0		56
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	56		0
+
+Deque Grows
+100
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+54		53
+
+Puts
+53
+
+Take Attempts	Take Successes	Take Failures
+107		107		0
+
+Steal Attempts	Steal Successes	Steal Failures
+54		0		54
+
+Pending Work
+Remove Attempts	Removes
+54		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+99948
+
+Take Attempts	Take Successes	Take Failures
+99950		99950		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+99
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+77		75
+
+Puts
+100001
+
+Take Attempts	Take Successes	Take Failures
+100078		100078		0
+
+Steal Attempts	Steal Successes	Steal Failures
+77		0		77
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	77		0
+
+Deque Grows
+100
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+75		74
+
+Puts
+74
+
+Take Attempts	Take Successes	Take Failures
+149		149		0
+
+Steal Attempts	Steal Successes	Steal Failures
+75		0		75
+
+Pending Work
+Remove Attempts	Removes
+75		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+99927
+
+Take Attempts	Take Successes	Take Failures
+99929		99929		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+99
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+58		56
+
+Puts
+100001
+
+Take Attempts	Take Successes	Take Failures
+100059		100059		0
+
+Steal Attempts	Steal Successes	Steal Failures
+58		0		58
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	58		0
+
+Deque Grows
+100
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+56		55
+
+Puts
+55
+
+Take Attempts	Take Successes	Take Failures
+111		111		0
+
+Steal Attempts	Steal Successes	Steal Failures
+56		0		56
+
+Pending Work
+Remove Attempts	Removes
+56		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+99946
+
+Take Attempts	Take Successes	Take Failures
+99948		99948		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+99
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+58		56
+
+Puts
+100001
+
+Take Attempts	Take Successes	Take Failures
+100059		100059		0
+
+Steal Attempts	Steal Successes	Steal Failures
+58		0		58
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	58		0
+
+Deque Grows
+100
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+56		55
+
+Puts
+55
+
+Take Attempts	Take Successes	Take Failures
+111		111		0
+
+Steal Attempts	Steal Successes	Steal Failures
+56		0		56
+
+Pending Work
+Remove Attempts	Removes
+56		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+99946
+
+Take Attempts	Take Successes	Take Failures
+99948		99948		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+99
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+73		71
+
+Puts
+100001
+
+Take Attempts	Take Successes	Take Failures
+100074		100074		0
+
+Steal Attempts	Steal Successes	Steal Failures
+73		0		73
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	73		0
+
+Deque Grows
+100
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+71		70
+
+Puts
+70
+
+Take Attempts	Take Successes	Take Failures
+141		141		0
+
+Steal Attempts	Steal Successes	Steal Failures
+71		0		71
+
+Pending Work
+Remove Attempts	Removes
+71		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+99931
+
+Take Attempts	Take Successes	Take Failures
+99933		99933		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+99
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+61		59
+
+Puts
+100001
+
+Take Attempts	Take Successes	Take Failures
+100062		100062		0
+
+Steal Attempts	Steal Successes	Steal Failures
+61		0		61
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	61		0
+
+Deque Grows
+100
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+59		58
+
+Puts
+58
+
+Take Attempts	Take Successes	Take Failures
+117		117		0
+
+Steal Attempts	Steal Successes	Steal Failures
+59		0		59
+
+Pending Work
+Remove Attempts	Removes
+59		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+99943
+
+Take Attempts	Take Successes	Take Failures
+99945		99945		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+99
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+57		55
+
+Puts
+100001
+
+Take Attempts	Take Successes	Take Failures
+100058		100058		0
+
+Steal Attempts	Steal Successes	Steal Failures
+57		0		57
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	57		0
+
+Deque Grows
+100
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+55		54
+
+Puts
+54
+
+Take Attempts	Take Successes	Take Failures
+109		109		0
+
+Steal Attempts	Steal Successes	Steal Failures
+55		0		55
+
+Pending Work
+Remove Attempts	Removes
+55		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+99947
+
+Take Attempts	Take Successes	Take Failures
+99949		99949		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+99
+
+
+begin(jgfmt.section2.JGFSeriesBench)
+SizeA	SizeB
+7.449	74.34
+7.474	74.329
+7.45	74.332
+7.506	74.255
+7.443	74.427
+7.52	74.267
+7.463	74.26
+7.51	74.308
+7.47	74.377
+7.448	74.279
+end(jgfmt.section2.JGFSeriesBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+537		535
+
+Puts
+3399
+
+Take Attempts	Take Successes	Take Failures
+3937		3937		0
+
+Steal Attempts	Steal Successes	Steal Failures
+538		0		538
+
+Pending Work
+Adds	Remove Attempts	Removes
+1	538		1
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+267		266
+
+Puts
+1672
+
+Take Attempts	Take Successes	Take Failures
+1939		1939		0
+
+Steal Attempts	Steal Successes	Steal Failures
+267		0		267
+
+Pending Work
+Remove Attempts	Removes
+267		0
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+270		269
+
+Puts
+1727
+
+Take Attempts	Take Successes	Take Failures
+1998		1998		0
+
+Steal Attempts	Steal Successes	Steal Failures
+271		0		271
+
+Pending Work
+Remove Attempts	Removes
+271		1
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+528		526
+
+Puts
+3400
+
+Take Attempts	Take Successes	Take Failures
+3928		3928		0
+
+Steal Attempts	Steal Successes	Steal Failures
+528		0		528
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	528		0
+
+Deque Grows
+15
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+255		254
+
+Puts
+1607
+
+Take Attempts	Take Successes	Take Failures
+1862		1862		0
+
+Steal Attempts	Steal Successes	Steal Failures
+255		0		255
+
+Pending Work
+Remove Attempts	Removes
+255		0
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+273		272
+
+Puts
+1793
+
+Take Attempts	Take Successes	Take Failures
+2066		2066		0
+
+Steal Attempts	Steal Successes	Steal Failures
+273		0		273
+
+Pending Work
+Remove Attempts	Removes
+273		0
+
+Deque Grows
+8
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+526		524
+
+Puts
+3399
+
+Take Attempts	Take Successes	Take Failures
+3926		3926		0
+
+Steal Attempts	Steal Successes	Steal Failures
+527		0		527
+
+Pending Work
+Adds	Remove Attempts	Removes
+1	527		1
+
+Deque Grows
+15
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+278		277
+
+Puts
+1764
+
+Take Attempts	Take Successes	Take Failures
+2043		2043		0
+
+Steal Attempts	Steal Successes	Steal Failures
+279		0		279
+
+Pending Work
+Remove Attempts	Removes
+279		1
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+248		247
+
+Puts
+1635
+
+Take Attempts	Take Successes	Take Failures
+1883		1883		0
+
+Steal Attempts	Steal Successes	Steal Failures
+248		0		248
+
+Pending Work
+Remove Attempts	Removes
+248		0
+
+Deque Grows
+8
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+555		553
+
+Puts
+3400
+
+Take Attempts	Take Successes	Take Failures
+3955		3955		0
+
+Steal Attempts	Steal Successes	Steal Failures
+555		0		555
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	555		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+273		272
+
+Puts
+1621
+
+Take Attempts	Take Successes	Take Failures
+1894		1894		0
+
+Steal Attempts	Steal Successes	Steal Failures
+273		0		273
+
+Pending Work
+Remove Attempts	Removes
+273		0
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+282		281
+
+Puts
+1779
+
+Take Attempts	Take Successes	Take Failures
+2061		2061		0
+
+Steal Attempts	Steal Successes	Steal Failures
+282		0		282
+
+Pending Work
+Remove Attempts	Removes
+282		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+540		538
+
+Puts
+3399
+
+Take Attempts	Take Successes	Take Failures
+3940		3940		0
+
+Steal Attempts	Steal Successes	Steal Failures
+541		0		541
+
+Pending Work
+Adds	Remove Attempts	Removes
+1	541		1
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+288		287
+
+Puts
+1823
+
+Take Attempts	Take Successes	Take Failures
+2111		2111		0
+
+Steal Attempts	Steal Successes	Steal Failures
+288		0		288
+
+Pending Work
+Remove Attempts	Removes
+288		0
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+252		251
+
+Puts
+1576
+
+Take Attempts	Take Successes	Take Failures
+1829		1829		0
+
+Steal Attempts	Steal Successes	Steal Failures
+253		0		253
+
+Pending Work
+Remove Attempts	Removes
+253		1
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+544		542
+
+Puts
+3400
+
+Take Attempts	Take Successes	Take Failures
+3944		3944		0
+
+Steal Attempts	Steal Successes	Steal Failures
+544		0		544
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	544		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+302		301
+
+Puts
+1850
+
+Take Attempts	Take Successes	Take Failures
+2152		2152		0
+
+Steal Attempts	Steal Successes	Steal Failures
+302		0		302
+
+Pending Work
+Remove Attempts	Removes
+302		0
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+242		241
+
+Puts
+1550
+
+Take Attempts	Take Successes	Take Failures
+1792		1792		0
+
+Steal Attempts	Steal Successes	Steal Failures
+242		0		242
+
+Pending Work
+Remove Attempts	Removes
+242		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+531		529
+
+Puts
+3400
+
+Take Attempts	Take Successes	Take Failures
+3931		3931		0
+
+Steal Attempts	Steal Successes	Steal Failures
+531		0		531
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	531		0
+
+Deque Grows
+15
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+240		239
+
+Puts
+1546
+
+Take Attempts	Take Successes	Take Failures
+1786		1786		0
+
+Steal Attempts	Steal Successes	Steal Failures
+240		0		240
+
+Pending Work
+Remove Attempts	Removes
+240		0
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+291		290
+
+Puts
+1854
+
+Take Attempts	Take Successes	Take Failures
+2145		2145		0
+
+Steal Attempts	Steal Successes	Steal Failures
+291		0		291
+
+Pending Work
+Remove Attempts	Removes
+291		0
+
+Deque Grows
+8
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+541		539
+
+Puts
+3399
+
+Take Attempts	Take Successes	Take Failures
+3941		3941		0
+
+Steal Attempts	Steal Successes	Steal Failures
+542		0		542
+
+Pending Work
+Adds	Remove Attempts	Removes
+1	542		1
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+292		291
+
+Puts
+1912
+
+Take Attempts	Take Successes	Take Failures
+2205		2205		0
+
+Steal Attempts	Steal Successes	Steal Failures
+293		0		293
+
+Pending Work
+Remove Attempts	Removes
+293		1
+
+Deque Grows
+5
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+249		248
+
+Puts
+1487
+
+Take Attempts	Take Successes	Take Failures
+1736		1736		0
+
+Steal Attempts	Steal Successes	Steal Failures
+249		0		249
+
+Pending Work
+Remove Attempts	Removes
+249		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+551		549
+
+Puts
+3399
+
+Take Attempts	Take Successes	Take Failures
+3951		3951		0
+
+Steal Attempts	Steal Successes	Steal Failures
+552		0		552
+
+Pending Work
+Adds	Remove Attempts	Removes
+1	552		1
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+284		283
+
+Puts
+1690
+
+Take Attempts	Take Successes	Take Failures
+1974		1974		0
+
+Steal Attempts	Steal Successes	Steal Failures
+284		0		284
+
+Pending Work
+Remove Attempts	Removes
+284		0
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+267		266
+
+Puts
+1709
+
+Take Attempts	Take Successes	Take Failures
+1977		1977		0
+
+Steal Attempts	Steal Successes	Steal Failures
+268		0		268
+
+Pending Work
+Remove Attempts	Removes
+268		1
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+549		547
+
+Puts
+3400
+
+Take Attempts	Take Successes	Take Failures
+3949		3949		0
+
+Steal Attempts	Steal Successes	Steal Failures
+549		0		549
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	549		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+262		261
+
+Puts
+1636
+
+Take Attempts	Take Successes	Take Failures
+1898		1898		0
+
+Steal Attempts	Steal Successes	Steal Failures
+262		0		262
+
+Pending Work
+Remove Attempts	Removes
+262		0
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+287		286
+
+Puts
+1764
+
+Take Attempts	Take Successes	Take Failures
+2051		2051		0
+
+Steal Attempts	Steal Successes	Steal Failures
+287		0		287
+
+Pending Work
+Remove Attempts	Removes
+287		0
+
+Deque Grows
+7
+
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+577		575
+
+Puts
+3400
+
+Take Attempts	Take Successes	Take Failures
+3977		3977		0
+
+Steal Attempts	Steal Successes	Steal Failures
+577		0		577
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	577		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+276		275
+
+Puts
+1742
+
+Take Attempts	Take Successes	Take Failures
+2018		2018		0
+
+Steal Attempts	Steal Successes	Steal Failures
+276		0		276
+
+Pending Work
+Remove Attempts	Removes
+276		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+301		300
+
+Puts
+1658
+
+Take Attempts	Take Successes	Take Failures
+1959		1959		0
+
+Steal Attempts	Steal Successes	Steal Failures
+301		0		301
+
+Pending Work
+Remove Attempts	Removes
+301		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+561		559
+
+Puts
+3400
+
+Take Attempts	Take Successes	Take Failures
+3961		3961		0
+
+Steal Attempts	Steal Successes	Steal Failures
+561		0		561
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	561		0
+
+Deque Grows
+11
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+264		263
+
+Puts
+1651
+
+Take Attempts	Take Successes	Take Failures
+1915		1915		0
+
+Steal Attempts	Steal Successes	Steal Failures
+264		0		264
+
+Pending Work
+Remove Attempts	Removes
+264		0
+
+Deque Grows
+4
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+297		296
+
+Puts
+1749
+
+Take Attempts	Take Successes	Take Failures
+2046		2046		0
+
+Steal Attempts	Steal Successes	Steal Failures
+297		0		297
+
+Pending Work
+Remove Attempts	Removes
+297		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+543		541
+
+Puts
+3400
+
+Take Attempts	Take Successes	Take Failures
+3943		3943		0
+
+Steal Attempts	Steal Successes	Steal Failures
+543		0		543
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	543		0
+
+Deque Grows
+16
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+270		269
+
+Puts
+1670
+
+Take Attempts	Take Successes	Take Failures
+1940		1940		0
+
+Steal Attempts	Steal Successes	Steal Failures
+270		0		270
+
+Pending Work
+Remove Attempts	Removes
+270		0
+
+Deque Grows
+8
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+273		272
+
+Puts
+1730
+
+Take Attempts	Take Successes	Take Failures
+2003		2003		0
+
+Steal Attempts	Steal Successes	Steal Failures
+273		0		273
+
+Pending Work
+Remove Attempts	Removes
+273		0
+
+Deque Grows
+8
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+575		573
+
+Puts
+3400
+
+Take Attempts	Take Successes	Take Failures
+3975		3975		0
+
+Steal Attempts	Steal Successes	Steal Failures
+575		0		575
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	575		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+284		283
+
+Puts
+1648
+
+Take Attempts	Take Successes	Take Failures
+1932		1932		0
+
+Steal Attempts	Steal Successes	Steal Failures
+284		0		284
+
+Pending Work
+Remove Attempts	Removes
+284		0
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+291		290
+
+Puts
+1752
+
+Take Attempts	Take Successes	Take Failures
+2043		2043		0
+
+Steal Attempts	Steal Successes	Steal Failures
+291		0		291
+
+Pending Work
+Remove Attempts	Removes
+291		0
+
+Deque Grows
+5
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+564		562
+
+Puts
+3399
+
+Take Attempts	Take Successes	Take Failures
+3964		3964		0
+
+Steal Attempts	Steal Successes	Steal Failures
+565		0		565
+
+Pending Work
+Adds	Remove Attempts	Removes
+1	565		1
+
+Deque Grows
+16
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+296		295
+
+Puts
+1738
+
+Take Attempts	Take Successes	Take Failures
+2034		2034		0
+
+Steal Attempts	Steal Successes	Steal Failures
+296		0		296
+
+Pending Work
+Remove Attempts	Removes
+296		0
+
+Deque Grows
+8
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+268		267
+
+Puts
+1661
+
+Take Attempts	Take Successes	Take Failures
+1930		1930		0
+
+Steal Attempts	Steal Successes	Steal Failures
+269		0		269
+
+Pending Work
+Remove Attempts	Removes
+269		1
+
+Deque Grows
+8
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+554		552
+
+Puts
+3400
+
+Take Attempts	Take Successes	Take Failures
+3954		3954		0
+
+Steal Attempts	Steal Successes	Steal Failures
+554		0		554
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	554		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+277		276
+
+Puts
+1763
+
+Take Attempts	Take Successes	Take Failures
+2040		2040		0
+
+Steal Attempts	Steal Successes	Steal Failures
+277		0		277
+
+Pending Work
+Remove Attempts	Removes
+277		0
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+277		276
+
+Puts
+1637
+
+Take Attempts	Take Successes	Take Failures
+1914		1914		0
+
+Steal Attempts	Steal Successes	Steal Failures
+277		0		277
+
+Pending Work
+Remove Attempts	Removes
+277		0
+
+Deque Grows
+6
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+556		554
+
+Puts
+3400
+
+Take Attempts	Take Successes	Take Failures
+3956		3956		0
+
+Steal Attempts	Steal Successes	Steal Failures
+556		0		556
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	556		0
+
+Deque Grows
+16
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+271		270
+
+Puts
+1640
+
+Take Attempts	Take Successes	Take Failures
+1911		1911		0
+
+Steal Attempts	Steal Successes	Steal Failures
+271		0		271
+
+Pending Work
+Remove Attempts	Removes
+271		0
+
+Deque Grows
+8
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+285		284
+
+Puts
+1760
+
+Take Attempts	Take Successes	Take Failures
+2045		2045		0
+
+Steal Attempts	Steal Successes	Steal Failures
+285		0		285
+
+Pending Work
+Remove Attempts	Removes
+285		0
+
+Deque Grows
+8
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+543		541
+
+Puts
+3400
+
+Take Attempts	Take Successes	Take Failures
+3943		3943		0
+
+Steal Attempts	Steal Successes	Steal Failures
+543		0		543
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	543		0
+
+Deque Grows
+16
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+274		273
+
+Puts
+1726
+
+Take Attempts	Take Successes	Take Failures
+2000		2000		0
+
+Steal Attempts	Steal Successes	Steal Failures
+274		0		274
+
+Pending Work
+Remove Attempts	Removes
+274		0
+
+Deque Grows
+8
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+269		268
+
+Puts
+1674
+
+Take Attempts	Take Successes	Take Failures
+1943		1943		0
+
+Steal Attempts	Steal Successes	Steal Failures
+269		0		269
+
+Pending Work
+Remove Attempts	Removes
+269		0
+
+Deque Grows
+8
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+559		557
+
+Puts
+3400
+
+Take Attempts	Take Successes	Take Failures
+3959		3959		0
+
+Steal Attempts	Steal Successes	Steal Failures
+559		0		559
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	559		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+286		285
+
+Puts
+1809
+
+Take Attempts	Take Successes	Take Failures
+2095		2095		0
+
+Steal Attempts	Steal Successes	Steal Failures
+286		0		286
+
+Pending Work
+Remove Attempts	Removes
+286		0
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+273		272
+
+Puts
+1591
+
+Take Attempts	Take Successes	Take Failures
+1864		1864		0
+
+Steal Attempts	Steal Successes	Steal Failures
+273		0		273
+
+Pending Work
+Remove Attempts	Removes
+273		0
+
+Deque Grows
+5
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+534		532
+
+Puts
+3400
+
+Take Attempts	Take Successes	Take Failures
+3934		3934		0
+
+Steal Attempts	Steal Successes	Steal Failures
+534		0		534
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	534		0
+
+Deque Grows
+15
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+266		265
+
+Puts
+1683
+
+Take Attempts	Take Successes	Take Failures
+1949		1949		0
+
+Steal Attempts	Steal Successes	Steal Failures
+266		0		266
+
+Pending Work
+Remove Attempts	Removes
+266		0
+
+Deque Grows
+7
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+268		267
+
+Puts
+1717
+
+Take Attempts	Take Successes	Take Failures
+1985		1985		0
+
+Steal Attempts	Steal Successes	Steal Failures
+268		0		268
+
+Pending Work
+Remove Attempts	Removes
+268		0
+
+Deque Grows
+8
+
+
+begin(jgfmt.section3.JGFMolDynBench)
+SizeA	SizeB
+1.196	16.021
+1.249	16.098
+1.175	19.613
+1.227	19.7
+1.167	14.77
+1.213	14.849
+1.194	20.054
+1.237	20.145
+1.244	20.293
+1.289	20.373
+1.252	20.369
+1.295	20.458
+1.244	20.658
+1.29	20.745
+1.174	20.746
+1.225	20.827
+1.237	20.798
+1.285	20.878
+1.23	20.852
+1.283	20.933
+end(jgfmt.section3.JGFMolDynBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+20		18
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10021		10021		0
+
+Steal Attempts	Steal Successes	Steal Failures
+20		0		20
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	20		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+18		17
+
+Puts
+17
+
+Take Attempts	Take Successes	Take Failures
+35		35		0
+
+Steal Attempts	Steal Successes	Steal Failures
+18		0		18
+
+Pending Work
+Remove Attempts	Removes
+18		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9984
+
+Take Attempts	Take Successes	Take Failures
+9986		9986		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+15		13
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10016		10016		0
+
+Steal Attempts	Steal Successes	Steal Failures
+15		0		15
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	15		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+13		12
+
+Puts
+12
+
+Take Attempts	Take Successes	Take Failures
+25		25		0
+
+Steal Attempts	Steal Successes	Steal Failures
+13		0		13
+
+Pending Work
+Remove Attempts	Removes
+13		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9989
+
+Take Attempts	Take Successes	Take Failures
+9991		9991		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+23		21
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10024		10024		0
+
+Steal Attempts	Steal Successes	Steal Failures
+23		0		23
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	23		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+21		20
+
+Puts
+20
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+21		0		21
+
+Pending Work
+Remove Attempts	Removes
+21		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9981
+
+Take Attempts	Take Successes	Take Failures
+9983		9983		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+22		20
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10023		10023		0
+
+Steal Attempts	Steal Successes	Steal Failures
+22		0		22
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	22		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+20		19
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+39		39		0
+
+Steal Attempts	Steal Successes	Steal Failures
+20		0		20
+
+Pending Work
+Remove Attempts	Removes
+20		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9982
+
+Take Attempts	Take Successes	Take Failures
+9984		9984		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+23		21
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10024		10024		0
+
+Steal Attempts	Steal Successes	Steal Failures
+23		0		23
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	23		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+21		20
+
+Puts
+20
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+21		0		21
+
+Pending Work
+Remove Attempts	Removes
+21		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9981
+
+Take Attempts	Take Successes	Take Failures
+9983		9983		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+17		15
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10018		10018		0
+
+Steal Attempts	Steal Successes	Steal Failures
+17		0		17
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	17		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+15		14
+
+Puts
+14
+
+Take Attempts	Take Successes	Take Failures
+29		29		0
+
+Steal Attempts	Steal Successes	Steal Failures
+15		0		15
+
+Pending Work
+Remove Attempts	Removes
+15		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9987
+
+Take Attempts	Take Successes	Take Failures
+9989		9989		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+23		21
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10024		10024		0
+
+Steal Attempts	Steal Successes	Steal Failures
+23		0		23
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	23		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+21		20
+
+Puts
+20
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+21		0		21
+
+Pending Work
+Remove Attempts	Removes
+21		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9981
+
+Take Attempts	Take Successes	Take Failures
+9983		9983		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+16		14
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10017		10017		0
+
+Steal Attempts	Steal Successes	Steal Failures
+16		0		16
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	16		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+14		13
+
+Puts
+13
+
+Take Attempts	Take Successes	Take Failures
+27		27		0
+
+Steal Attempts	Steal Successes	Steal Failures
+14		0		14
+
+Pending Work
+Remove Attempts	Removes
+14		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9988
+
+Take Attempts	Take Successes	Take Failures
+9990		9990		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+23		21
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10024		10024		0
+
+Steal Attempts	Steal Successes	Steal Failures
+23		0		23
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	23		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+21		20
+
+Puts
+20
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+21		0		21
+
+Pending Work
+Remove Attempts	Removes
+21		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9981
+
+Take Attempts	Take Successes	Take Failures
+9983		9983		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+17		15
+
+Puts
+10001
+
+Take Attempts	Take Successes	Take Failures
+10018		10018		0
+
+Steal Attempts	Steal Successes	Steal Failures
+17		0		17
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	17		0
+
+Deque Grows
+12
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+15		14
+
+Puts
+14
+
+Take Attempts	Take Successes	Take Failures
+29		29		0
+
+Steal Attempts	Steal Successes	Steal Failures
+15		0		15
+
+Pending Work
+Remove Attempts	Removes
+15		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+9987
+
+Take Attempts	Take Successes	Take Failures
+9989		9989		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+11
+
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+114		112
+
+Puts
+60001
+
+Take Attempts	Take Successes	Take Failures
+60115		60115		0
+
+Steal Attempts	Steal Successes	Steal Failures
+114		0		114
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	114		0
+
+Deque Grows
+61
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+59890
+
+Take Attempts	Take Successes	Take Failures
+59892		59892		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+60
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+112		111
+
+Puts
+111
+
+Take Attempts	Take Successes	Take Failures
+223		223		0
+
+Steal Attempts	Steal Successes	Steal Failures
+112		0		112
+
+Pending Work
+Remove Attempts	Removes
+112		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+103		101
+
+Puts
+60001
+
+Take Attempts	Take Successes	Take Failures
+60104		60104		0
+
+Steal Attempts	Steal Successes	Steal Failures
+103		0		103
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	103		0
+
+Deque Grows
+61
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+101		100
+
+Puts
+100
+
+Take Attempts	Take Successes	Take Failures
+201		201		0
+
+Steal Attempts	Steal Successes	Steal Failures
+101		0		101
+
+Pending Work
+Remove Attempts	Removes
+101		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+59901
+
+Take Attempts	Take Successes	Take Failures
+59903		59903		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+60
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+115		113
+
+Puts
+60001
+
+Take Attempts	Take Successes	Take Failures
+60116		60116		0
+
+Steal Attempts	Steal Successes	Steal Failures
+115		0		115
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	115		0
+
+Deque Grows
+61
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+113		112
+
+Puts
+112
+
+Take Attempts	Take Successes	Take Failures
+225		225		0
+
+Steal Attempts	Steal Successes	Steal Failures
+113		0		113
+
+Pending Work
+Remove Attempts	Removes
+113		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+59889
+
+Take Attempts	Take Successes	Take Failures
+59891		59891		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+60
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+97		95
+
+Puts
+60001
+
+Take Attempts	Take Successes	Take Failures
+60098		60098		0
+
+Steal Attempts	Steal Successes	Steal Failures
+97		0		97
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	97		0
+
+Deque Grows
+61
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+95		94
+
+Puts
+94
+
+Take Attempts	Take Successes	Take Failures
+189		189		0
+
+Steal Attempts	Steal Successes	Steal Failures
+95		0		95
+
+Pending Work
+Remove Attempts	Removes
+95		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+59907
+
+Take Attempts	Take Successes	Take Failures
+59909		59909		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+60
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+121		119
+
+Puts
+60001
+
+Take Attempts	Take Successes	Take Failures
+60122		60122		0
+
+Steal Attempts	Steal Successes	Steal Failures
+121		0		121
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	121		0
+
+Deque Grows
+61
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+119		118
+
+Puts
+118
+
+Take Attempts	Take Successes	Take Failures
+237		237		0
+
+Steal Attempts	Steal Successes	Steal Failures
+119		0		119
+
+Pending Work
+Remove Attempts	Removes
+119		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+59883
+
+Take Attempts	Take Successes	Take Failures
+59885		59885		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+60
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+77		75
+
+Puts
+60001
+
+Take Attempts	Take Successes	Take Failures
+60078		60078		0
+
+Steal Attempts	Steal Successes	Steal Failures
+77		0		77
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	77		0
+
+Deque Grows
+61
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+75		74
+
+Puts
+74
+
+Take Attempts	Take Successes	Take Failures
+149		149		0
+
+Steal Attempts	Steal Successes	Steal Failures
+75		0		75
+
+Pending Work
+Remove Attempts	Removes
+75		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+59927
+
+Take Attempts	Take Successes	Take Failures
+59929		59929		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+60
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+84		82
+
+Puts
+60001
+
+Take Attempts	Take Successes	Take Failures
+60085		60085		0
+
+Steal Attempts	Steal Successes	Steal Failures
+84		0		84
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	84		0
+
+Deque Grows
+61
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+82		81
+
+Puts
+81
+
+Take Attempts	Take Successes	Take Failures
+163		163		0
+
+Steal Attempts	Steal Successes	Steal Failures
+82		0		82
+
+Pending Work
+Remove Attempts	Removes
+82		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+59920
+
+Take Attempts	Take Successes	Take Failures
+59922		59922		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+60
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+34		32
+
+Puts
+60001
+
+Take Attempts	Take Successes	Take Failures
+60035		60035		0
+
+Steal Attempts	Steal Successes	Steal Failures
+34		0		34
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	34		0
+
+Deque Grows
+61
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+32		31
+
+Puts
+31
+
+Take Attempts	Take Successes	Take Failures
+63		63		0
+
+Steal Attempts	Steal Successes	Steal Failures
+32		0		32
+
+Pending Work
+Remove Attempts	Removes
+32		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+59970
+
+Take Attempts	Take Successes	Take Failures
+59972		59972		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+60
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+117		115
+
+Puts
+60001
+
+Take Attempts	Take Successes	Take Failures
+60118		60118		0
+
+Steal Attempts	Steal Successes	Steal Failures
+117		0		117
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	117		0
+
+Deque Grows
+61
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+115		114
+
+Puts
+114
+
+Take Attempts	Take Successes	Take Failures
+229		229		0
+
+Steal Attempts	Steal Successes	Steal Failures
+115		0		115
+
+Pending Work
+Remove Attempts	Removes
+115		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+59887
+
+Take Attempts	Take Successes	Take Failures
+59889		59889		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+60
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+118		116
+
+Puts
+60001
+
+Take Attempts	Take Successes	Take Failures
+60119		60119		0
+
+Steal Attempts	Steal Successes	Steal Failures
+118		0		118
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	118		0
+
+Deque Grows
+61
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+116		115
+
+Puts
+115
+
+Take Attempts	Take Successes	Take Failures
+231		231		0
+
+Steal Attempts	Steal Successes	Steal Failures
+116		0		116
+
+Pending Work
+Remove Attempts	Removes
+116		0
+
+Deque Grows
+1
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+59886
+
+Take Attempts	Take Successes	Take Failures
+59888		59888		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+60
+
+
+begin(jgfmt.section3.JGFMonteCarloBench)
+SizeA	SizeB
+2.901	14.843
+3.584	15.434
+2.886	14.099
+3.547	14.685
+2.908	14.066
+3.588	14.639
+2.846	13.842
+3.514	14.417
+2.896	13.965
+3.577	14.54
+2.95	14.161
+3.639	14.74
+2.915	14.097
+3.582	14.673
+2.986	14.269
+3.658	14.849
+2.903	14.205
+3.57	14.783
+2.94	14.198
+3.739	14.798
+end(jgfmt.section3.JGFMonteCarloBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+10		8
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+44		44		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	10		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+21		21		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+5
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+8		7
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+8		0		8
+
+Pending Work
+Remove Attempts	Removes
+8		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+10		8
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+44		44		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	10		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+21		21		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+5
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+8		7
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+8		0		8
+
+Pending Work
+Remove Attempts	Removes
+8		0
+
+Deque Grows
+1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+7		5
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+41		41		0
+
+Steal Attempts	Steal Successes	Steal Failures
+7		0		7
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	7		0
+
+Deque Grows
+13
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+3		2
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+18		18		0
+
+Steal Attempts	Steal Successes	Steal Failures
+3		0		3
+
+Pending Work
+Remove Attempts	Removes
+3		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+4		3
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+4		0		4
+
+Pending Work
+Remove Attempts	Removes
+4		0
+
+Deque Grows
+7
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M -XX:+UseNUMA jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/thom/workspace/intervals-java/Intervals/runtime
+
+Global Statistics
+
+Gone Idle	Woken up
+10		8
+
+Puts
+34
+
+Take Attempts	Take Successes	Take Failures
+44		44		0
+
+Steal Attempts	Steal Successes	Steal Failures
+10		0		10
+
+Pending Work
+Adds	Remove Attempts	Removes
+0	10		0
+
+Deque Grows
+6
+
+
+Statistics for (Intervals-Worker-0)
+
+Gone Idle	Woken up
+2		1
+
+Puts
+19
+
+Take Attempts	Take Successes	Take Failures
+21		21		0
+
+Steal Attempts	Steal Successes	Steal Failures
+2		0		2
+
+Pending Work
+Remove Attempts	Removes
+2		0
+
+Deque Grows
+5
+
+
+Statistics for (Intervals-Worker-1)
+
+Gone Idle	Woken up
+8		7
+
+Puts
+15
+
+Take Attempts	Take Successes	Take Failures
+23		23		0
+
+Steal Attempts	Steal Successes	Steal Failures
+8		0		8
+
+Pending Work
+Remove Attempts	Removes
+8		0
+
+Deque Grows
+1
+
+
+begin(jgfmt.section3.JGFRayTracerBench)
+SizeA	SizeB
+0.0040	0.0040
+0.982	9.23
+1.025	9.266
+0.0060	0.0050
+0.967	11.494
+1.008	11.526
+0.0050	0.0040
+0.968	9.383
+1.005	9.424
+0.0050	0.0050
+0.981	11.649
+1.017	11.682
+0.0050	0.0050
+0.965	9.499
+1.002	9.537
+0.0040	0.0040
+0.973	9.64
+1.015	9.68
+0.0050	0.0050
+0.963	9.528
+0.998	9.567
+0.0040	0.0050
+1.024	9.899
+1.065	9.935
+0.0060	0.0050
+0.945	9.665
+0.982	9.702
+0.0050	0.0060
+0.951	11.897
+0.993	11.93
+end(jgfmt.section3.JGFRayTracerBench)
+
+
+Script done on Wed 30 Jun 2010 04:09:53 AM CEST
