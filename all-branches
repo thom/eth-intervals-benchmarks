@@ -1,58 +1,15 @@
 #!/bin/bash
-: ${2?"Usage: $0 HOST CORES [STATS]. Warning: Removes old benchmark logs results/${HOST}-20*"}
+: ${2?"Usage: $0 HOST CORES NO_LOCALITY STATS. Warning: Removes old benchmark logs results/${HOST}-20*"}
 
 HOST=$1
 CORES=$2
-
-if [ -z ${3} ]
-then
-	STATS=false
-else
-	STATS=true
-fi
+NO_LOCALITY=$3
+STATS=$4
 
 branches=(
-	# Lazy deques
-	lazy-deque-orig
-	lazy-deque-cas
-
-	# Dynamic circular deques
-	dynamic-circular-deque
-	dynamic-circular-deque-rta
-
-	# Duplicating queues
-	duplicating-queue
-
-	# Idempotent queues
-	idempotent-fifo-queue
-	idempotent-fifo-queue-no-steal-loop
-	idempotent-lifo-queue
-	idempotent-lifo-queue-no-steal-loop
-	idempotent-deque
-	idempotent-deque-no-steal-loop
-
-	# Work-stealing lazy deque
-	work-stealing-lazy-deque
-
-	# Work-stealing deque
-	work-stealing-deque
-	work-stealing-deque-lazy-top
-	work-stealing-deque-no-steal-loop
-	work-stealing-deque-no-steal-loop-lazy-top
-
-	# Duplicating work-stealing deque
-	duplicating-work-stealing-deque
-
-	# Idempotent work-stealing deque
-	idempotent-work-stealing-deque
-	idempotent-work-stealing-deque-no-steal-loop
-
-	# Dynamic work-stealing deque
-	dynamic-work-stealing-deque
-	dynamic-work-stealing-deque-no-steal-loop
-
-	# Locality
-	locality
+	keep-alive-thread
+	no-keep-alive-thread
+	shared-work-queue
 )
 
 cfg=src/ch/ethz/intervals/Config.java
@@ -62,8 +19,24 @@ ITER=10
 OPTS="-server -Xmx2048M -Xms2048M -Xss8M"
 NUMA_OPTS="${OPTS} -XX:+UseNUMA"
 
-echo "$HOST ($CORES cores), stats=$STATS"
+echo "$HOST ($CORES cores), no_locality=$NO_LOCALITY, stats=$STATS"
 echo
+
+function locality_begin {
+	if [ -e ${cfg} ]
+	then
+		capitalized_host=`echo $HOST | perl -ne 'print ucfirst($_)'`
+		sed -i "s/public static final Units units = new MafushiUnits()/public static final Units units = new ${capitalized_host}Units()/g" ${cfg}
+	fi
+
+        if ${NO_LOCALITY}
+	then
+		if [ -e ${cfg} ]
+		then
+			sed -i 's/public static final boolean AFFINITY = true/public static final boolean AFFINITY = false/g' ${cfg}
+		fi
+	fi
+}
 
 function stats_begin {
         if ${STATS}
@@ -102,6 +75,7 @@ for branch in ${branches[@]}; do
 	cd ..
 	git_co_cfg
 	git co origin/${branch}
+	locality_begin
 	stats_begin
 	cd -
 	JAVA_OPTS=${OPTS} NS="-1" ITERFAST=${ITER} ITERSLOW=${ITER} ./all-benchmarks
@@ -115,6 +89,7 @@ for branch in ${branches[@]}; do
 	cd ..
 	git_co_cfg
 	git co origin/${branch}
+	locality_begin
 	stats_begin
 	cd -
 	JAVA_OPTS=${NUMA_OPTS} NS="-1" ITERFAST=${ITER} ITERSLOW=${ITER} ./all-benchmarks
@@ -124,19 +99,21 @@ for branch in ${branches[@]}; do
 done
 
 # Threads
-cd ..
-git_co_cfg
-git co master
-stats_begin
-cd -
-JAVA_OPTS=${OPTS} NS="${CORES}" ITERFAST=${ITER} ITERSLOW=${ITER} ./all-benchmarks
-move_results "${CORES}-threads"
+#cd ..
+#git_co_cfg
+#git co master
+#locality_begin
+#stats_begin
+#cd -
+#JAVA_OPTS=${OPTS} NS="${CORES}" ITERFAST=${ITER} ITERSLOW=${ITER} ./all-benchmarks
+#move_results "${CORES}-threads"
 
 # Threads (NUMA)
-cd ..
-git_co_cfg
-git co master
-stats_begin
-cd -
-JAVA_OPTS=${NUMA_OPTS} NS="${CORES}" ITERFAST=${ITER} ITERSLOW=${ITER} ./all-benchmarks
-move_results "${CORES}-threads-numa"
+#cd ..
+#git_co_cfg
+#git co master
+#locality_begin
+#stats_begin
+#cd -
+#JAVA_OPTS=${NUMA_OPTS} NS="${CORES}" ITERFAST=${ITER} ITERSLOW=${ITER} ./all-benchmarks
+#move_results "${CORES}-threads-numa"
