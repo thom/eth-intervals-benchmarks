@@ -9,7 +9,9 @@ STATS=$4
 branches=(
 	keep-alive-thread
 	no-keep-alive-thread
-	shared-work-queue
+	linked-blocking-deque
+	shared-work-queue-yield
+	shared-work-queue-semaphore
 )
 
 cfg=src/ch/ethz/intervals/Config.java
