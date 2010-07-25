@@ -1,0 +1,385 @@
+Script started on Sun 25 Jul 2010 08:57:10 AM CEST
+Logfile: mafushi-2010-07-25-08:57:10.txt
+
+date
+Sun Jul 25 08:57:10 CEST 2010
+
+git branch
+* (no branch)
+
+git show --pretty=oneline | head -1
+721ba762ed590989c20ee8da4407beacbf999f5e Globally shared work queue where workers acquire semaphore if they can't get any work (go to sleep)
+
+git diff | cat
+diff --git a/Intervals/src/ch/ethz/intervals/Config.java b/Intervals/src/ch/ethz/intervals/Config.java
+index 918cbc5..18e2c0c 100644
+--- a/Intervals/src/ch/ethz/intervals/Config.java
++++ b/Intervals/src/ch/ethz/intervals/Config.java
+@@ -12,7 +12,7 @@ public class Config {
+ 	/**
+ 	 * Should workers be bound to cores?
+ 	 */
+-	public static final boolean AFFINITY = true;
++	public static final boolean AFFINITY = false;
+ 
+ 	/**
+ 	 * Should we collect and print statistics?
+
+pwd
+/home/weibelt/intervals-java/Intervals
+
+Settings:
+JAVA_OPTS=-server -Xmx2048M -Xms2048M -Xss8M
+NOBUILD=
+CLASSPATH=:/home/weibelt/intervals-java/Intervals/bin:/home/weibelt/intervals-java/Intervals/lib/*
+LD_LIBRARY_PATH=:/usr/lib:/usr/local/lib:/home/weibelt/intervals-java/Intervals/lib
+
+Buildfile: build.xml
+
+clean:
+   [delete] Deleting directory /home/weibelt/intervals-java/Intervals/bin
+
+create:
+    [mkdir] Created dir: /home/weibelt/intervals-java/Intervals/bin
+
+compile:
+    [javac] Compiling 95 source files to /home/weibelt/intervals-java/Intervals/bin
+    [javac] Compiling 123 source files to /home/weibelt/intervals-java/Intervals/bin
+    [javac] Compiling 67 source files to /home/weibelt/intervals-java/Intervals/bin
+
+BUILD SUCCESSFUL
+Total time: 7 seconds
+
+SIZES2=SizeA SizeB SizeC
+SIZES3=SizeA SizeB
+ITERFAST=10
+ITERSLOW=10
+NS=-1
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFCryptBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+begin(jgfmt.section2.JGFCryptBench)
+SizeA	SizeB	SizeC
+0.157	0.28	0.57
+0.145	0.349	0.553
+0.149	0.305	0.572
+0.137	0.281	0.571
+0.162	0.332	0.586
+0.15	0.38	0.578
+0.165	0.309	0.556
+0.193	0.322	0.605
+0.154	0.301	0.551
+0.171	0.288	0.557
+end(jgfmt.section2.JGFCryptBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFLUFactBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+begin(jgfmt.section2.JGFLUFactBench)
+SizeA	SizeB	SizeC
+0.408	0.745	2.356
+0.416	0.74	2.367
+0.386	0.748	2.31
+0.446	0.759	2.341
+0.415	0.734	2.359
+0.423	0.787	2.324
+0.411	0.818	2.37
+0.412	0.73	2.353
+0.394	0.756	2.389
+0.414	0.733	2.314
+end(jgfmt.section2.JGFLUFactBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSORBenchSizeC -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+begin(jgfmt.section2.JGFSORBench)
+SizeA	SizeB	SizeC
+0.83	1.211	1.813
+0.836	1.23	1.601
+0.821	1.243	1.786
+0.863	1.234	1.727
+0.822	1.256	1.834
+0.838	1.232	1.722
+0.772	1.292	1.743
+0.832	1.023	1.774
+0.865	1.279	1.742
+0.851	1.251	1.269
+end(jgfmt.section2.JGFSORBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section2.JGFSeriesBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+begin(jgfmt.section2.JGFSeriesBench)
+SizeA	SizeB
+1.375	11.525
+1.436	11.429
+1.35	11.498
+1.361	11.511
+1.393	11.424
+1.447	11.391
+1.342	11.411
+1.388	11.451
+1.464	11.452
+1.324	11.412
+end(jgfmt.section2.JGFSeriesBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMolDynBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+begin(jgfmt.section3.JGFMolDynBench)
+SizeA	SizeB
+0.78	5.866
+0.838	5.958
+0.769	6.646
+0.822	6.743
+0.791	6.943
+0.843	7.036
+0.703	6.412
+0.756	6.518
+0.762	6.849
+0.814	6.94
+0.735	6.51
+0.788	6.605
+0.839	6.873
+0.891	6.965
+0.812	6.723
+0.865	6.815
+0.768	6.54
+0.821	6.633
+0.831	6.155
+0.884	6.247
+end(jgfmt.section3.JGFMolDynBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFMonteCarloBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+begin(jgfmt.section3.JGFMonteCarloBench)
+SizeA	SizeB
+0.689	2.827
+0.967	3.25
+0.835	3.024
+1.262	3.43
+0.722	2.666
+0.954	3.079
+0.744	2.849
+0.974	3.26
+0.859	2.77
+1.182	3.19
+0.631	2.821
+1.038	3.258
+0.738	3.143
+1.072	3.577
+0.637	2.819
+0.879	3.245
+0.748	2.651
+1.047	3.075
+0.717	2.695
+0.988	3.11
+end(jgfmt.section3.JGFMonteCarloBench)
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeA -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+Running java -server -Xmx2048M -Xms2048M -Xss8M jgfmt.section3.JGFRayTracerBenchSizeB -1 from /home/weibelt/intervals-java/Intervals/runtime
+
+begin(jgfmt.section3.JGFRayTracerBench)
+SizeA	SizeB
+0.022	0.013
+0.352	2.642
+0.41	2.692
+0.012	0.013
+0.353	2.816
+0.401	2.865
+0.013	0.013
+0.317	2.611
+0.366	2.659
+0.013	0.017
+0.36	2.61
+0.409	2.663
+0.013	0.013
+0.368	2.683
+0.416	2.73
+0.013	0.013
+0.35	2.569
+0.398	2.619
+0.013	0.016
+0.329	2.662
+0.377	2.726
+0.013	0.013
+0.343	2.634
+0.392	2.682
+0.013	0.013
+0.349	2.704
+0.398	2.753
+0.012	0.013
+0.38	2.773
+0.427	2.821
+end(jgfmt.section3.JGFRayTracerBench)
+
+
+Script done on Sun 25 Jul 2010 09:04:22 AM CEST
