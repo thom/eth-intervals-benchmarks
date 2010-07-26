@@ -28,7 +28,7 @@ function locality_begin {
 	if [ -e ${cfg} ]
 	then
 		capitalized_host=`echo $HOST | perl -ne 'print ucfirst($_)'`
-		sed -i "s/public static final Units units = new MafushiUnits()/public static final Units units = new ${capitalized_host}Units()/g" ${cfg}
+		sed -i "s/public static final Places places = new MafushiPlaces()/public static final Places places = new ${capitalized_host}Places()/g" ${cfg}
 	fi
 
         if ${NO_LOCALITY}
