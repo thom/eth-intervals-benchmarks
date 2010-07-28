@@ -7,11 +7,10 @@ NO_LOCALITY=$3
 STATS=$4
 
 branches=(
-	keep-alive-thread
-	no-keep-alive-thread
-	linked-blocking-deque
-	shared-work-queue-yield
-	shared-work-queue-semaphore
+	threadpool-orig
+	threadpool-new-yield
+	threadpool-new-place-idle
+	threadpool-new-global-idle
 )
 
 cfg=src/ch/ethz/intervals/Config.java
