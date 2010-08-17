@@ -1,0 +1,14 @@
+#!/bin/bash
+
+MYDIR=$(dirname $0)
+DIR=$(cd $MYDIR; pwd)
+JGF=$(cd $MYDIR/..; pwd)
+
+if [ -z "$JAVA_OPTS" ]
+then
+	JAVA_OPTS="-server -Xmx4096M -Xms4096M -Xss8M -XX:+UseNUMA"
+fi
+
+$DIR/benchmark-init $1
+
+java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t intervals -w 8 -l ignorant
