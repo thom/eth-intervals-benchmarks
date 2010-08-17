@@ -6,9 +6,33 @@ JGF=$(cd $MYDIR/..; pwd)
 
 if [ -z "$JAVA_OPTS" ]
 then
-	JAVA_OPTS="-server -Xmx4096M -Xms4096M -Xss8M -XX:+UseNUMA"
+	export JAVA_OPTS="-server -Xmx4096M -Xms4096M -Xss8M -XX:+UseNUMA"
 fi
 
 $DIR/benchmark-init $1
 
-java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t intervals -w 8 -l ignorant
+W=512
+
+localities=(
+	best
+	ignorant
+	worst
+	random
+)
+
+types=(
+	threads
+	intervals
+)
+
+for type in ${types[@]}; do
+	for locality in ${localities[@]}; do
+		java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t ${type} -w ${W} -l ${locality}
+		echo
+	done
+	echo
+done
+
+java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t threadpool -w ${W}
+echo
+java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t single -w ${W}
