@@ -1,0 +1,262 @@
+Script started on Wed 18 Aug 2010 10:34:15 AM CEST
+Logfile: mafushi-2010-08-18-10:34:15.txt
+
+date
+Wed Aug 18 10:34:15 CEST 2010
+
+git branch
+* locality
+
+git show --pretty=oneline | head -1
+e8d5bbbb2a87024f8c1d0c1565abd70cf5517708 Cleanup places
+
+git diff | cat
+
+pwd
+/home/weibelt/intervals-java/Intervals
+
+Settings:
+JAVA_OPTS=-server -Xmx4096M -Xms4096M -Xss8M -XX:+UseNUMA
+NOBUILD=
+CLASSPATH=:/home/weibelt/intervals-java/Intervals/bin:/home/weibelt/intervals-java/Intervals/lib/*
+LD_LIBRARY_PATH=:/usr/lib:/usr/local/lib:/home/weibelt/intervals-java/Intervals/lib
+
+Buildfile: build.xml
+
+clean:
+   [delete] Deleting directory /home/weibelt/intervals-java/Intervals/bin
+
+create:
+    [mkdir] Created dir: /home/weibelt/intervals-java/Intervals/bin
+
+compile:
+    [javac] Compiling 81 source files to /home/weibelt/intervals-java/Intervals/bin
+    [javac] Compiling 123 source files to /home/weibelt/intervals-java/Intervals/bin
+    [javac] Compiling 78 source files to /home/weibelt/intervals-java/Intervals/bin
+
+BUILD SUCCESSFUL
+Total time: 7 seconds
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 16
+
+Run 0 = 6816
+Run 1 = 7624
+Run 2 = 6816
+Run 3 = 6848
+Run 4 = 6737
+Run 5 = 6670
+Run 6 = 6642
+Run 7 = 6695
+Run 8 = 6686
+Run 9 = 6599
+
+3-best = 6637.000000
+
+Benchmark: cache stress
+Locality: ignorant
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 16
+
+Run 0 = 8648
+Run 1 = 10746
+Run 2 = 7841
+Run 3 = 7814
+Run 4 = 7869
+Run 5 = 7899
+Run 6 = 7989
+Run 7 = 7893
+Run 8 = 7944
+Run 9 = 7824
+
+3-best = 7826.333333
+
+Benchmark: cache stress
+Locality: worst
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 16
+
+Run 0 = 9392
+Run 1 = 8954
+Run 2 = 9508
+Run 3 = 9036
+Run 4 = 8932
+Run 5 = 8804
+Run 6 = 8937
+Run 7 = 8899
+Run 8 = 9015
+Run 9 = 8958
+
+3-best = 8878.333333
+
+Benchmark: cache stress
+Locality: random
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 16
+
+Run 0 = 9603
+Run 1 = 10349
+Run 2 = 10396
+Run 3 = 11173
+Run 4 = 9941
+Run 5 = 11603
+Run 6 = 9057
+Run 7 = 10034
+Run 8 = 9709
+Run 9 = 10037
+
+3-best = 9456.333333
+
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 16
+
+Run 0 = 7097
+Run 1 = 6894
+Run 2 = 6707
+Run 3 = 6777
+Run 4 = 6808
+Run 5 = 6958
+Run 6 = 6597
+Run 7 = 7018
+Run 8 = 6569
+Run 9 = 6712
+
+3-best = 6624.333333
+
+Benchmark: cache stress
+Locality: ignorant
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 16
+
+Run 0 = 8277
+Run 1 = 7789
+Run 2 = 7790
+Run 3 = 7796
+Run 4 = 7771
+Run 5 = 7853
+Run 6 = 7814
+Run 7 = 7706
+Run 8 = 7749
+Run 9 = 7819
+
+3-best = 7742.000000
+
+Benchmark: cache stress
+Locality: worst
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 16
+
+Run 0 = 8107
+Run 1 = 7701
+Run 2 = 7703
+Run 3 = 7727
+Run 4 = 7695
+Run 5 = 7706
+Run 6 = 7733
+Run 7 = 7778
+Run 8 = 7724
+Run 9 = 7745
+
+3-best = 7699.666667
+
+Benchmark: cache stress
+Locality: random
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 16
+
+Run 0 = 8040
+Run 1 = 7719
+Run 2 = 7677
+Run 3 = 7685
+Run 4 = 7805
+Run 5 = 7694
+Run 6 = 7681
+Run 7 = 7787
+Run 8 = 7552
+Run 9 = 7752
+
+3-best = 7636.666667
+
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threadpool
+Number of threads in thread pool: 8
+Array size: 2097144
+Tasks per unit: 16
+
+Run 0 = 7100
+Run 1 = 7039
+Run 2 = 6859
+Run 3 = 6873
+Run 4 = 6801
+Run 5 = 6880
+Run 6 = 6850
+Run 7 = 6889
+^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[B^[[BRun 8 = 6899
+Run 9 = 6919
+
+3-best = 6836.666667
+
+Benchmark: cache stress
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: single
+Array size: 2097144
+Tasks per unit: 16
+
+Run 0 = 50935
+Run 1 = 50890
+Run 2 = 50886
+Run 3 = 50889
+Run 4 = 50891
+Run 5 = 50891
+Run 6 = 50888
+Run 7 = 50890
+Run 8 = 50886
+Run 9 = 50886
+
+3-best = 50886.000000
+
+Script done on Wed 18 Aug 2010 10:54:55 AM CEST
