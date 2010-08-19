@@ -27,32 +27,32 @@ types=(
 
 for type in ${types[@]}; do
 	for locality in ${localities[@]}; do
-		pfmon --cpu-list 0,1 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t ${type} -w ${W} -l ${locality} -r 1 -k 1
+		pfmon --cpu-list 0,1 -uk --system-wide -e UNC_LLC_MISS:PROBE,UNC_LLC_MISS:WRITE,UNC_LLC_MISS:READ,UNC_LLC_HITS:PROBE,UNC_LLC_HITS:WRITE,UNC_LLC_HITS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t ${type} -w ${W} -l ${locality} -r 1 -k 1
 		echo
-		pfmon --cpu-list 2,3 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t ${type} -w ${W} -l ${locality} -r 1 -k 1
+		pfmon --cpu-list 2,3 -uk --system-wide -e UNC_LLC_MISS:PROBE,UNC_LLC_MISS:WRITE,UNC_LLC_MISS:READ,UNC_LLC_HITS:PROBE,UNC_LLC_HITS:WRITE,UNC_LLC_HITS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t ${type} -w ${W} -l ${locality} -r 1 -k 1
 		echo
-		pfmon --cpu-list 4,5 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t ${type} -w ${W} -l ${locality} -r 1 -k 1
+		pfmon --cpu-list 4,5 -uk --system-wide -e UNC_LLC_MISS:PROBE,UNC_LLC_MISS:WRITE,UNC_LLC_MISS:READ,UNC_LLC_HITS:PROBE,UNC_LLC_HITS:WRITE,UNC_LLC_HITS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t ${type} -w ${W} -l ${locality} -r 1 -k 1
 		echo
-		pfmon --cpu-list 6,7 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t ${type} -w ${W} -l ${locality} -r 1 -k 1
+		pfmon --cpu-list 6,7 -uk --system-wide -e UNC_LLC_MISS:PROBE,UNC_LLC_MISS:WRITE,UNC_LLC_MISS:READ,UNC_LLC_HITS:PROBE,UNC_LLC_HITS:WRITE,UNC_LLC_HITS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t ${type} -w ${W} -l ${locality} -r 1 -k 1
 		echo
 		echo
 	done
 	echo
 done
 
-pfmon --cpu-list 0,1 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t threadpool -w ${W} -r 1 -k 1
+pfmon --cpu-list 0,1 -uk --system-wide -e UNC_LLC_MISS:PROBE,UNC_LLC_MISS:WRITE,UNC_LLC_MISS:READ,UNC_LLC_HITS:PROBE,UNC_LLC_HITS:WRITE,UNC_LLC_HITS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t threadpool -w ${W} -r 1 -k 1
 echo
-pfmon --cpu-list 2,3 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t threadpool -w ${W} -r 1 -k 1
+pfmon --cpu-list 2,3 -uk --system-wide -e UNC_LLC_MISS:PROBE,UNC_LLC_MISS:WRITE,UNC_LLC_MISS:READ,UNC_LLC_HITS:PROBE,UNC_LLC_HITS:WRITE,UNC_LLC_HITS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t threadpool -w ${W} -r 1 -k 1
 echo
-pfmon --cpu-list 4,5 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t threadpool -w ${W} -r 1 -k 1
+pfmon --cpu-list 4,5 -uk --system-wide -e UNC_LLC_MISS:PROBE,UNC_LLC_MISS:WRITE,UNC_LLC_MISS:READ,UNC_LLC_HITS:PROBE,UNC_LLC_HITS:WRITE,UNC_LLC_HITS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t threadpool -w ${W} -r 1 -k 1
 echo
-pfmon --cpu-list 6,7 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t threadpool -w ${W} -r 1 -k 1
+pfmon --cpu-list 6,7 -uk --system-wide -e UNC_LLC_MISS:PROBE,UNC_LLC_MISS:WRITE,UNC_LLC_MISS:READ,UNC_LLC_HITS:PROBE,UNC_LLC_HITS:WRITE,UNC_LLC_HITS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t threadpool -w ${W} -r 1 -k 1
 echo
 echo
-pfmon --cpu-list 0,1 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t single -w ${W} -r 1 -k 1
+pfmon --cpu-list 0,1 -uk --system-wide -e UNC_LLC_MISS:PROBE,UNC_LLC_MISS:WRITE,UNC_LLC_MISS:READ,UNC_LLC_HITS:PROBE,UNC_LLC_HITS:WRITE,UNC_LLC_HITS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t single -w ${W} -r 1 -k 1
 echo
-pfmon --cpu-list 2,3 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t single -w ${W} -r 1 -k 1
+pfmon --cpu-list 2,3 -uk --system-wide -e UNC_LLC_MISS:PROBE,UNC_LLC_MISS:WRITE,UNC_LLC_MISS:READ,UNC_LLC_HITS:PROBE,UNC_LLC_HITS:WRITE,UNC_LLC_HITS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t single -w ${W} -r 1 -k 1
 echo
-pfmon --cpu-list 4,5 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t single -w ${W} -r 1 -k 1
+pfmon --cpu-list 4,5 -uk --system-wide -e UNC_LLC_MISS:PROBE,UNC_LLC_MISS:WRITE,UNC_LLC_MISS:READ,UNC_LLC_HITS:PROBE,UNC_LLC_HITS:WRITE,UNC_LLC_HITS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t single -w ${W} -r 1 -k 1
 echo
-pfmon --cpu-list 6,7 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t single -w ${W} -r 1 -k 1
+pfmon --cpu-list 6,7 -uk --system-wide -e UNC_LLC_MISS:PROBE,UNC_LLC_MISS:WRITE,UNC_LLC_MISS:READ,UNC_LLC_HITS:PROBE,UNC_LLC_HITS:WRITE,UNC_LLC_HITS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t single -w ${W} -r 1 -k 1
