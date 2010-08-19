@@ -1,0 +1,651 @@
+Script started on Thu 19 Aug 2010 07:32:15 PM CEST
+Logfile: mafushi-2010-08-19-19:32:15.txt
+
+date
+Thu Aug 19 19:32:15 CEST 2010
+
+git branch
+* locality
+
+git show --pretty=oneline | head -1
+e8d5bbbb2a87024f8c1d0c1565abd70cf5517708 Cleanup places
+
+git diff | cat
+
+pwd
+/home/weibelt/intervals-java/Intervals
+
+Settings:
+JAVA_OPTS=-server -Xmx4096M -Xms4096M -Xss8M -XX:+UseNUMA
+NOBUILD=
+CLASSPATH=:/home/weibelt/intervals-java/Intervals/bin:/home/weibelt/intervals-java/Intervals/lib/*
+LD_LIBRARY_PATH=:/usr/lib:/usr/local/lib:/home/weibelt/intervals-java/Intervals/lib
+
+Buildfile: build.xml
+
+clean:
+   [delete] Deleting directory /home/weibelt/intervals-java/Intervals/bin
+
+create:
+    [mkdir] Created dir: /home/weibelt/intervals-java/Intervals/bin
+
+compile:
+    [javac] Compiling 81 source files to /home/weibelt/intervals-java/Intervals/bin
+    [javac] Compiling 123 source files to /home/weibelt/intervals-java/Intervals/bin
+    [javac] Compiling 78 source files to /home/weibelt/intervals-java/Intervals/bin
+
+BUILD SUCCESSFUL
+Total time: 7 seconds
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3437
+
+1-best = 3437.000000
+CPU0                     104168769 UNC_LLC_MISS:READ
+CPU1                     119992719 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3367
+
+1-best = 3367.000000
+CPU2                     104971978 UNC_LLC_MISS:READ
+CPU3                     110010034 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3392
+
+1-best = 3392.000000
+CPU4                     103308963 UNC_LLC_MISS:READ
+CPU5                     120796352 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3392
+
+1-best = 3392.000000
+CPU6                     105819401 UNC_LLC_MISS:READ
+CPU7                     100404483 UNC_LLC_MISS:READ
+
+
+Benchmark: cache stress
+Locality: ignorant
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4201
+
+1-best = 4201.000000
+CPU0                     457039864 UNC_LLC_MISS:READ
+CPU1                     409558778 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: ignorant
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4072
+
+1-best = 4072.000000
+CPU2                     384936030 UNC_LLC_MISS:READ
+CPU3                     358434931 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: ignorant
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3965
+
+1-best = 3965.000000
+CPU4                     455409353 UNC_LLC_MISS:READ
+CPU5                     374900140 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: ignorant
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4228
+
+1-best = 4228.000000
+CPU6                     387445851 UNC_LLC_MISS:READ
+CPU7                     356732040 UNC_LLC_MISS:READ
+
+
+Benchmark: cache stress
+Locality: worst
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4471
+
+1-best = 4471.000000
+CPU0                     533340908 UNC_LLC_MISS:READ
+CPU1                     476560999 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: worst
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4683
+
+1-best = 4683.000000
+CPU2                     517376033 UNC_LLC_MISS:READ
+CPU3                     491814423 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: worst
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4794
+
+1-best = 4794.000000
+CPU4                     514292608 UNC_LLC_MISS:READ
+CPU5                     500039285 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: worst
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4436
+
+1-best = 4436.000000
+CPU6                     518847593 UNC_LLC_MISS:READ
+CPU7                     474478880 UNC_LLC_MISS:READ
+
+
+Benchmark: cache stress
+Locality: random
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 5857
+
+1-best = 5857.000000
+CPU0                     427852584 UNC_LLC_MISS:READ
+CPU1                     468938243 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: random
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 5805
+
+1-best = 5805.000000
+CPU2                     466857977 UNC_LLC_MISS:READ
+CPU3                     405801921 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: random
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 6152
+
+1-best = 6152.000000
+CPU4                     454431611 UNC_LLC_MISS:READ
+CPU5                     430262089 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: random
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4683
+
+1-best = 4683.000000
+CPU6                     424227066 UNC_LLC_MISS:READ
+CPU7                     409460224 UNC_LLC_MISS:READ
+
+
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3897
+
+1-best = 3897.000000
+CPU0                     114825709 UNC_LLC_MISS:READ
+CPU1                     170542723 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3525
+
+1-best = 3525.000000
+CPU2                     128219855 UNC_LLC_MISS:READ
+CPU3                     110375195 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3746
+
+1-best = 3746.000000
+CPU4                     130935913 UNC_LLC_MISS:READ
+CPU5                     131221485 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3696
+
+1-best = 3696.000000
+CPU6                     128461957 UNC_LLC_MISS:READ
+CPU7                     125542499 UNC_LLC_MISS:READ
+
+
+Benchmark: cache stress
+Locality: ignorant
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4400
+
+1-best = 4400.000000
+CPU0                     430782651 UNC_LLC_MISS:READ
+CPU1                     375239557 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: ignorant
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4498
+
+1-best = 4498.000000
+CPU2                     435262062 UNC_LLC_MISS:READ
+CPU3                     398458748 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: ignorant
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4344
+
+1-best = 4344.000000
+CPU4                     425441062 UNC_LLC_MISS:READ
+CPU5                     418130153 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: ignorant
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4268
+
+1-best = 4268.000000
+CPU6                     436932543 UNC_LLC_MISS:READ
+CPU7                     373176084 UNC_LLC_MISS:READ
+
+
+Benchmark: cache stress
+Locality: worst
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4163
+
+1-best = 4163.000000
+CPU0                     406743541 UNC_LLC_MISS:READ
+CPU1                     421114877 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: worst
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4525
+
+1-best = 4525.000000
+CPU2                     437691937 UNC_LLC_MISS:READ
+CPU3                     401325426 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: worst
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4331
+
+1-best = 4331.000000
+CPU4                     438646629 UNC_LLC_MISS:READ
+CPU5                     412353022 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: worst
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4349
+
+1-best = 4349.000000
+CPU6                     442132008 UNC_LLC_MISS:READ
+CPU7                     402792566 UNC_LLC_MISS:READ
+
+
+Benchmark: cache stress
+Locality: random
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4226
+
+1-best = 4226.000000
+CPU0                     421152207 UNC_LLC_MISS:READ
+CPU1                     376453445 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: random
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4029
+
+1-best = 4029.000000
+CPU2                     389803509 UNC_LLC_MISS:READ
+CPU3                     374124978 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: random
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4204
+
+1-best = 4204.000000
+CPU4                     436142443 UNC_LLC_MISS:READ
+CPU5                     371717642 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: random
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4174
+
+1-best = 4174.000000
+CPU6                     489924049 UNC_LLC_MISS:READ
+CPU7                     360733769 UNC_LLC_MISS:READ
+
+
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threadpool
+Number of threads in thread pool: 8
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3636
+
+1-best = 3636.000000
+CPU0                      88950550 UNC_LLC_MISS:READ
+CPU1                      92377194 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threadpool
+Number of threads in thread pool: 8
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3652
+
+1-best = 3652.000000
+CPU2                      92925216 UNC_LLC_MISS:READ
+CPU3                      94451155 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threadpool
+Number of threads in thread pool: 8
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3389
+
+1-best = 3389.000000
+CPU4                      87492913 UNC_LLC_MISS:READ
+CPU5                      73322151 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threadpool
+Number of threads in thread pool: 8
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3647
+
+1-best = 3647.000000
+CPU6                     169456831 UNC_LLC_MISS:READ
+CPU7                     149886372 UNC_LLC_MISS:READ
+
+
+Benchmark: cache stress
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: single
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 25538
+
+1-best = 25538.000000
+CPU0                     706371473 UNC_LLC_MISS:READ
+CPU1                       1606495 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: single
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 25522
+
+1-best = 25522.000000
+CPU2                     688724893 UNC_LLC_MISS:READ
+CPU3                       1653325 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: single
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 25537
+
+1-best = 25537.000000
+CPU4                     700261151 UNC_LLC_MISS:READ
+CPU5                       1457758 UNC_LLC_MISS:READ
+
+Benchmark: cache stress
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: single
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 25550
+
+1-best = 25550.000000
+CPU6                     700025300 UNC_LLC_MISS:READ
+CPU7                       1625060 UNC_LLC_MISS:READ
+
+Script done on Thu 19 Aug 2010 07:36:57 PM CEST
