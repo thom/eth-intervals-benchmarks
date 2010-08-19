@@ -1,0 +1,292 @@
+Script started on Thu 19 Aug 2010 09:12:01 PM CEST
+Logfile: mafushi-2010-08-19-21:12:01.txt
+
+date
+Thu Aug 19 21:12:01 CEST 2010
+
+git branch
+* locality
+
+git show --pretty=oneline | head -1
+e8d5bbbb2a87024f8c1d0c1565abd70cf5517708 Cleanup places
+
+git diff | cat
+
+pwd
+/home/weibelt/intervals-java/Intervals
+
+Settings:
+JAVA_OPTS=-server -Xmx4096M -Xms4096M -Xss8M -XX:+UseNUMA
+NOBUILD=
+CLASSPATH=:/home/weibelt/intervals-java/Intervals/bin:/home/weibelt/intervals-java/Intervals/lib/*
+LD_LIBRARY_PATH=:/usr/lib:/usr/local/lib:/home/weibelt/intervals-java/Intervals/lib
+
+Buildfile: build.xml
+
+clean:
+   [delete] Deleting directory /home/weibelt/intervals-java/Intervals/bin
+
+create:
+    [mkdir] Created dir: /home/weibelt/intervals-java/Intervals/bin
+
+compile:
+    [javac] Compiling 81 source files to /home/weibelt/intervals-java/Intervals/bin
+    [javac] Compiling 123 source files to /home/weibelt/intervals-java/Intervals/bin
+    [javac] Compiling 78 source files to /home/weibelt/intervals-java/Intervals/bin
+
+BUILD SUCCESSFUL
+Total time: 9 seconds
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3343
+
+1-best = 3343.000000
+CPU0                     105824614 UNC_LLC_MISS:PROBE
+CPU0                          7133 UNC_LLC_MISS:WRITE
+CPU0                     112774731 UNC_LLC_MISS:READ 
+CPU0                        577102 UNC_LLC_HITS:PROBE
+CPU0                       1705500 UNC_LLC_HITS:WRITE
+CPU0                    1301890922 UNC_LLC_HITS:READ 
+CPU1                     112539926 UNC_LLC_MISS:PROBE
+CPU1                        349965 UNC_LLC_MISS:WRITE
+CPU1                     106027230 UNC_LLC_MISS:READ 
+CPU1                        265980 UNC_LLC_HITS:PROBE
+CPU1                       1252290 UNC_LLC_HITS:WRITE
+CPU1                    1274936886 UNC_LLC_HITS:READ 
+
+Benchmark: cache stress
+Locality: ignorant
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4165
+
+1-best = 4165.000000
+CPU0                     159829147 UNC_LLC_MISS:PROBE
+CPU0                          7119 UNC_LLC_MISS:WRITE
+CPU0                     423679400 UNC_LLC_MISS:READ 
+CPU0                     216866456 UNC_LLC_HITS:PROBE
+CPU0                       1722389 UNC_LLC_HITS:WRITE
+CPU0                     944820122 UNC_LLC_HITS:READ 
+CPU1                     253092862 UNC_LLC_MISS:PROBE
+CPU1                        349941 UNC_LLC_MISS:WRITE
+CPU1                     376315131 UNC_LLC_MISS:READ 
+CPU1                     170623444 UNC_LLC_HITS:PROBE
+CPU1                       1347148 UNC_LLC_HITS:WRITE
+CPU1                     728866635 UNC_LLC_HITS:READ 
+
+Benchmark: cache stress
+Locality: worst
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4580
+
+1-best = 4580.000000
+CPU0                     224003949 UNC_LLC_MISS:PROBE
+CPU0                        182006 UNC_LLC_MISS:WRITE
+CPU0                     513880832 UNC_LLC_MISS:READ 
+CPU0                     267273385 UNC_LLC_HITS:PROBE
+CPU0                       2067721 UNC_LLC_HITS:WRITE
+CPU0                     743655690 UNC_LLC_HITS:READ 
+CPU1                     288254875 UNC_LLC_MISS:PROBE
+CPU1                        175158 UNC_LLC_MISS:WRITE
+CPU1                     490943052 UNC_LLC_MISS:READ 
+CPU1                     226023158 UNC_LLC_HITS:PROBE
+CPU1                        970356 UNC_LLC_HITS:WRITE
+CPU1                     643448189 UNC_LLC_HITS:READ 
+
+Benchmark: cache stress
+Locality: random
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 6077
+
+1-best = 6077.000000
+CPU0                     187072979 UNC_LLC_MISS:PROBE
+CPU0                        181823 UNC_LLC_MISS:WRITE
+CPU0                     502392293 UNC_LLC_MISS:READ 
+CPU0                     205005928 UNC_LLC_HITS:PROBE
+CPU0                       2076770 UNC_LLC_HITS:WRITE
+CPU0                     956993265 UNC_LLC_HITS:READ 
+CPU1                     280152517 UNC_LLC_MISS:PROBE
+CPU1                        175238 UNC_LLC_MISS:WRITE
+CPU1                     391642327 UNC_LLC_MISS:READ 
+CPU1                     222646022 UNC_LLC_HITS:PROBE
+CPU1                        945532 UNC_LLC_HITS:WRITE
+CPU1                     688633675 UNC_LLC_HITS:READ 
+
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3760
+
+1-best = 3760.000000
+CPU0                      96216998 UNC_LLC_MISS:PROBE
+CPU0                          7853 UNC_LLC_MISS:WRITE
+CPU0                     140354081 UNC_LLC_MISS:READ 
+CPU0                      39319234 UNC_LLC_HITS:PROBE
+CPU0                       1934335 UNC_LLC_HITS:WRITE
+CPU0                    1201292315 UNC_LLC_HITS:READ 
+CPU1                     114480748 UNC_LLC_MISS:PROBE
+CPU1                        349851 UNC_LLC_MISS:WRITE
+CPU1                     135088994 UNC_LLC_MISS:READ 
+CPU1                      25970245 UNC_LLC_HITS:PROBE
+CPU1                       1173162 UNC_LLC_HITS:WRITE
+CPU1                    1133233008 UNC_LLC_HITS:READ 
+
+Benchmark: cache stress
+Locality: ignorant
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4198
+
+1-best = 4198.000000
+CPU0                     153253888 UNC_LLC_MISS:PROBE
+CPU0                          7315 UNC_LLC_MISS:WRITE
+CPU0                     432357121 UNC_LLC_MISS:READ 
+CPU0                     252409424 UNC_LLC_HITS:PROBE
+CPU0                       1732641 UNC_LLC_HITS:WRITE
+CPU0                     843674213 UNC_LLC_HITS:READ 
+CPU1                     268287137 UNC_LLC_MISS:PROBE
+CPU1                        350069 UNC_LLC_MISS:WRITE
+CPU1                     405056634 UNC_LLC_MISS:READ 
+CPU1                     164325146 UNC_LLC_HITS:PROBE
+CPU1                       1361593 UNC_LLC_HITS:WRITE
+CPU1                     724447502 UNC_LLC_HITS:READ 
+
+Benchmark: cache stress
+Locality: worst
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4375
+
+1-best = 4375.000000
+CPU0                     151926393 UNC_LLC_MISS:PROBE
+CPU0                          7590 UNC_LLC_MISS:WRITE
+CPU0                     419910720 UNC_LLC_MISS:READ 
+CPU0                     265371819 UNC_LLC_HITS:PROBE
+CPU0                       1926832 UNC_LLC_HITS:WRITE
+CPU0                     780979858 UNC_LLC_HITS:READ 
+CPU1                     270976407 UNC_LLC_MISS:PROBE
+CPU1                        349852 UNC_LLC_MISS:WRITE
+CPU1                     416809823 UNC_LLC_MISS:READ 
+CPU1                     149056497 UNC_LLC_HITS:PROBE
+CPU1                       1183368 UNC_LLC_HITS:WRITE
+CPU1                     757767752 UNC_LLC_HITS:READ 
+
+Benchmark: cache stress
+Locality: random
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4364
+
+1-best = 4364.000000
+CPU0                     165373001 UNC_LLC_MISS:PROBE
+CPU0                          7581 UNC_LLC_MISS:WRITE
+CPU0                     433954030 UNC_LLC_MISS:READ 
+CPU0                     254730709 UNC_LLC_HITS:PROBE
+CPU0                       1924530 UNC_LLC_HITS:WRITE
+CPU0                     821913624 UNC_LLC_HITS:READ 
+CPU1                     269269018 UNC_LLC_MISS:PROBE
+CPU1                        349850 UNC_LLC_MISS:WRITE
+CPU1                     419617049 UNC_LLC_MISS:READ 
+CPU1                     164839024 UNC_LLC_HITS:PROBE
+CPU1                       1186124 UNC_LLC_HITS:WRITE
+CPU1                     747623719 UNC_LLC_HITS:READ 
+
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threadpool
+Number of threads in thread pool: 8
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3615
+
+1-best = 3615.000000
+CPU0                      86306159 UNC_LLC_MISS:PROBE
+CPU0                          7122 UNC_LLC_MISS:WRITE
+CPU0                      86465802 UNC_LLC_MISS:READ 
+CPU0                        410444 UNC_LLC_HITS:PROBE
+CPU0                       1976765 UNC_LLC_HITS:WRITE
+CPU0                    1280679142 UNC_LLC_HITS:READ 
+CPU1                      86117957 UNC_LLC_MISS:PROBE
+CPU1                        349966 UNC_LLC_MISS:WRITE
+CPU1                      86335462 UNC_LLC_MISS:READ 
+CPU1                        384711 UNC_LLC_HITS:PROBE
+CPU1                        885797 UNC_LLC_HITS:WRITE
+CPU1                    1220253308 UNC_LLC_HITS:READ 
+
+Benchmark: cache stress
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: single
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 25511
+
+1-best = 25511.000000
+CPU0                       1689773 UNC_LLC_MISS:PROBE
+CPU0                          7188 UNC_LLC_MISS:WRITE
+CPU0                     679715859 UNC_LLC_MISS:READ 
+CPU0                        391975 UNC_LLC_HITS:PROBE
+CPU0                       1789964 UNC_LLC_HITS:WRITE
+CPU0                    2058900227 UNC_LLC_HITS:READ 
+CPU1                     678227847 UNC_LLC_MISS:PROBE
+CPU1                        349966 UNC_LLC_MISS:WRITE
+CPU1                       1606725 UNC_LLC_MISS:READ 
+CPU1                       1655049 UNC_LLC_HITS:PROBE
+CPU1                       1076301 UNC_LLC_HITS:WRITE
+CPU1                       3867339 UNC_LLC_HITS:READ 
+
+Script done on Thu 19 Aug 2010 09:13:21 PM CEST
