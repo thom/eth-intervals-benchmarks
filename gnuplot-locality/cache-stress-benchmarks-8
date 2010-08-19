@@ -1,0 +1,262 @@
+Script started on Wed 18 Aug 2010 10:23:03 AM CEST
+Logfile: mafushi-2010-08-18-10:23:03.txt
+
+date
+Wed Aug 18 10:23:03 CEST 2010
+
+git branch
+* locality
+
+git show --pretty=oneline | head -1
+e8d5bbbb2a87024f8c1d0c1565abd70cf5517708 Cleanup places
+
+git diff | cat
+
+pwd
+/home/weibelt/intervals-java/Intervals
+
+Settings:
+JAVA_OPTS=-server -Xmx4096M -Xms4096M -Xss8M -XX:+UseNUMA
+NOBUILD=
+CLASSPATH=:/home/weibelt/intervals-java/Intervals/bin:/home/weibelt/intervals-java/Intervals/lib/*
+LD_LIBRARY_PATH=:/usr/lib:/usr/local/lib:/home/weibelt/intervals-java/Intervals/lib
+
+Buildfile: build.xml
+
+clean:
+   [delete] Deleting directory /home/weibelt/intervals-java/Intervals/bin
+
+create:
+    [mkdir] Created dir: /home/weibelt/intervals-java/Intervals/bin
+
+compile:
+    [javac] Compiling 81 source files to /home/weibelt/intervals-java/Intervals/bin
+    [javac] Compiling 123 source files to /home/weibelt/intervals-java/Intervals/bin
+    [javac] Compiling 78 source files to /home/weibelt/intervals-java/Intervals/bin
+
+BUILD SUCCESSFUL
+Total time: 8 seconds
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3361
+Run 1 = 3732
+Run 2 = 3634
+Run 3 = 3344
+Run 4 = 3345
+Run 5 = 3331
+Run 6 = 3450
+Run 7 = 3444
+Run 8 = 3306
+Run 9 = 3486
+
+3-best = 3327.000000
+
+Benchmark: cache stress
+Locality: ignorant
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4191
+Run 1 = 7632
+Run 2 = 4186
+Run 3 = 3982
+Run 4 = 4043
+Run 5 = 4057
+Run 6 = 4170
+Run 7 = 4098
+Run 8 = 3931
+Run 9 = 4066
+
+3-best = 3985.333333
+
+Benchmark: cache stress
+Locality: worst
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4546
+Run 1 = 5830
+Run 2 = 4507
+Run 3 = 4423
+Run 4 = 4458
+Run 5 = 4394
+Run 6 = 4477
+Run 7 = 4459
+Run 8 = 4351
+Run 9 = 4449
+
+3-best = 4389.333333
+
+Benchmark: cache stress
+Locality: random
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threads
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 5191
+Run 1 = 7201
+Run 2 = 6338
+Run 3 = 5477
+Run 4 = 7025
+Run 5 = 5966
+Run 6 = 5932
+Run 7 = 6564
+Run 8 = 5949
+Run 9 = 4856
+
+3-best = 5174.666667
+
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3557
+Run 1 = 3852
+Run 2 = 3615
+Run 3 = 3618
+Run 4 = 3616
+Run 5 = 3617
+Run 6 = 3616
+Run 7 = 3618
+Run 8 = 3619
+Run 9 = 3616
+
+3-best = 3596.000000
+
+Benchmark: cache stress
+Locality: ignorant
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4424
+Run 1 = 4056
+Run 2 = 4035
+Run 3 = 4027
+Run 4 = 4052
+Run 5 = 4066
+Run 6 = 4172
+Run 7 = 4088
+Run 8 = 4123
+Run 9 = 4107
+
+3-best = 4038.000000
+
+Benchmark: cache stress
+Locality: worst
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4338
+Run 1 = 4065
+Run 2 = 4107
+Run 3 = 3979
+Run 4 = 4056
+Run 5 = 4056
+Run 6 = 4188
+Run 7 = 4066
+Run 8 = 4076
+Run 9 = 4102
+
+3-best = 4030.333333
+
+Benchmark: cache stress
+Locality: random
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: intervals
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 4307
+Run 1 = 4142
+Run 2 = 3995
+Run 3 = 4041
+Run 4 = 3950
+Run 5 = 4107
+Run 6 = 4001
+Run 7 = 4002
+Run 8 = 4046
+Run 9 = 4070
+
+3-best = 3982.000000
+
+
+Benchmark: cache stress
+Locality: best
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: threadpool
+Number of threads in thread pool: 8
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 3664
+Run 1 = 3709
+Run 2 = 3543
+Run 3 = 3451
+Run 4 = 3472
+Run 5 = 3548
+Run 6 = 3520
+Run 7 = 3552
+Run 8 = 3405
+Run 9 = 3602
+
+3-best = 3442.666667
+
+Benchmark: cache stress
+Machine: mafushi
+Places: 2
+Units: 8
+Implemenation: single
+Array size: 2097144
+Tasks per unit: 8
+
+Run 0 = 25604
+Run 1 = 25571
+Run 2 = 25575
+Run 3 = 25569
+Run 4 = 25573
+Run 5 = 25573
+Run 6 = 25574
+Run 7 = 25573
+Run 8 = 25572
+Run 9 = 25573
+
+3-best = 25570.666667
+
+Script done on Wed 18 Aug 2010 10:33:56 AM CEST
