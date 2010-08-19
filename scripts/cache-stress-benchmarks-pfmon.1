@@ -1,0 +1,38 @@
+#!/bin/bash
+
+MYDIR=$(dirname $0)
+DIR=$(cd $MYDIR; pwd)
+JGF=$(cd $MYDIR/..; pwd)
+
+if [ -z "$JAVA_OPTS" ]
+then
+	export JAVA_OPTS="-server -Xmx4096M -Xms4096M -Xss8M -XX:+UseNUMA"
+fi
+
+$DIR/benchmark-init $1
+
+W=8
+
+localities=(
+	best
+	ignorant
+	worst
+	random
+)
+
+types=(
+	threads
+	intervals
+)
+
+for type in ${types[@]}; do
+	for locality in ${localities[@]}; do
+		pfmon --cpu-list 0,1 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t ${type} -w ${W} -l ${locality} -r 1 -k 1
+		echo
+	done
+	echo
+done
+
+pfmon --cpu-list 0,1 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t threadpool -w ${W} -r 1 -k 1
+echo
+pfmon --cpu-list 0,1 -uk --system-wide -e UNC_LLC_MISS:READ java ${JAVA_OPTS} ch.ethz.cachestress.Main -m mafushi -t single -w ${W} -r 1 -k 1

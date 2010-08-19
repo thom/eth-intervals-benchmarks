@@ -1,0 +1,6 @@
+#!/bin/bash
+MYDIR=$(dirname $0)
+DIR=$(cd $MYDIR/..; pwd)
+LOGDIR=${MYDIR}/results
+LOGFILE=$(hostname)-$(date +'%Y-%m-%d-%H:%M:%S').txt
+CLASSPATH=$CLASSPATH:$DIR/bin:$DIR/lib/* LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$DIR/lib script -c "$MYDIR/scripts/cache-stress-benchmarks-pfmon.1 $LOGFILE" $LOGDIR/$LOGFILE
